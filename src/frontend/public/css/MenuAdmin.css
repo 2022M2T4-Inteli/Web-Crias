@@ -1,0 +1,93 @@
+.flyer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-style: solid;
+    border-top-right-radius: 15px 15px;
+	border-top-left-radius: 15px 15px;
+	border-bottom-left-radius: 15px 15px;
+	border-bottom-right-radius: 15px 15px;
+
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+    font-size: 48px;
+
+    width: 60%;
+    height: 250px;
+    gap: 10%;
+}
+
+.flyer-button {
+    height: 65px;
+    padding: 10px;
+    
+    font-size: 24px;
+    color: #FFFFFF;
+
+    border-style: none;
+    border-top-right-radius: 50px 50px;
+	border-top-left-radius: 50px 50px;
+	border-bottom-left-radius: 50px 50px;
+	border-bottom-right-radius: 50px 50px;
+
+    background-color: #1E1E1E;
+}
+
+.history-section {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+
+    font-size: 24px;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: 95vw;
+    gap: 5%;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.history-frame {
+    border-top-right-radius: 20px 20px;
+	border-top-left-radius: 20px 20px;
+	border-bottom-left-radius: 20px 20px;
+	border-bottom-right-radius: 20px 20px;
+
+    border-style: solid;
+    background-color: #F2F2F2;
+    width: 135px;
+    height: 170px;
+}
+
+.client-section {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+
+    font-size: 24px;
+}
+
+.client-frame {
+    border-radius: 100%;
+    border-style: solid;
+    background-color: #F2F2F2;
+    width: 135px;
+    height: 135px;
+}
