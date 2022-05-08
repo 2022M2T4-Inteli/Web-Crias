@@ -19,75 +19,48 @@
     z-index: 1;
 }
 
+.header-menu {
+    display: flex; 
+    flex-direction: row; 
+    width: 90%; 
+    height: 100%;
+}
+
+.logout {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+}
+
+.logout-button:hover {
+    cursor: pointer;
+}
+
 .page-header {
     display: flex;
     flex-direction: row;
     align-items: center;
     background-color: #3468FC;
-    height: 4.375rem;
+    height: 4.5rem;
     width: 100%;
     color: #FFFFFF;
 }
 
-.menu-bar-text {
-    display: none;
-    font-size: 2rem;
-    padding-left: 0.5%;
-    padding-right: 0.5%;
-    border-top-right-radius: 1.875rem;
-    align-items: center;
+.header-menu-button {
+    display: flex;
     justify-content: center;
-    background-color: #8CAAFD;
-    height: 100%;
-}
-
-.menu-bar {
-    display: none;
-    flex-direction: column;
-    color: #FFFFFF;
-    font-size: 1.5rem;
-    text-align: left;
-    border-top-right-radius: 15px;
-    width: 18vw;
-    height: 100vh;
-    background-color: #8CAAFD;
-}
-
-.menu-bar-select-button {
-    display: flex;
     align-items: center;
-    padding-left: 4%;
+    height: 100%;
     width: auto;
-    height: 6.5%;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
-.menu-bar-select-button:hover {
-    background-color: #E2EAFF;
-    cursor: pointer
-}
-
-.menu-button:hover {
+.header-menu-button:hover {
     cursor: pointer;
-}
-
-.menu-button {
-    display: flex;
-    width: 2.9%;
-    flex-direction: column;
-    margin-left: 1.25rem;
-    gap: 0.625rem;
-}
-
-.hurb-cabecalho {
-    width: 97.25%;
-    margin-right: 1.25rem;
-    text-align: right;
-}
-
-.line {
-    background-color: #FFFFFF;
-    width: 3.125rem;
-    height: 0.375rem;
+    background-color: #8CAAFD;
 }
 
 .page-body {
@@ -99,7 +72,5 @@
 
 .page-footer {
     width: auto;
-    background-color: #CFFCE2;
     width: 100%;
-    height: 9.375rem;
 }

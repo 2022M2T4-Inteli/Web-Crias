@@ -12,156 +12,95 @@
             Hurb - Menu Admnin
         </title>
     </head>
-    <body>
+    <body onload="changeFlyerLineIndex(0)">
         <div class="page-menu-overlay">
             <!--Header section where are filled with initial page content-->
             <div class="page-header">
-                <div class="menu-bar-text">Menu</div>
-                <div class="menu-button" onclick="showMenuBar()">
-                    <!--Divs for create menu visual button-->
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
+                <div style="margin-left: 1%; margin-right: 2.5%;">
+                    <h1>Hurb</h1>
                 </div>
-                <div class="hurb-cabecalho">
-                    <h1 class="hurb-menu-text">Hurb</h1>
+                <div class="logout">
+                    <div class="logout-button">
+                        <img src="../icons/Logout.svg" width="40" height="40">
+                    </div>
                 </div>
-            </div>
-            
-            <div class="menu-bar">
-                <!--<div class="menu-bar-select-button">Menu</div>-->
-                <div class="menu-bar-select-button">Antecipações</div>
-                <div class="menu-bar-select-button">Clientes</div>
-                <div class="menu-bar-select-button">Sair</div>
             </div>
         </div>
         <!--Main section-->
         <div class="main">
             <!--Body section where are filled with all of principal content-->
             <div class="page-body">
-                <!--Flyer section-->
-                <div class="flyer">
-                    Acompanhe as solicitações de antecipação na palma da mão!
-                    <button class="flyer-button">
-                        Acesse Aqui
-                    </button>
-                </div>
-                
-                <!--History section where are filled with hotels that antecipated-->
-                <div class="history-section">
-                    <br><br>
-                    <b>Últimas Solicitações de Antecipação <a href="">View All</a></b>
-                    <br>
-                    <div class="items">
-                        <div class="item">
-                            <div class="history-frame"></div>
-                            Hotel
+                <h2 style="color: #3468FC">Olá administrador, bem-vindo!</h2>
+                <br>
+                <b>Pesquisar</b>
+                <div class="body-search">
+                    <div class="search-bar">
+                        <input type="text">
+                        <select>
+                            <option value="Parceiro">Parceiro</option>
+                            <option value="Antecipações Pendentes">Antecipações Pendentes</option>
+                            <option value="Histórico de Antecipações">Histórico de Antecipações</option>
+                        </select>
+                        <div class="order-button">
+                            Ordenar 
                         </div>
-                        <div class="item">
-                            <div class="history-frame"></div>
-                            Hotel
-                        </div>
-                        <div class="item">
-                            <div class="history-frame"></div>
-                            Hotel
-                        </div>
-                        <div class="item">
-                            <div class="history-frame"></div>
-                            Hotel
-                        </div>
-                        <div class="item">
-                            <div class="history-frame"></div>
-                            Hotel
-                        </div>
-                        <div class="item">
-                            <div class="history-frame"></div>
-                            Hotel
-                        </div>
-                        <div class="item">
-                            <div class="history-frame"></div>
-                            Hotel
-                        </div>
-                        <div class="item">
-                            <div class="history-frame"></div>
-                            Hotel
-                        </div><div class="item">
-                            <div class="history-frame"></div>
-                            Hotel
-                        </div>
-                        <div class="item">
-                            <div class="history-frame"></div>
-                            Hotel
-                        </div>
-                        <div class="item">
-                            <div class="history-frame"></div>
-                            Hotel
-                        </div>
-                    </div>                    
+                    </div>
+
+                    <div class="data-grid">
+                        <table>
+                            <tr>
+                                <th>Razão Social</th>
+                                <th>Nome Fantasia</th>
+                                <th>CNPJ</th>
+                                <th>Telefone</th>
+                                <th>Endereço</th>
+                            </tr>
+                            <tr>
+                                <td>⠀</td>
+                                <td>⠀</td>
+                                <td>⠀</td>
+                                <td>⠀</td>
+                                <td>⠀</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
                 <br><br>
 
-                <hr>
-
-                <!--Client section filled with last clients that antecipated-->
-                <div class="client-section">
+                <div class="body-general-info">
+                    <h1>Antecipações</h1>
                     <br>
-                    <b>Últimas Clientes <a href="">View All</a></b>
+                    <div class="body-divisory"></div>
+                    <br><br>
+                    <div class="body-date-buttons">
+                        <div id="left-button" class="date-button" onclick="selectDateButton(0)">
+                            <b>Dia</b>
+                        </div>
+                        <div id="mid-button" class="date-button" onclick="selectDateButton(1)">
+                            <b>Semana</b>
+                        </div>
+                        <div id="right-button" class="date-button" onclick="selectDateButton(2)">
+                            <b>Mês</b>
+                        </div>
+                    </div>
                     <br>
-                    <div class="items">
-                        <div class="item">
-                            <div class="client-frame"></div>
-                            Cliente
-                        </div>
-                        <div class="item">
-                            <div class="client-frame"></div>
-                            Cliente
-                        </div>
-                        <div class="item">
-                            <div class="client-frame"></div>
-                            Cliente
-                        </div>
-                        <div class="item">
-                            <div class="client-frame"></div>
-                            Cliente
-                        </div>
-                        <div class="item">
-                            <div class="client-frame"></div>
-                            Cliente
-                        </div>
-                        <div class="item">
-                            <div class="client-frame"></div>
-                            Cliente
-                        </div>
-                        <div class="item">
-                            <div class="client-frame"></div>
-                            Cliente
-                        </div>
-                        <div class="item">
-                            <div class="client-frame"></div>
-                            Cliente
-                        </div>
-                        <div class="item">
-                            <div class="client-frame"></div>
-                            Cliente
-                        </div>
-                        <div class="item">
-                            <div class="client-frame"></div>
-                            Cliente
-                        </div><div class="item">
-                            <div class="client-frame"></div>
-                            Cliente
-                        </div>
-                    </div>                    
+                    <div class="body-info">
+                        <div class="body-info-box"></div>
+                        <div class="body-info-box"></div>
+                        <div class="body-info-box"></div>
+                        <div class="body-info-box"></div>
+                    </div>
                 </div>
             </div>
             <br><br><br>
-
+            <hr>
             <!--Footer section where are filled with final page content-->
             <div class="page-footer">
-
+                <img src="../icons/hurb-logo.svg" width="200rem" height="100rem">
             </div>
         </div>
-    
+        
+        <script src="../js/MenuAdmin.js"></script>
         <script src="../js/Main.js"></script>
     </body>
 </html>
