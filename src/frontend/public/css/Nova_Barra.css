@@ -12,11 +12,18 @@
 	background-color: #3468FC;
 }
 
-.menu a, p {
+.menu a {
 	display: inline;
 	color: white;
-	margin-right: 30px;
-	margin-left: 30px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.menu p {
+	display: inline;
+	color: white;
+	margin-right: 10px;
+	margin-left: 10px;
 }
 
 .menu a:hover {
