@@ -1,0 +1,84 @@
+/* Mensagem de boas vindas */
+.welcome {
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    color: black;
+    background-color: blue;
+    
+        
+}
+
+.item {
+    height: 55rem;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-color: black;
+    
+}
+
+.overlay-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.3;
+    width: auto;
+}
+
+.container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 50px;
+}
+
+.main-title {
+    color: #444;
+    font-size: 40px;
+    text-align: center;
+    position: relative;
+    top: 330px;
+}
+
+.main-title::after {
+    content:"";
+    border-top: 2px solid #333;
+    width: 15%;
+    position: absolute;
+    top: 60px;
+    left: 42.5%;
+}
+
+
+.thumbnail {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    min-width: 40%;
+    border-radius: 5px;
+    top: 100px;
+    position: relative;
+    color: aqua;
+    
+    
+  }
+ 
+  .thumbnail-description {
+    min-height: 40px;
+  }
+ 
+  .thumbnail:hover {
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
+  }
+
+  .col-md-4 {
+      top: 300px;
+  }
+
+  
