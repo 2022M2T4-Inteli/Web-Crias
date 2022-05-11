@@ -95,12 +95,19 @@
 	margin-right: 110px;
 }
 
-btn-primary {
-	background-color: #34fc9f;
-}
-
 .fechar {
 	display: flex;
 	justify-content: center;
 
+}
+
+.centralize-button {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#button-color {
+	background-color: #3468FC;
 }
