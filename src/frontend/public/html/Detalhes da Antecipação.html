@@ -20,27 +20,26 @@
     </head>
     <body>
         <!--Main section-->
-        <div class="page-menu-overlay">
-            <!--Header section where are filled with initial page content-->
-            <div class="page-menus">
-                <div class="menu-bar-text">Menu</div>
-                <div class="menu-button" onclick="showMenuBar()">
-                    <!--Divs for create menu visual button-->
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
-                <div class="hurb-cabecalho">
-                    <h1 class="hurb-menu-text">Hurb</h1>
-                </div>
+        <div class="menu">
+
+            <div class="col-sm-2" id="H_menu">
+                <p> Hurb </p>
             </div>
-            
-            <div class="menu-bar">
-                <div class="menu-bar-select-button">Tela Inicial</div>
-                <div class="menu-bar-select-button">Antecipações</div>
-                <div class="menu-bar-select-button">Clientes</div>
-                <div class="menu-bar-select-button">Sair</div>
+    
+            <div class="col-sm-8" id="T_menu">
+                <a href="index.html"> Menu </a>
+                <p> | </p>
+                <a href="compra.html"> Perfil </a>
+                <p> | </p>
+                <a href="contato.html"> Antecipar </a>
+                <p> | </p>
+                <a href="contato.html"> Status </a>
             </div>
+    
+            <div class="col-sm-2" id="L_menu">
+                <a href="contato.html"> Log Out </a>
+            </div>
+    
         </div>
         <div class="main">
             <!--Body section where are filled with all of principal content-->
@@ -66,10 +65,6 @@
             </div>
             <br><br><br>
 
-            <!--Footer section where are filled with final page content-->
-            <div class="page-footer">
-
-            </div>
         </div> 
     
         <script src="../js/Main.js"></script>
