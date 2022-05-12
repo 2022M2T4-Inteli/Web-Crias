@@ -38,6 +38,10 @@
     margin-right: 1rem;
 }
 
+.logout-button a {
+    color: #FFFFFF;
+}
+
 .logout-button:hover {
     cursor: pointer;
 }
@@ -229,7 +233,7 @@
     box-shadow: 5px 5px 10px #000000;
     width: 30%;
     height: 90%;
-    background-color: #D8BEFE;
+    background-color: #E2EAFF;
 }
 
 .upper {
@@ -356,7 +360,7 @@
     width: 30%;
     height: 8rem;
     box-shadow: 1px 1px 10px #000000;
-    background-color: #CFFCE2;
+    background-color: #FFFFFF;
 }
 
 .info-box p {

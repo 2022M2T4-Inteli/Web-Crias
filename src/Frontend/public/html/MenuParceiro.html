@@ -30,17 +30,17 @@
 			</div>
 			
 			<div class="col-sm-8" id="T_menu">
-			<a href="index.html"> Menu </a>
-			<p> | </p> 
-			<a href="compra.html"> Perfil </a>
-			<p> | </p> 
-			<a href="contato.html"> Antecipar </a>
-			<p> | </p> 
-			<a href="contato.html"> Status </a>
+				<a href="MenuParceiro.html"> Menu </a>
+				<p> | </p>
+				<a href="EditarPerfil.html"> Perfil </a>
+				<p> | </p>
+				<a href="SolicitaçãoAntecipação.html"> Antecipar </a>
+				<p> | </p>
+				<a href="HistoricoSolicitacao.html"> Histórico </a>
 			</div>
 			
 			<div class="col-sm-2" id="L_menu">
-			<a  href="contato.html" > Log Out </a> 
+			<a  href="index.html" > Log Out </a> 
 			</div>
 			
 		</div>
@@ -78,7 +78,7 @@
 								<p class="carousel-text">Solicite antecipação de reservas já concluídas.</p>
 								<br>
 								<div class="carousel-button">
-									<button type="button" class="btn">Solicitar</button>
+									<button type="button" class="btn" onclick="changePage(0)">Solicitar</button>
 								</div>
 							</div>
 					  	</div>
@@ -89,7 +89,7 @@
 								<p class="carousel-text">Acompanhe o status de solicitações pendentes.</p>
 								<br>
 								<div class="carousel-button">
-									<button type="button" class="btn">Acompanhar</button>
+									<button type="button" class="btn" onclick="changePage(1)">Acompanhar</button>
 								</div>
 							</div>
 					  	</div>
@@ -100,7 +100,7 @@
 								<p class="carousel-text">Gerencie e edite seus dados.</p>
 								<br>
 								<div class="carousel-button">
-									<button type="button" class="btn">Gerenciar</button>
+									<button type="button" class="btn" onclick="changePage(2)">Gerenciar</button>
 								</div>
 							</div>
 					  	</div>
@@ -255,6 +255,6 @@
 			<img src="../icons/hurb-logo.png" width="250rem" height="100rem">
         </div>
     
-        <script src="../js/Main.js"></script>
+        <script src="../js/MenuParceiro.js"></script>
     </body>
 </html>
