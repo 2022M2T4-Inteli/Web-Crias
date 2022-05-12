@@ -1,3 +1,4 @@
+<!--Written by Renato-->
 <!DOCTYPE html>
 <html>
     <!--Adding tilte to page, choosing css file and linking font to file-->
@@ -12,7 +13,7 @@
             Hurb - Menu Admnin
         </title>
     </head>
-    <body onload="changeFlyerLineIndex(0)">
+    <body onload="selectDateButton(0)">
         <div class="page-menu-overlay">
             <!--Header section where are filled with initial page content-->
             <div class="page-header">
@@ -21,7 +22,7 @@
                 </div>
                 <div class="logout">
                     <div class="logout-button">
-                        <a href="index.html">Log Out</a>
+                        <a href="index - Admin.html">Log Out</a>
                     </div>
                 </div>
             </div>
@@ -33,11 +34,14 @@
                 <h2 style="color: #3468FC; font-weight: 400;">Olá administrador, bem-vindo!</h2>
                 <br>
                 <b>Pesquisar</b>
+                <!--Section where the user will search data and see the results-->
                 <div class="body-search">
+                    <!--Search bar section-->
                     <div class="search-bar">
                         <div class="search-text">
                             <input type="text" id="search-input-text">
                             <img id="search-button" src="../icons/seach-button.png" onclick="search()">
+                            <!--Select tag to show how the user can search-->
                             <select id="search-hotel" class="select-property">
                                 <option value="Nome">Nome</option>
                                 <option value="CNPJ">CNPJ</option>
@@ -48,6 +52,7 @@
                                 <option value="Data">Data</option>
                             </select>
                         </div>
+                        <!--Select tag to show what can be searched-->
                         <select class="select-type" onchange="changeSearchProperty()">
                             <option value="Parceiro">Parceiro</option>
                             <option value="Antecipações Pendentes">Antecipações Pendentes</option>
@@ -57,10 +62,13 @@
                             Ordenar 
                         </div>
                     </div>
+                    <!--Hotel data-->
                     <div class="data-hotel">
                         <div class="hotel-frame"></div>
                         <p id="hotel-name"></p>
                     </div>
+
+                    <!--Data of pending anticipation-->
                     <div class="data-pending">
                         <div class="card-pend">
                             <div class="upper">
@@ -112,6 +120,7 @@
                         </div>
                     </div>
 
+                    <!--Data of last antecipation history-->
                     <div class="data-history">
                         <div class="card-hist">
                             <div class="upper">
@@ -164,13 +173,14 @@
                     </div>
                 </div>
 
-                
                 <br>
 
+                <!--Section where will show antecipations details(number of antecipation, how much, etc)-->
                 <div class="body-general-info">
                     <h2>Antecipações</h2>
                     <div class="body-divisory"></div>
                     <br>
+                    <!--Period of time of antecipation details-->
                     <div class="body-date-buttons">
                         <div id="left-button" class="date-button" onclick="selectDateButton(0)">
                             Semana
@@ -183,6 +193,7 @@
                         </div>
                     </div>
                     <br><br><br>
+                    <!--Antecipation details-->
                     <div class="body-info">
                         <div class="info-box">
                             <h2>Quantidade de Antecipações</h2>
@@ -208,6 +219,7 @@
                 </div>
             </div>
             <br><br><br>
+
             <hr>
             <!--Footer section where are filled with final page content-->
             <div class="page-footer">

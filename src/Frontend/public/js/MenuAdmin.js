@@ -1,3 +1,4 @@
+//Written by Renato
 //Declaring variables
 const buttons = {
     leftButton: document.querySelector("#left-button"),
@@ -15,6 +16,7 @@ const divPending = document.querySelector(".data-pending");
 const divHistory = document.querySelector(".data-history");
 const pedngingDateList = document.querySelectorAll(".pending-date");
 
+//Changing search property according what is searched
 function changeSearchProperty(){
     const searchProperty = document.querySelector(".select-type");
     const searchData = document.querySelector("#search-data");
@@ -36,6 +38,7 @@ function changeSearchProperty(){
     }
 }
 
+//Show answers to search
 function search(){
     switch (searchType.value){
         case "Parceiro":
@@ -63,6 +66,7 @@ function search(){
     }
 }
 
+//Changing date buttons colors
 function selectDateButton(index){
     switch(index){
         case 0:
@@ -80,12 +84,14 @@ function selectDateButton(index){
     }
 }
 
+//Changing font-weight of date-button's text
 function changingFontWeight(b1, b2, b3){
     buttons.leftButton.style.fontWeight = b1;
     buttons.midButton.style.fontWeight = b2;
     buttons.rightButton.style.fontWeight = b3;
 }
 
+//Changing date-button background-color
 function changingColor(b1, b2, b3){
     bodyInfo.style.display = "flex";
     buttons.leftButton.style.backgroundColor = b1;
