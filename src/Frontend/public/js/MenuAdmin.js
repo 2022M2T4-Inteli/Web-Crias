@@ -16,6 +16,10 @@ const divPending = document.querySelector(".data-pending");
 const divHistory = document.querySelector(".data-history");
 const pedngingDateList = document.querySelectorAll(".pending-date");
 
+function detailHotel() {
+    window.location = 'Detalhes do Hotel.html';
+}
+
 //Changing search property according what is searched
 function changeSearchProperty(){
     const searchProperty = document.querySelector(".select-type");

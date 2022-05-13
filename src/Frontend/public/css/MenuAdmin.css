@@ -196,6 +196,10 @@
     height: 8.5rem;
 }
 
+.hotel-frame:hover {
+    cursor: pointer;
+}
+
 .data-pending {
     display: none;
     flex-direction: row;
