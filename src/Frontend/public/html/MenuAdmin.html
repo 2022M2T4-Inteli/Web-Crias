@@ -1,0 +1,233 @@
+<!--Written by Renato-->
+<!DOCTYPE html>
+<html>
+    <!--Adding tilte to page, choosing css file and linking font to file-->
+    <head>
+        <meta charset="UTF-8">
+        <link href="../css/global.css" rel="stylesheet">
+        <link href="../css/MenuAdmin.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <title>
+            Hurb - Menu Admnin
+        </title>
+    </head>
+    <body onload="selectDateButton(0)">
+        <div class="page-menu-overlay">
+            <!--Header section where are filled with initial page content-->
+            <div class="page-header">
+                <div style="margin-left: 1%; margin-right: 2.5%;">
+                    <img src="../icons/image.png" width="110rem" height="40rem">
+                </div>
+                <div class="logout">
+                    <div class="logout-button">
+                        <a href="index - Admin.html">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Main section-->
+        <div class="main">
+            <!--Body section where are filled with all of principal content-->
+            <div class="page-body">
+                <h2 style="color: #3468FC; font-weight: 400;">Olá administrador, bem-vindo!</h2>
+                <br>
+                <b>Pesquisar</b>
+                <!--Section where the user will search data and see the results-->
+                <div class="body-search">
+                    <!--Search bar section-->
+                    <div class="search-bar">
+                        <div class="search-text">
+                            <input type="text" id="search-input-text">
+                            <img id="search-button" src="../icons/seach-button.png" onclick="search()">
+                            <!--Select tag to show how the user can search-->
+                            <select id="search-hotel" class="select-property">
+                                <option value="Nome">Nome</option>
+                                <option value="CNPJ">CNPJ</option>
+                                <option value="Email">Email</option>
+                            </select>
+
+                            <select id="search-data" class="select-property">
+                                <option value="Data">Data</option>
+                            </select>
+                        </div>
+                        <!--Select tag to show what can be searched-->
+                        <select class="select-type" onchange="changeSearchProperty()">
+                            <option value="Parceiro">Parceiro</option>
+                            <option value="Antecipações Pendentes">Antecipações Pendentes</option>
+                            <option value="Histórico de Antecipações">Histórico de Antecipações</option>
+                        </select>
+                        <div class="order-button">
+                            Ordenar 
+                        </div>
+                    </div>
+                    <!--Hotel data-->
+                    <div class="data-hotel">
+                        <div class="hotel-frame" onclick="detailHotel()"></div>
+                        <p id="hotel-name" onclick="detailHotel()"></p>
+                    </div>
+
+                    <!--Data of pending anticipation-->
+                    <div class="data-pending">
+                        <div class="card-pend">
+                            <div class="upper">
+                                <div class="type-sol">
+                                    <p>D+2</p>
+                                </div>
+                                <div class="date">
+                                    <p class="pending-date">20/04/2022</p>
+                                </div>
+                            </div>
+                            <div class="money">
+                                <p>R$5.000,00</p>
+                            </div>
+                            <div class="status">
+                                <p>Status: Aguardando confirmação</p>
+                            </div>
+                        </div>
+                        <div class="card-pend">
+                            <div class="upper">
+                                <div class="type-sol">
+                                    <p>D+7</p>
+                                </div>
+                                <div class="date">
+                                    <p class="pending-date">15/04/2022</p>
+                                </div>
+                            </div>
+                            <div class="money">
+                                <p>R$20.000,00</p>
+                            </div>
+                            <div class="status">
+                                <p>Status: Aguardando pagamento</p>
+                            </div>
+                        </div>
+                        <div class="card-pend">
+                            <div class="upper">
+                                <div class="type-sol">
+                                    <p>D+15</p>
+                                </div>
+                                <div class="date">
+                                    <p class="pending-date">10/04/2022</p>
+                                </div>
+                            </div>
+                            <div class="money">
+                                <p>R$10.000,00</p>
+                            </div>
+                            <div class="status">
+                                <p>Status: Aguardando pagamento</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Data of last antecipation history-->
+                    <div class="data-history">
+                        <div class="card-hist">
+                            <div class="upper">
+                                <div class="type-sol">
+                                    <p>D+2</p>
+                                </div>
+                                <div class="date">
+                                    <p class="pending-date">20/04/2022</p>
+                                </div>
+                            </div>
+                            <div class="money">
+                                <p>R$5.000,00</p>
+                            </div>
+                            <div class="status">
+                                <p>Status: <span style="color: #0A9142;">Pago</span></p>
+                            </div>
+                        </div>
+                        <div class="card-hist">
+                            <div class="upper">
+                                <div class="type-sol">
+                                    <p>D+15</p>
+                                </div>
+                                <div class="date">
+                                    <p class="pending-date">15/04/2022</p>
+                                </div>
+                            </div>
+                            <div class="money">
+                                <p>R$45.000,00</p>
+                            </div>
+                            <div class="status">
+                                <p>Status: <span style="color: #0A9142;">Pago</span></p>
+                            </div>
+                        </div>
+                        <div class="card-hist">
+                            <div class="upper">
+                                <div class="type-sol">
+                                    <p>D+7</p>
+                                </div>
+                                <div class="date">
+                                    <p class="pending-date">10/04/2022</p>
+                                </div>
+                            </div>
+                            <div class="money">
+                                <p>R$70.000,00</p>
+                            </div>
+                            <div class="status">
+                                <p>Status: <span style="color: #0A9142;">Pago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <!--Section where will show antecipations details(number of antecipation, how much, etc)-->
+                <div class="body-general-info">
+                    <h2>Visão Geral</h2>
+                    <div class="body-divisory"></div>
+                    <br>
+                    <!--Period of time of antecipation details-->
+                    <div class="body-date-buttons">
+                        <div id="left-button" class="date-button" onclick="selectDateButton(0)">
+                            Semana
+                        </div>
+                        <div id="mid-button" class="date-button" onclick="selectDateButton(1)">
+                            Mês
+                        </div>
+                        <div id="right-button" class="date-button" onclick="selectDateButton(2)">
+                            Ano
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <!--Antecipation details-->
+                    <div class="body-info">
+                        <div class="info-box">
+                            <h2>Quantidade de Antecipações</h2>
+                            <br>
+                            <p>20</p>
+                        </div>
+                        <div class="info-box">
+                            <h2>Valor Total<br>Antecipado</h2>
+                            <br>
+                            <p>28.200,00</p>
+                        </div>
+                        <div class="info-box">
+                            <h2>Valor Total<br>Taxado</h2>
+                            <br>
+                            <p>1.800,00</p>
+                        </div>
+                        <div class="info-box">
+                            <h2>Tipo Mais<br>Solicitado</h2>
+                            <br>
+                            <p>D+2(70%)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br>
+
+            <hr>
+            <!--Footer section where are filled with final page content-->
+            <div class="page-footer">
+                <img src="../icons/hurb-logo.png" width="250rem" height="100rem">
+            </div>
+        </div>
+        
+        <script src="../js/MenuAdmin.js"></script>
+        <script src="../js/Main.js"></script>
+    </body>
+</html>
