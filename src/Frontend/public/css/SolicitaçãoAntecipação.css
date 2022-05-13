@@ -2,8 +2,8 @@
 	font-family: 'Montserrat', sans-serif;
 	padding: 0;
 	margin: 0;
-}
 
+}
 .menu {
 	position: fixed;
 	text-align: center;
@@ -51,7 +51,6 @@
 }
 
 .ttl {
-	font-weight: bold;
 	color: black;
 	font-size: 3rem;
 }
@@ -66,7 +65,9 @@
 }
 
 .txt {
+	
 	margin-left: 3%;
+	margin-top: 1%;
 }
 
 .opções {
