@@ -21,3 +21,12 @@ function calcd15() {
     document.getElementById("receberá").innerHTML = "Você receberá: R$ " + recebido
     document.getElementById("taxado").innerHTML = "Foi taxado: R$ " + taxado
 }
+
+function calcd30() {
+    var montante = document.getElementById("montante").value
+    var taxado = 0
+    var recebido = montante
+    document.getElementById("receberá").innerHTML = "Você receberá: R$ " + recebido
+    document.getElementById("taxado").innerHTML = "Foi taxado: R$ " + taxado
+    
+}
