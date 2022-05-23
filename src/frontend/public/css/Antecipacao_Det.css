@@ -9,6 +9,10 @@
     flex-direction: column;
 }
 
+.page-body {
+	margin-left: 50px;
+}
+
 .menu {
 	position: fixed;
 	text-align: center;
