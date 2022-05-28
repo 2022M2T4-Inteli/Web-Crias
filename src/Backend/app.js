@@ -39,7 +39,7 @@ app.get('/getInvoiceData', (req, res) => {
 		if (err) {
 		    throw err;
 		}
-		res.json(rows);
+		res.send(JSON.stringify(rows));
 	});
 	db.close(); // Fecha o banco
 });
@@ -61,7 +61,7 @@ app.get('/getRanking', (req, res) => {
 		if (err) {
 		    throw err;
 		}
-		res.json(rows);
+		res.send(JSON.stringify(rows));
 	});
 	db.close(); // Fecha o banco
 });
@@ -82,7 +82,7 @@ app.get('/getGeneralVision', (req, res) => {
 		if (err) {
 		    throw err;
 		}
-		res.json(rows);
+		res.send(JSON.stringify(rows));
 	});
 	db.close(); // Fecha o banco
 });
@@ -117,7 +117,7 @@ app.get('/getPartnerData', (req, res) => {
 		if (err) {
 		    throw err;
 		}
-		res.json(rows);
+		res.send(JSON.stringify(rows));
 	});
 	db.close(); // Fecha o banco
 });

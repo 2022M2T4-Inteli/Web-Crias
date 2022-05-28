@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <link href="../css/global.css" rel="stylesheet">
         <link href="../css/MenuAdmin.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -39,25 +40,25 @@
                             <div>
                                 <h3>Quantidade de Antecipações</h4>
                                 <div class="general-vision-box">
-                                    <h1>137</h1>
+                                    <h1 id="total-amount-anticipations"></h1>
                                 </div>
                             </div>
                             <div>
                                 <h3>Valor Total Antecipado</h4>
                                 <div class="general-vision-box">
-                                    <h1>4.000.000.000.000,00</h1>
+                                    <h1 id="total-amount-advance"></h1>
                                 </div>
                             </div>
                             <div>
                                 <h3>Valor Total Taxado</h4>
                                 <div class="general-vision-box">
-                                    <h1>20.000.000,00</h1>
+                                    <h1 id="total-taxed-amount"></h1>
                                 </div>
                             </div>
                             <div>
                                 <h3>Tipo Mais Solicitado</h4>
                                 <div class="general-vision-box">
-                                    <h1>D+2(63%)</h1>
+                                    <h1 id="most-requested-type"></h1>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +94,7 @@
                     </div>
                     <div class="ranking">
                         <h3>Ranking do principais antecipadores</h3>
-                        <table>
+                        <table id="ranking-table">
                             <tr>
                                 <th class="ranking-table-position">Pos.</th>
                                 <th class="ranking-table-id">Id</th>
@@ -101,7 +102,7 @@
                                 <th class="ranking-table-qtd">Qtd.</th>
                                 <th class="ranking-table-total">Valor Antecipado</th>
                             </tr>
-                            <tr>
+                            <!--<tr>
                                 <td class="ranking-table-position">1</td>
                                 <td class="ranking-table-id">1</td>
                                 <td class="ranking-table-razao">Pousada Vale</td>
@@ -205,7 +206,7 @@
                                 <td class="ranking-table-razao"></td>
                                 <td class="ranking-table-qtd"></td>
                                 <td class="ranking-table-total"></td>
-                            </tr>
+                            </tr>-->
                         </table>
                     </div>
                 </div>
