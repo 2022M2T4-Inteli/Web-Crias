@@ -14,6 +14,8 @@ app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
 
+app.get('/serverStatus')
+
 app.get('/getInvoiceData', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
@@ -52,7 +54,8 @@ app.get('/getRanking', (req, res) => {
 					Parceiro.Razao AS RazaoSocial,
 					Parceiro.QuantidadeAntecipacao AS QuantidadeAntecipacao,
 					(SELECT SUM(Fatura.ValorRecebido) FROM Fatura WHERE Fatura.Parceiro_id = Parceiro.id) AS ValorAntecipado
-				FROM Parceiro`;
+				FROM Parceiro
+				ORDER BY Parceiro.QuantidadeAntecipacao DESC`;
     
 	db.all(sql, [],  (err, rows ) => {
 		if (err) {
@@ -72,7 +75,7 @@ app.get('/getGeneralVision', (req, res) => {
 					(SELECT SUM(Parceiro.QuantidadeAntecipacao) FROM Parceiro) As TotalDeAntecipações,
 					SUM(Fatura.ValorRecebido) As ValorTotalAntecipado,
 					SUM(Fatura.ValorTaxado) As ValorTotalTaxado,
-					(SELECT SUM(TipoAntecipacao.Quantidade) FROM TipoAntecipacao) As PorcentagemAntecipação
+					(SELECT TipoAntecipacao.Nome FROM TipoAntecipacao WHERE TipoAntecipacao.Quantidade = (SELECT MAX(TipoAntecipacao.Quantidade) FROM TipoAntecipacao)) As TipoMaisAntecipado
 				FROM Fatura`;
     
 	db.all(sql, [],  (err, rows ) => {
