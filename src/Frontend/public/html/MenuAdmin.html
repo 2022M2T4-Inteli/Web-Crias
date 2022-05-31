@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <link href="../css/global.css" rel="stylesheet">
         <link href="../css/MenuAdmin.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -31,194 +32,185 @@
         <div class="main">
             <!--Body section where are filled with all of principal content-->
             <div class="page-body">
-                <h2 style="color: #3468FC; font-weight: 400;">Olá administrador, bem-vindo!</h2>
-                <br>
-                <b>Pesquisar</b>
-                <!--Section where the user will search data and see the results-->
-                <div class="body-search">
-                    <!--Search bar section-->
-                    <div class="search-bar">
-                        <div class="search-text">
-                            <input type="text" id="search-input-text">
-                            <img id="search-button" src="../icons/seach-button.png" onclick="search()">
-                            <!--Select tag to show how the user can search-->
-                            <select id="search-hotel" class="select-property">
-                                <option value="Nome">Nome</option>
-                                <option value="CNPJ">CNPJ</option>
-                                <option value="Email">Email</option>
-                            </select>
+                <h1 class="welcome-message">Olá administrador, bem vindo!</h1>
+                <br><br>
+                <div class="page-content">
+                    <div class="general-content">
+                        <div class="general-vision">
+                            <div>
+                                <h3>Quantidade de Antecipações</h4>
+                                <div class="general-vision-box">
+                                    <h1 id="total-amount-anticipations"></h1>
+                                </div>
+                            </div>
+                            <div>
+                                <h3>Valor Total Antecipado</h4>
+                                <div class="general-vision-box">
+                                    <h1 id="total-amount-advance"></h1>
+                                </div>
+                            </div>
+                            <div>
+                                <h3>Valor Total Taxado</h4>
+                                <div class="general-vision-box">
+                                    <h1 id="total-taxed-amount"></h1>
+                                </div>
+                            </div>
+                            <div>
+                                <h3>Tipo Mais Solicitado</h4>
+                                <div class="general-vision-box">
+                                    <h1 id="most-requested-type"></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="search-bar">
+                            <b>Barra de Pesquisa</b>
+                            <div class="bar">
+                                <input type="text">
+                                <select>
+                                    <option value="Parceiro">Parceiro</option>
+                                    <option value="Pendentes">Solicitações Pendentes</option>
+                                    <option value="Passadas">Solicitações Passadas</option>
+                                </select>
+                                <button>Ordenar</button>
+                            </div>
 
-                            <select id="search-data" class="select-property">
-                                <option value="Data">Data</option>
-                            </select>
+                            <table>
+                                <tr>
+                                    <th class="hotel-id">ID</th>
+                                    <th class="hotel-name">Razão Social</th>
+                                    <th class="hotel-state">Estado</th>
+                                    <th class="hotel-tel">Telefone</th>
+                                </tr>
+                                <tr>
+                                    <td class="hotel-id">1</td>
+                                    <td class="hotel-name">Pousada Vale</td>
+                                    <td class="hotel-state">São Paulo</td>
+                                    <td class="hotel-tel">12991377946 <a href="Detalhes do Hotel.html">Ver Mais</a></td>
+                                </tr>
+                            </table>
                         </div>
-                        <!--Select tag to show what can be searched-->
-                        <select class="select-type" onchange="changeSearchProperty()">
-                            <option value="Parceiro">Parceiro</option>
-                            <option value="Antecipações Pendentes">Antecipações Pendentes</option>
-                            <option value="Histórico de Antecipações">Histórico de Antecipações</option>
-                        </select>
-                        <div class="order-button">
-                            Ordenar 
-                        </div>
+                        <br>
                     </div>
-                    <!--Hotel data-->
-                    <div class="data-hotel">
-                        <div class="hotel-frame" onclick="detailHotel()"></div>
-                        <p id="hotel-name" onclick="detailHotel()"></p>
-                    </div>
-
-                    <!--Data of pending anticipation-->
-                    <div class="data-pending">
-                        <div class="card-pend">
-                            <div class="upper">
-                                <div class="type-sol">
-                                    <p>D+2</p>
-                                </div>
-                                <div class="date">
-                                    <p class="pending-date">20/04/2022</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <p>R$5.000,00</p>
-                            </div>
-                            <div class="status">
-                                <p>Status: Aguardando confirmação</p>
-                            </div>
-                        </div>
-                        <div class="card-pend">
-                            <div class="upper">
-                                <div class="type-sol">
-                                    <p>D+7</p>
-                                </div>
-                                <div class="date">
-                                    <p class="pending-date">15/04/2022</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <p>R$20.000,00</p>
-                            </div>
-                            <div class="status">
-                                <p>Status: Aguardando pagamento</p>
-                            </div>
-                        </div>
-                        <div class="card-pend">
-                            <div class="upper">
-                                <div class="type-sol">
-                                    <p>D+15</p>
-                                </div>
-                                <div class="date">
-                                    <p class="pending-date">10/04/2022</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <p>R$10.000,00</p>
-                            </div>
-                            <div class="status">
-                                <p>Status: Aguardando pagamento</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Data of last antecipation history-->
-                    <div class="data-history">
-                        <div class="card-hist">
-                            <div class="upper">
-                                <div class="type-sol">
-                                    <p>D+2</p>
-                                </div>
-                                <div class="date">
-                                    <p class="pending-date">20/04/2022</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <p>R$5.000,00</p>
-                            </div>
-                            <div class="status">
-                                <p>Status: <span style="color: #0A9142;">Pago</span></p>
-                            </div>
-                        </div>
-                        <div class="card-hist">
-                            <div class="upper">
-                                <div class="type-sol">
-                                    <p>D+15</p>
-                                </div>
-                                <div class="date">
-                                    <p class="pending-date">15/04/2022</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <p>R$45.000,00</p>
-                            </div>
-                            <div class="status">
-                                <p>Status: <span style="color: #0A9142;">Pago</span></p>
-                            </div>
-                        </div>
-                        <div class="card-hist">
-                            <div class="upper">
-                                <div class="type-sol">
-                                    <p>D+7</p>
-                                </div>
-                                <div class="date">
-                                    <p class="pending-date">10/04/2022</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <p>R$70.000,00</p>
-                            </div>
-                            <div class="status">
-                                <p>Status: <span style="color: #0A9142;">Pago</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-
-                <!--Section where will show antecipations details(number of antecipation, how much, etc)-->
-                <div class="body-general-info">
-                    <h2>Visão Geral</h2>
-                    <div class="body-divisory"></div>
-                    <br>
-                    <!--Period of time of antecipation details-->
-                    <div class="body-date-buttons">
-                        <div id="left-button" class="date-button" onclick="selectDateButton(0)">
-                            Semana
-                        </div>
-                        <div id="mid-button" class="date-button" onclick="selectDateButton(1)">
-                            Mês
-                        </div>
-                        <div id="right-button" class="date-button" onclick="selectDateButton(2)">
-                            Ano
-                        </div>
-                    </div>
-                    <br><br><br>
-                    <!--Antecipation details-->
-                    <div class="body-info">
-                        <div class="info-box">
-                            <h2>Quantidade de Antecipações</h2>
-                            <br>
-                            <p>20</p>
-                        </div>
-                        <div class="info-box">
-                            <h2>Valor Total<br>Antecipado</h2>
-                            <br>
-                            <p>28.200,00</p>
-                        </div>
-                        <div class="info-box">
-                            <h2>Valor Total<br>Taxado</h2>
-                            <br>
-                            <p>1.800,00</p>
-                        </div>
-                        <div class="info-box">
-                            <h2>Tipo Mais<br>Solicitado</h2>
-                            <br>
-                            <p>D+2(70%)</p>
-                        </div>
+                    <div class="ranking">
+                        <h3>Ranking do principais antecipadores</h3>
+                        <table id="ranking-table">
+                            <tr>
+                                <th class="ranking-table-position">Pos.</th>
+                                <th class="ranking-table-id">Id</th>
+                                <th class="ranking-table-razao">Razão Social</th>
+                                <th class="ranking-table-qtd">Qtd.</th>
+                                <th class="ranking-table-total">Valor Antecipado</th>
+                            </tr>
+                            <!--<tr>
+                                <td class="ranking-table-position">1</td>
+                                <td class="ranking-table-id">1</td>
+                                <td class="ranking-table-razao">Pousada Vale</td>
+                                <td class="ranking-table-qtd">15</td>
+                                <td class="ranking-table-total">5.398.203,00</td>
+                            </tr>
+                            <tr>
+                                <td class="ranking-table-position">2</td>
+                                <td class="ranking-table-id"></td>
+                                <td class="ranking-table-razao"></td>
+                                <td class="ranking-table-qtd"></td>
+                                <td class="ranking-table-total"></td>
+                            </tr>
+                            <tr>
+                                <td class="ranking-table-position">3</td>
+                                <td class="ranking-table-id"></td>
+                                <td class="ranking-table-razao"></td>
+                                <td class="ranking-table-qtd"></td>
+                                <td class="ranking-table-total"></td>
+                            </tr>
+                            <tr>
+                                <td class="ranking-table-position">4</td>
+                                <td class="ranking-table-id"></td>
+                                <td class="ranking-table-razao"></td>
+                                <td class="ranking-table-qtd"></td>
+                                <td class="ranking-table-total"></td>
+                            </tr>
+                            <tr>
+                                <td class="ranking-table-position">5</td>
+                                <td class="ranking-table-id"></td>
+                                <td class="ranking-table-razao"></td>
+                                <td class="ranking-table-qtd"></td>
+                                <td class="ranking-table-total"></td>
+                            </tr>
+                            <tr>
+                                <td class="ranking-table-position">6</td>
+                                <td class="ranking-table-id"></td>
+                                <td class="ranking-table-razao"></td>
+                                <td class="ranking-table-qtd"></td>
+                                <td class="ranking-table-total"></td>
+                            </tr>
+                            <tr>
+                                <td class="ranking-table-position">7</td>
+                                <td class="ranking-table-id"></td>
+                                <td class="ranking-table-razao"></td>
+                                <td class="ranking-table-qtd"></td>
+                                <td class="ranking-table-total"></td>
+                            </tr>
+                            <tr>
+                                <td class="ranking-table-position">8</td>
+                                <td class="ranking-table-id"></td>
+                                <td class="ranking-table-razao"></td>
+                                <td class="ranking-table-qtd"></td>
+                                <td class="ranking-table-total"></td>
+                            </tr>
+                            <tr>
+                                <td class="ranking-table-position">9</td>
+                                <td class="ranking-table-id"></td>
+                                <td class="ranking-table-razao"></td>
+                                <td class="ranking-table-qtd"></td>
+                                <td class="ranking-table-total"></td>
+                            </tr>
+                            <tr>
+                                <td class="ranking-table-position">10</td>
+                                <td class="ranking-table-id"></td>
+                                <td class="ranking-table-razao"></td>
+                                <td class="ranking-table-qtd"></td>
+                                <td class="ranking-table-total"></td>
+                            </tr>
+                            <tr>
+                                <td class="ranking-table-position">11</td>
+                                <td class="ranking-table-id"></td>
+                                <td class="ranking-table-razao"></td>
+                                <td class="ranking-table-qtd"></td>
+                                <td class="ranking-table-total"></td>
+                            </tr>
+                            <tr>
+                                <td class="ranking-table-position">12</td>
+                                <td class="ranking-table-id"></td>
+                                <td class="ranking-table-razao"></td>
+                                <td class="ranking-table-qtd"></td>
+                                <td class="ranking-table-total"></td>
+                            </tr>
+                            <tr>
+                                <td class="ranking-table-position">13</td>
+                                <td class="ranking-table-id"></td>
+                                <td class="ranking-table-razao"></td>
+                                <td class="ranking-table-qtd"></td>
+                                <td class="ranking-table-total"></td>
+                            </tr>
+                            <tr>
+                                <td class="ranking-table-position">14</td>
+                                <td class="ranking-table-id"></td>
+                                <td class="ranking-table-razao"></td>
+                                <td class="ranking-table-qtd"></td>
+                                <td class="ranking-table-total"></td>
+                            </tr>
+                            <tr>
+                                <td class="ranking-table-position">15</td>
+                                <td class="ranking-table-id"></td>
+                                <td class="ranking-table-razao"></td>
+                                <td class="ranking-table-qtd"></td>
+                                <td class="ranking-table-total"></td>
+                            </tr>-->
+                        </table>
                     </div>
                 </div>
             </div>
-            <br><br><br>
 
             <hr>
             <!--Footer section where are filled with final page content-->

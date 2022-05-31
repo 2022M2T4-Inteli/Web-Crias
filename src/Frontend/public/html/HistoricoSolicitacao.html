@@ -3,7 +3,6 @@
         <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
-		<link href="../css/global.css" rel="stylesheet">
 		<link href="../css/HistoricoSolicitacao.css" rel="stylesheet">
 		<link href="../css/Nova_Barra.css" rel="stylesheet">
 		
@@ -16,7 +15,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <title>
-            Hurb - Histórico de Solicitações
+            Hurb - Solicitações
         </title>
     </head>
     <body>
@@ -32,7 +31,7 @@
                 <p> | </p>
                 <a href="EditarPerfil.html"> Perfil </a>
                 <p> | </p>
-                <a href="SolicitaçãoAntecipação.html"> Antecipar </a>
+                <a href="SolicitaçãoAntecipação.html"> Faturar </a>
                 <p> | </p>
                 <a href="HistoricoSolicitacao.html"> Histórico </a>
 			</div>
@@ -46,119 +45,48 @@
             <div class="page-body">
                 <div class="title">
                     <div class="title-mask">
-                        <p>Histórico de Solicitações</p>
+                        <p>Solicitações</p>
                         <div class="divisory"></div>
                     </div>
                 </div>
-                <div class="sol-pend">
-                    <div class="sol-pend-title">
-                        <p>Solicitações Pendentes:</p>
-                    </div>
-                    <div class="sol-pend-box">
-                        <div class="card-pend">
-                            <div class="upper">
-                                <div class="type-sol">
-                                    <p>D+2</p>
-                                </div>
-                                <div class="date">
-                                    <p>20/04/2022</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <p>R$30.000,00</p>
-                            </div>
-                            <div class="status">
-                                <p>Status: <span style="color:red; font-size: 2.25rem">Aguardando aprovação</span></p>
-                            </div>
-                        </div>
-                        <div class="card-pend">
-                            <div class="upper">
-                                <div class="type-sol">
-                                    <p>D+7</p>
-                                </div>
-                                <div class="date">
-                                    <p>15/04/2022</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <p>R$20.000,00</p>
-                            </div>
-                            <div class="status">
-                                <p>Status: <span style="color: #f5ae20; font-size: 2.25rem;">Aguardando pagamento</span></p>
-                            </div>
-                        </div>
-                        <div class="card-pend">
-                            <div class="upper">
-                                <div class="type-sol">
-                                    <p>D+15</p>
-                                </div>
-                                <div class="date">
-                                    <p>10/04/2022</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <p>R$10.000,00</p>
-                            </div>
-                            <div class="status">
-                                <p>Status: <span style="color: #f5ae20; font-size: 2.25rem">Aguardando pagamento</span></p>
-                            </div>
-                        </div>
-                    </div>
+
+                <div class="pending-section">
+                    <h2>Solicitações Pendentes:</h2>
+                    <table>
+                        <tr>
+                            <th class="total-value">Valor Total</th>
+                            <th class="receive-value">Valor a Receber</th>
+                            <th class="antecipation-type">Tipo</th>
+                            <th class="date">Data</th>
+                            <th class="status">Status</th>
+                        </tr>
+                        <tr>
+                            <td class="total-value">10.000,00</td>
+                            <td class="receive-value">1.200,00</td>
+                            <td class="antecipation-type">D+2</td>
+                            <td class="date">18/05/2022</td>
+                            <td class="status">Aguardando Confirmação</td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="sol-pas">
-                    <div class="sol-pas-title">
-                        <p>Solicitações Finalizadas:</p>
-                    </div>
-                    <div class="sol-pas-box">
-                        <div class="card-pas">
-                            <div class="upper">
-                                <div class="type-sol">
-                                    <p>D+2</p>
-                                </div>
-                                <div class="date">
-                                    <p>20/04/2022</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <p>R$30.000,00</p>
-                            </div>
-                            <div class="status">
-                                <p>Status: <span style="color: green">Pago</span></p>
-                            </div>
-                        </div>
-                        <div class="card-pas">
-                            <div class="upper">
-                                <div class="type-sol">
-                                    <p>D+2</p>
-                                </div>
-                                <div class="date">
-                                    <p>20/04/2022</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <p>R$30.000,00</p>
-                            </div>
-                            <div class="status">
-                                <p>Status: <span style="color: green">Pago</span></p>
-                            </div>
-                        </div>
-                        <div class="card-pas">
-                            <div class="upper">
-                                <div class="type-sol">
-                                    <p>D+2</p>
-                                </div>
-                                <div class="date">
-                                    <p>20/04/2022</p>
-                                </div>
-                            </div>
-                            <div class="money">
-                                <p>R$30.000,00</p>
-                            </div>
-                            <div class="status">
-                                <p>Status: <span style="color: green">Pago</span></p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="past-section">
+                    <h2>Solicitações Finalizadas:</h2>
+                    <table>
+                        <tr>
+                            <th class="total-value">Valor Total</th>
+                            <th class="receive-value">Valor a Receber</th>
+                            <th class="antecipation-type">Tipo</th>
+                            <th class="date">Data</th>
+                            <th class="status">Status</th>
+                        </tr>
+                        <tr>
+                            <td class="total-value">17.300,00</td>
+                            <td class="receive-value">1.557,00</td>
+                            <td class="antecipation-type">D+7</td>
+                            <td class="date">18/05/2022</td>
+                            <td class="status">Recebido</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <br><br><br>

@@ -16,22 +16,6 @@
     width: 50%;
 }
 
-/* Escolhha seu hotel */
-#choosing-hotel {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.select-type {
-    color: #3468FC;
-    margin-right: 5rem;
-    width: 17.5rem;
-    height: 3.75rem;
-    border-color: #3468FC;
-    background-color: #FFFFFF;
-    text-align: center;
-}
 
 /* Carrossel */
 .item {
