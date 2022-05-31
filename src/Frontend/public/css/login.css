@@ -5,64 +5,28 @@
     width: initial;
 }
 
-img {
-    width: 30rem;
-}
-
-.page-body {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
 .header {
     display: flex;
     /**/
     flex-direction: column;
-    gap: 0px;
+    /*alinha os objetos em coluna*/
+    gap: 50px;
+    /*espaçamento entre os objetos*/
     align-items: center;
+    /*alinha os objetos no centro da tela*/
     justify-content: center;
-    background-color: rgb(255, 255, 255);
-    width: 30%;
-    height: 40rem;
-    border-radius: 20px;
-    box-shadow: 10px 10px gray;
 }
 
 .txt {
     font-weight: bold;
-    color: rgb(0, 0, 0);
+    color: #fff;
 }
 
 .btn-primary {
     background-color: #022A97;
-    border: 2px solid black;
-}
-
-.login {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
 }
 
 body {
     padding: 3%;
-    background-color: lightgray;
-}
-
-.overlay-image {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    background-position: center;
-    background-size: cover;
-    opacity: 0.5;
-    width: auto;
-    z-index: -1;
-}
-
-input {
-    border-radius: 5px;
+    background-color: #3468FC;
 }
