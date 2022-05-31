@@ -4,6 +4,8 @@
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <!--Bootstrap-->
         <link href="../css/login.css" rel="stylesheet">
         <!--CSS-->
@@ -25,15 +27,19 @@
             <!--Logo-->
             <div>
                 <p class="txt">E-mail</p>
-                <input type=text required name='txtstart' style='width:300px'>
+                <input type=text required name='txtstart' style='width:300px' id="log">
                 <!--1ºcaixa de texto-->
             </div>
             <div>
                 <p class="txt">Senha</p>
-                <input type=password required name='txtstart' style='width:300px'>
+                <input type=password required name='txtstart' style='width:300px' id="pass">
                 <!--2ºcaixa de texto-->
             </div>
-            <a href="MenuAdmin.html" class="btn btn-lg btn-primary">Entrar</a>
+
+            <button onclick="checkLogin()" >Log In!</button>
+            <!-- <a href="MenuAdmin.html" class="btn btn-lg btn-primary">Entrar</a> -->
         </div>
+        <script src="../js/Login.js"></script>
+
     </body>
 </hmtl>

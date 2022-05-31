@@ -144,3 +144,39 @@ app.post('/postPartnerData', (req, res) => {
 	db.close(); // Fecha o banco
 });
 */
+
+app.get('/checkLogin', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+    var sql = `SELECT
+				Login.Email
+                FROM Login`;
+     
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.send(JSON.stringify(rows));
+	});
+	db.close(); // Fecha o banco
+});
+
+app.get('/checkPass', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+    var sql = `SELECT
+				Login.Senha
+                FROM Login`;
+     
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.send(JSON.stringify(rows));
+	});
+	db.close(); // Fecha o banco
+});
