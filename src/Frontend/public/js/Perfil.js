@@ -1,4 +1,3 @@
-import {id_used} from 'Login.js';
 
 $(document).ready(function(){
     $.get("http://127.0.0.1:5555/getPartnerData", function(resultado){

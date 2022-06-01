@@ -1,4 +1,4 @@
-export const id_used = 0;
+//module.exports = id_used;
 
 function checkLogin( ){ 
     
@@ -37,12 +37,12 @@ function loadPage (id_parc) {
 
     if(id_parc){
         console.log(token_key);
-        //location.replace("MenuParceiro.html")
+        location.replace("MenuParceiro.html")
     }
 
     else{
         console.log(token_key);
-        //location.replace("MenuAdmin.html")
+        location.replace("MenuAdmin.html")
     }
    
 }
