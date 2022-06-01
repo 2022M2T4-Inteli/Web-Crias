@@ -1,4 +1,4 @@
-const TOKEN = Math.floor(Math.random() * 10000) + 1;
+export const id_used = 0;
 
 function checkLogin( ){ 
     
@@ -19,9 +19,10 @@ function checkLogin( ){
 
             if (objeto[i].Email == EMAIL && objeto[i].Senha == PASSWORD) {
                 console.log("email e senha ok");
-                let id_used = objeto[i].id; //console.log(id_used);
 
-                loadPage(id_used, objeto[i].Parceido_id);
+                id_used = objeto[i].id; //console.log(id_used);
+
+                loadPage(objeto[i].Parceido_id);
 
                 return;
 
@@ -32,9 +33,7 @@ function checkLogin( ){
     });
 }
 
-function loadPage (id, id_parc) {
-
-    var token_key = id * TOKEN;
+function loadPage (id_parc) {
 
     if(id_parc){
         console.log(token_key);
@@ -47,5 +46,3 @@ function loadPage (id, id_parc) {
     }
    
 }
-
-    
