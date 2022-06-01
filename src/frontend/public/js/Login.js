@@ -1,3 +1,5 @@
+const TOKEN = Math.floor(Math.random() * 10000) + 1;
+
 function checkLogin( ){ 
     
     var EMAIL = $("#log").val();
@@ -12,15 +14,16 @@ function checkLogin( ){
         console.log(Object.keys(objeto).length);
 
         for(i = 0; i < Object.keys(objeto).length; i ++) {
-            console.log(objeto[i].Email);
-            console.log(objeto[i].Senha);  
+            //console.log(objeto[i].Email);
+            //console.log(objeto[i].Senha);  
 
             if (objeto[i].Email == EMAIL && objeto[i].Senha == PASSWORD) {
                 console.log("email e senha ok");
-                let id_parceiro = objeto[i].Parceiro_id; console.log(id_parceiro);
+                let id_used = objeto[i].id; //console.log(id_used);
 
-                loadPage(id_parceiro);
-                return id_parceiro;
+                loadPage(id_used, objeto[i].Parceido_id);
+
+                return;
 
             }
             else {
@@ -29,12 +32,20 @@ function checkLogin( ){
     });
 }
 
-export var id_parceiro;
+function loadPage (id, id_parc) {
 
-function loadPage (id) {
+    var token_key = id * TOKEN;
 
-    location.replace("MenuAdmin.html")
+    if(id_parc){
+        console.log(token_key);
+        //location.replace("MenuParceiro.html")
+    }
 
+    else{
+        console.log(token_key);
+        //location.replace("MenuAdmin.html")
+    }
+   
 }
 
     
