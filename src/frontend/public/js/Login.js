@@ -20,9 +20,11 @@ function checkLogin( ){
             if (objeto[i].Email == EMAIL && objeto[i].Senha == PASSWORD) {
                 console.log("email e senha ok");
 
-                //id_used = objeto[i].id; //console.log(id_used);
+                //id_used = objeto[i].id; 
+                
+                console.log(objeto[i].Estabelecimento_id);
 
-                loadPage(objeto[i].Parceido_id);
+                loadPage(objeto[i].Estabelecimento_id);
 
                 return;
 
@@ -33,13 +35,12 @@ function checkLogin( ){
     });
 }
 
-function loadPage (id_parc) {
+function loadPage (id) {
 
-    if(id_parc){
+    if(id){
         //console.log(token_key);
         location.replace("MenuParceiro.html")
     }
-
     else{
        //console.log(token_key);
         location.replace("MenuAdmin.html")
