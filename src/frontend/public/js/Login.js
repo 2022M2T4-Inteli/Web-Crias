@@ -20,7 +20,7 @@ function checkLogin( ){
             if (objeto[i].Email == EMAIL && objeto[i].Senha == PASSWORD) {
                 console.log("email e senha ok");
 
-                id_used = objeto[i].id; //console.log(id_used);
+                //id_used = objeto[i].id; //console.log(id_used);
 
                 loadPage(objeto[i].Parceido_id);
 
@@ -36,12 +36,12 @@ function checkLogin( ){
 function loadPage (id_parc) {
 
     if(id_parc){
-        console.log(token_key);
+        //console.log(token_key);
         location.replace("MenuParceiro.html")
     }
 
     else{
-        console.log(token_key);
+       //console.log(token_key);
         location.replace("MenuAdmin.html")
     }
    
