@@ -23,8 +23,8 @@ app.get('/getInvoiceData', (req, res) => {
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
     var sql = `SELECT
                     Fatura.id,
-					Parceiro.id AS IDdoParceiro,
-					Parceiro.Razao AS NomeDoParceiro,
+					Estabelecimento.id AS IDdoParceiro,
+					Estabelecimento.Razao AS NomeDoParceiro,
 					TipoAntecipacao.Nome AS TipoAntecipação,
 					Fatura.NotaFiscal AS NotaFiscal,
 					Fatura.ValorRecebido as ValorRecebido,
@@ -32,7 +32,7 @@ app.get('/getInvoiceData', (req, res) => {
 					Fatura.Data as Data,
 					Fatura.Status as Status
                 FROM Fatura
-                    INNER JOIN Parceiro ON Parceiro.id = Fatura.Parceiro_id
+                    INNER JOIN Estabelecimento ON Estabelecimento.id = Fatura.Estabelecimento_id
                     INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id`;
     
 	db.all(sql, [],  (err, rows ) => {
@@ -50,12 +50,12 @@ app.get('/getRanking', (req, res) => {
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
     var sql = `SELECT
-                    Parceiro.id,
-					Parceiro.Razao AS RazaoSocial,
-					Parceiro.QuantidadeAntecipacao AS QuantidadeAntecipacao,
-					(SELECT SUM(Fatura.ValorRecebido) FROM Fatura WHERE Fatura.Parceiro_id = Parceiro.id) AS ValorAntecipado
-				FROM Parceiro
-				ORDER BY Parceiro.QuantidadeAntecipacao DESC`;
+					Estabelecimento.id,
+					Estabelecimento.Razao AS RazaoSocial,
+					Estabelecimento.QuantidadeAntecipacao AS QuantidadeAntecipacao,
+					(SELECT SUM(Fatura.ValorRecebido) FROM Fatura WHERE Fatura.Estabelecimento_id = Estabelecimento.id) AS ValorAntecipado
+				FROM Estabelecimento
+				ORDER BY Estabelecimento.QuantidadeAntecipacao DESC`;
     
 	db.all(sql, [],  (err, rows ) => {
 		if (err) {
@@ -72,7 +72,7 @@ app.get('/getGeneralVision', (req, res) => {
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
     var sql = `SELECT
-					(SELECT SUM(Parceiro.QuantidadeAntecipacao) FROM Parceiro) As TotalDeAntecipações,
+					(SELECT SUM(Estabelecimento.QuantidadeAntecipacao) FROM Estabelecimento) As TotalDeAntecipações,
 					SUM(Fatura.ValorRecebido) As ValorTotalAntecipado,
 					SUM(Fatura.ValorTaxado) As ValorTotalTaxado,
 					(SELECT TipoAntecipacao.Nome FROM TipoAntecipacao WHERE TipoAntecipacao.Quantidade = (SELECT MAX(TipoAntecipacao.Quantidade) FROM TipoAntecipacao)) As TipoMaisAntecipado
@@ -93,11 +93,11 @@ app.get('/getPartnerData', (req, res) => {
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
     var sql = `SELECT
-                    Parceiro.id,
-                    Parceiro.Razao AS RazaoSocial,
-                    Parceiro.CNPJ AS CNPJ,
-                    Parceiro.Celular AS Celular,
-                    Parceiro.QuantidadeAntecipacao AS QuantidadeAntecipação,
+					Estabelecimento.id,
+                    Estabelecimento.Razao AS RazaoSocial,
+                    Estabelecimento.CNPJ AS CNPJ,
+                    Estabelecimento.Celular AS Celular,
+                    Estabelecimento.QuantidadeAntecipacao AS QuantidadeAntecipação,
                     Login.Email AS Email,
                     Endereco.Logradouro AS Logradouro,
                     Endereco.Nome AS NomedoLogradouro,
@@ -108,11 +108,27 @@ app.get('/getPartnerData', (req, res) => {
                     ContaBancaria.TitularDaConta AS TitulardaConta,
                     ContaBancaria.NumeroDaConta AS NúmerodaConta,
                     ContaBancaria.Agencia AS Agência
-                FROM Parceiro
-                    INNER JOIN Login ON Login.Parceiro_id = Parceiro.id
-                    INNER JOIN Endereco ON Endereco.Parceiro_id = Parceiro.id
-                    INNER JOIN ContaBancaria ON ContaBancaria.Parceiro_id = Parceiro.id;`;
+                FROM Estabelecimento
+                    INNER JOIN Login ON Login.Estabelecimento_id = Estabelecimento.id
+                    INNER JOIN Endereco ON Endereco.Estabelecimento_id = Estabelecimento.id
+                    INNER JOIN ContaBancaria ON ContaBancaria.Estabelecimento_id = Estabelecimento.id;`;
     
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.send(JSON.stringify(rows));
+	});
+	db.close(); // Fecha o banco
+});
+
+app.get('/checkLogin', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+    var sql = `SELECT * FROM Login`;
+     
 	db.all(sql, [],  (err, rows ) => {
 		if (err) {
 		    throw err;

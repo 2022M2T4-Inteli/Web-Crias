@@ -1,7 +1,7 @@
 $(document).ready(function(){
+    //Taking ranking info from database.
     $.get("http://127.0.0.1:5555/getRanking", function(resultado){
         var objeto = JSON.parse(resultado);
-        console.log(objeto);
         console.log(Object.keys(objeto).length);
         for(i = 0; i < Object.keys(objeto).length; i ++){
             $("#ranking-table").append(`<tr>
@@ -14,6 +14,7 @@ $(document).ready(function(){
         }
     });
 
+    //Taking the general info section from database.
     $.get("http://127.0.0.1:5555/getGeneralVision", function(resultado){
         var objeto = JSON.parse(resultado);
         console.log(objeto);

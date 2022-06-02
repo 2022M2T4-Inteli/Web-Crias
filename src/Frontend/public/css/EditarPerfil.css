@@ -59,3 +59,9 @@
 .mesmalinha {
   display: inline-block;
 }
+
+#hotel-name, #cnpj-hotel, #cell-hotel, #email-hotel, #logradouro-hotel, #logradouro-name-hotel, #neighbourhood-hotel, #number-hotel, #zip-hotel, #state-hotel {
+  color: black;
+  font-size: 32px;
+  font-weight: 400;
+}
