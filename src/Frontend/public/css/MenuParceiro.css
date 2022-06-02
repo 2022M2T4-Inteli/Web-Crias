@@ -1,19 +1,17 @@
 /* Mensagem de boas vindas */
 .welcome {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-top: 20px;
     color: #3468fc;
     margin-bottom: 10px;
-    font-weight: 400;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
 }
 
 .welcome p {
     font-size: 30px;
-}
-
-.welcome-mask {
-    width: 50%;
 }
 
 
