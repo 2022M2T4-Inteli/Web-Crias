@@ -1,33 +1,37 @@
 /* Mensagem de boas vindas */
 .welcome {
     display: flex;
-    flex-direction: column;
-    margin-top: 20px;
+    flex-direction: row;
+    margin-top: 10px;
     color: #3468fc;
     margin-bottom: 10px;
-    font-weight: 700;
-    text-align: center;
-    width: 100%;
+    font-weight: 400;
 }
 
 .welcome p {
     font-size: 30px;
 }
 
+.welcome-mask {
+    padding: 20px;
+}
+
 
 /* Carrossel */
+
 .item {
     height: 55rem;
     position: relative;
     background-position: center;
     background-size: cover;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.233);
 }
 
 .carousel-title {
     position: relative;
     text-align: left;
-    font-size: 32px;
+    font-size: 35px;
+    
 }
 
 .carousel-text {
@@ -103,7 +107,7 @@
     justify-content: center;
 }
 
-.type-box {
+/*.type-box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,6 +115,11 @@
     margin-bottom: 2rem;
     width: 25%;
     height: 45rem;
+}*/
+
+.type-box{
+    margin-bottom: 50px;
+    
 }
 
 .mask-hurb {
@@ -133,7 +142,7 @@
     flex-direction: column;
     background-color: #CCCCCC;
     width: 100%;
-    height: 70%;
+    height: 60%;
 }
 
 .mask-text {
@@ -142,8 +151,9 @@
     height: 60%;
     text-align: center;
     font-size: 2.5rem;
-    margin-top: 8rem;
+    margin-top: 15rem;
     font-weight: 500;
+    margin-bottom: 30%;
 
 }
 
@@ -154,6 +164,8 @@
     align-items: center;
     width: 100%;
     height: 40%;
+    margin-bottom: 10%;
+    
 }
 
 .mask-button button{
@@ -181,3 +193,4 @@
 .modal-presentation {
     text-align: left;
 }
+
