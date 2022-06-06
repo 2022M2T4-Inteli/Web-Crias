@@ -14,7 +14,7 @@
             Hurb - Menu Admnin
         </title>
     </head>
-    <body onload="selectDateButton(0)">
+    <body>
         <div class="page-menu-overlay">
             <!--Header section where are filled with initial page content-->
             <div class="page-header">
@@ -67,27 +67,34 @@
                             <b>Barra de Pesquisa</b>
                             <div class="bar">
                                 <input type="text">
-                                <select>
-                                    <option value="Parceiro">Parceiro</option>
+                                <select id="search-type" onchange="changeSearchType()">
+                                    <option value="Estabelecimento">Estabelecimento</option>
                                     <option value="Pendentes">Solicitações Pendentes</option>
                                     <option value="Passadas">Solicitações Passadas</option>
                                 </select>
                                 <button>Ordenar</button>
                             </div>
 
-                            <table>
-                                <tr>
+                            <table id="search-table">
+                                <tr id="partner-list">
                                     <th class="hotel-id">ID</th>
                                     <th class="hotel-name">Razão Social</th>
                                     <th class="hotel-state">Estado</th>
                                     <th class="hotel-tel">Telefone</th>
                                 </tr>
-                                <tr>
+                                <tr id="invoice-list">
+                                    <th class="invoice-note">Nota Fiscal</th>
+                                    <th class="invoice-partner-id">ID Estabelecimento</th>
+                                    <th class="invoice-received-value">Valor Recebido</th>
+                                    <th class="invoice-taxed-value">Valor Taxado</th>
+                                    <th class="invoice-date">Data</th>
+                                </tr>
+                                <!--<tr>
                                     <td class="hotel-id">1</td>
                                     <td class="hotel-name">Pousada Vale</td>
                                     <td class="hotel-state">São Paulo</td>
                                     <td class="hotel-tel">12991377946 <a href="Detalhes do Hotel.html">Ver Mais</a></td>
-                                </tr>
+                                </tr>-->
                             </table>
                         </div>
                         <br>
@@ -102,111 +109,6 @@
                                 <th class="ranking-table-qtd">Qtd.</th>
                                 <th class="ranking-table-total">Valor Antecipado</th>
                             </tr>
-                            <!--<tr>
-                                <td class="ranking-table-position">1</td>
-                                <td class="ranking-table-id">1</td>
-                                <td class="ranking-table-razao">Pousada Vale</td>
-                                <td class="ranking-table-qtd">15</td>
-                                <td class="ranking-table-total">5.398.203,00</td>
-                            </tr>
-                            <tr>
-                                <td class="ranking-table-position">2</td>
-                                <td class="ranking-table-id"></td>
-                                <td class="ranking-table-razao"></td>
-                                <td class="ranking-table-qtd"></td>
-                                <td class="ranking-table-total"></td>
-                            </tr>
-                            <tr>
-                                <td class="ranking-table-position">3</td>
-                                <td class="ranking-table-id"></td>
-                                <td class="ranking-table-razao"></td>
-                                <td class="ranking-table-qtd"></td>
-                                <td class="ranking-table-total"></td>
-                            </tr>
-                            <tr>
-                                <td class="ranking-table-position">4</td>
-                                <td class="ranking-table-id"></td>
-                                <td class="ranking-table-razao"></td>
-                                <td class="ranking-table-qtd"></td>
-                                <td class="ranking-table-total"></td>
-                            </tr>
-                            <tr>
-                                <td class="ranking-table-position">5</td>
-                                <td class="ranking-table-id"></td>
-                                <td class="ranking-table-razao"></td>
-                                <td class="ranking-table-qtd"></td>
-                                <td class="ranking-table-total"></td>
-                            </tr>
-                            <tr>
-                                <td class="ranking-table-position">6</td>
-                                <td class="ranking-table-id"></td>
-                                <td class="ranking-table-razao"></td>
-                                <td class="ranking-table-qtd"></td>
-                                <td class="ranking-table-total"></td>
-                            </tr>
-                            <tr>
-                                <td class="ranking-table-position">7</td>
-                                <td class="ranking-table-id"></td>
-                                <td class="ranking-table-razao"></td>
-                                <td class="ranking-table-qtd"></td>
-                                <td class="ranking-table-total"></td>
-                            </tr>
-                            <tr>
-                                <td class="ranking-table-position">8</td>
-                                <td class="ranking-table-id"></td>
-                                <td class="ranking-table-razao"></td>
-                                <td class="ranking-table-qtd"></td>
-                                <td class="ranking-table-total"></td>
-                            </tr>
-                            <tr>
-                                <td class="ranking-table-position">9</td>
-                                <td class="ranking-table-id"></td>
-                                <td class="ranking-table-razao"></td>
-                                <td class="ranking-table-qtd"></td>
-                                <td class="ranking-table-total"></td>
-                            </tr>
-                            <tr>
-                                <td class="ranking-table-position">10</td>
-                                <td class="ranking-table-id"></td>
-                                <td class="ranking-table-razao"></td>
-                                <td class="ranking-table-qtd"></td>
-                                <td class="ranking-table-total"></td>
-                            </tr>
-                            <tr>
-                                <td class="ranking-table-position">11</td>
-                                <td class="ranking-table-id"></td>
-                                <td class="ranking-table-razao"></td>
-                                <td class="ranking-table-qtd"></td>
-                                <td class="ranking-table-total"></td>
-                            </tr>
-                            <tr>
-                                <td class="ranking-table-position">12</td>
-                                <td class="ranking-table-id"></td>
-                                <td class="ranking-table-razao"></td>
-                                <td class="ranking-table-qtd"></td>
-                                <td class="ranking-table-total"></td>
-                            </tr>
-                            <tr>
-                                <td class="ranking-table-position">13</td>
-                                <td class="ranking-table-id"></td>
-                                <td class="ranking-table-razao"></td>
-                                <td class="ranking-table-qtd"></td>
-                                <td class="ranking-table-total"></td>
-                            </tr>
-                            <tr>
-                                <td class="ranking-table-position">14</td>
-                                <td class="ranking-table-id"></td>
-                                <td class="ranking-table-razao"></td>
-                                <td class="ranking-table-qtd"></td>
-                                <td class="ranking-table-total"></td>
-                            </tr>
-                            <tr>
-                                <td class="ranking-table-position">15</td>
-                                <td class="ranking-table-id"></td>
-                                <td class="ranking-table-razao"></td>
-                                <td class="ranking-table-qtd"></td>
-                                <td class="ranking-table-total"></td>
-                            </tr>-->
                         </table>
                     </div>
                 </div>
@@ -220,6 +122,5 @@
         </div>
         
         <script src="../js/MenuAdmin.js"></script>
-        <script src="../js/Main.js"></script>
     </body>
 </html>

@@ -223,6 +223,14 @@
     border-style: none;
 }
 
+#invoice-list {
+    display: block;
+}
+
+#partner-list {
+    display: none;
+}
+
 .hotel-id {
     width: 2.5%;
     max-width: 2.5%;
@@ -243,6 +251,36 @@
 .hotel-tel {
     width: 22.5%;
     max-width: 22.5%;
+    text-align: center;
+}
+
+.invoice-note {
+    width: 20%;
+    max-width: 20%;
+    text-align: center;
+}
+
+.invoice-partner-id {
+    width: 10%;
+    max-width: 10%;
+    text-align: center;
+}
+
+.invoice-received-value {
+    width: 25%;
+    max-width: 25%;
+    text-align: center;
+}
+
+.invoice-taxed-value {
+    width: 25%;
+    max-width: 25%;
+    text-align: center;
+}
+
+.invoice-date {
+    width: 30%;
+    max-width: 30%;
     text-align: center;
 }
 
