@@ -4,11 +4,11 @@
 <a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
-# Nome do Projeto
+# Hurb Antecipações
 
-## Nome do Grupo
+## Webcrias
 
-## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Goku Sayajin</a>, <a href="https://www.linkedin.com/in/victorbarq/">Saitama One</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ikki de Fenix</a>, <a href="https://www.linkedin.com/in/victorbarq/">Yusuke Urameshi</a>, <a href="https://www.linkedin.com/in/victorbarq/">Roronoa Zoro</a>
+## Integrantes: <a href="https://www.linkedin.com/in/felipe-silberberg-111998230/">Felipe Silberberg</a>, <a href="https://www.linkedin.com/in/gabrielcaetanonhoncanse/">Gabriel Caetano Nhoncanse</a>, <a href="https://www.linkedin.com/in/gabriel-rocha-pinto-santos-113385231/">Gabriel Rocha</a>, <a href="https://www.linkedin.com/in/gabriela-barretto99/">Gabriela Barretto</a>, <a href="https://www.linkedin.com/in/lu%C3%ADsa-vit%C3%B3ria-leite-silva-681443230/">Luísa Leite</a>, <a href="https://www.linkedin.com/in/renatosilvamachado/">Renato Machado</a>
 
 ## Descrição
 
