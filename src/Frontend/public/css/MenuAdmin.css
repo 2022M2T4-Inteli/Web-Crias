@@ -224,11 +224,13 @@
 }
 
 #invoice-list {
-    display: block;
+    display: flex;
+    width: 100%;
 }
 
 #partner-list {
-    display: none;
+    display: flex;
+    width: 100%;
 }
 
 .hotel-id {
@@ -238,19 +240,19 @@
 }
 
 .hotel-name {
-    width: 65%;
-    max-width: 65%;
+    width: 70%;
+    max-width: 70%;
 }
 
 .hotel-state {
-    width: 10%;
-    max-width: 10%;
+    width: 20%;
+    max-width: 20%;
     text-align: center;
 }
 
 .hotel-tel {
-    width: 22.5%;
-    max-width: 22.5%;
+    width: 40%;
+    max-width: 40%;
     text-align: center;
 }
 
@@ -281,6 +283,12 @@
 .invoice-date {
     width: 30%;
     max-width: 30%;
+    text-align: center;
+}
+
+.invoice-status {
+    width: 20%;
+    max-width: 20%;
     text-align: center;
 }
 
