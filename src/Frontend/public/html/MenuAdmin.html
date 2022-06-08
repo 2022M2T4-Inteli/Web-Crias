@@ -66,13 +66,13 @@
                         <div class="search-bar">
                             <b>Barra de Pesquisa</b>
                             <div class="bar">
-                                <input type="text">
+                                <input id="search-text" type="text">
                                 <select id="search-type" onchange="changeSearchType()">
                                     <option value="Estabelecimento">Estabelecimento</option>
                                     <option value="Pendentes">Solicitações Pendentes</option>
                                     <option value="Passadas">Solicitações Passadas</option>
                                 </select>
-                                <button>Ordenar</button>
+                                <button onclick="showSearch()">Pesquisar</button>
                             </div>
 
                             <table id="search-table">

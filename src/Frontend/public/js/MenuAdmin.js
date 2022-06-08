@@ -27,7 +27,7 @@ $(document).ready(function(){
     });
 });
 
-function changeSearchType(){
+function resetTable(){
     $("#search-table").html(`<tr id="partner-list">
                                         <th class="hotel-id">ID</th>
                                         <th class="hotel-name">Razão Social</th>
@@ -47,19 +47,41 @@ function changeSearchType(){
     switch(document.getElementById("search-type").value){
         case "Estabelecimento":
             searchType = "Estabelecimento";
+            $("#partner-list").css("display", "flex");
+            $("#invoice-list").css("display", "none");
+            break;
+        case "Pendentes":
+            searchType = "Pendentes";
+            $("#partner-list").css("display", "none");
+            $("#invoice-list").css("display", "flex");
+            break;
+        case "Passadas":
+            searchType = "Passadas";
+            $("#partner-list").css("display", "none");
+            $("#invoice-list").css("display", "flex");
+            break;
+    }
+}
+
+function changeSearchType(){
+    resetTable();
+
+    switch(document.getElementById("search-type").value){
+        case "Estabelecimento":
+            searchType = "Estabelecimento";
             showPartnerData();
             $("#partner-list").css("display", "flex");
             $("#invoice-list").css("display", "none");
             break;
         case "Pendentes":
             searchType = "Pendentes";
-            showPaidInvoiceData();
+            showInvoiceData();
             $("#partner-list").css("display", "none");
             $("#invoice-list").css("display", "flex");
             break;
         case "Passadas":
             searchType = "Passadas";
-            showInvoiceData();
+            showPaidInvoiceData();
             $("#partner-list").css("display", "none");
             $("#invoice-list").css("display", "flex");
             break;
@@ -69,7 +91,6 @@ function changeSearchType(){
 function showInvoiceData(){
     $.get("http://127.0.0.1:5555/getInvoiceData", function(resultado){
         var objeto = JSON.parse(resultado);
-        console.log(objeto);
         for(i = 0; i < Object.keys(objeto).length; i ++){
             $("#search-table").append(`<tr id="invoice-list">
                                             <td class="invoice-note">` + objeto[i].NotaFiscal + `</td>
@@ -88,7 +109,6 @@ function showInvoiceData(){
 function showPaidInvoiceData(){
     $.get("http://127.0.0.1:5555/getPaidInvoiceData", function(resultado){
         var objeto = JSON.parse(resultado);
-        console.log(objeto);
         for(i = 0; i < Object.keys(objeto).length; i ++){
             $("#search-table").append(`<tr id="invoice-list">
                                             <td class="invoice-note">` + objeto[i].NotaFiscal + `</td>
@@ -116,4 +136,65 @@ function showPartnerData(){
                                         </tr>`);
         }
     });
+}
+
+function showSearch(){
+    resetTable();
+
+    switch(document.getElementById("search-type").value){
+        case "Estabelecimento":
+            var url = "http://127.0.0.1:5555/getPartnerDataByID/" + $("#search-text").val();
+
+            $.get(url, function(resultado){
+                var objeto = JSON.parse(resultado);
+
+                $("#search-table").append(`<tr id="partner-list">
+                                                    <td class="hotel-id">`+ objeto[0].id + `</td>
+                                                    <td class="hotel-name">` + objeto[0].RazaoSocial + `</td>
+                                                    <td class="hotel-state">` + objeto[0].Estado + `</td>
+                                                    <td class="hotel-tel">` + objeto[0].Celular + `<a href="Detalhes do Hotel.html">Ver Mais</a></td>
+                                            </tr>`);
+            });
+            break;
+        case "Pendentes":
+            var url = "http://127.0.0.1:5555/getInvoiceDataByNf/" + $("#search-text").val();
+
+            console.log(url);
+
+            $.get(url, function(resultado){
+                var objeto = JSON.parse(resultado);
+
+                $("#search-table").append(`<tr id="invoice-list">
+                                                    <td class="invoice-note">` + objeto[0].NotaFiscal + `</td>
+                                                    <td class="invoice-partner-id">` + objeto[0].IDdoParceiro + `</td>
+                                                    <td class="invoice-received-value">` + objeto[0].ValorRecebido + `</td>
+                                                    <td class="invoice-taxed-value">` + objeto[0].ValorTaxado + `</td>
+                                                    <td class="invoice-type">` + objeto[0].TipoAntecipação + `</td>
+                                                    <td class="invoice-status">` + objeto[0].Status + `</td>
+                                                    <td class="invoice-date">` + objeto[0].Data + `</td>
+                                                </tr>`);
+
+                $("#invoice-list").css("display", "flex");
+            });
+            break;
+        case "Passadas":
+            var url = "http://127.0.0.1:5555/getPaidInvoiceDataByNf/" + $("#search-text").val();
+
+            $.get(url, function(resultado){
+                var objeto = JSON.parse(resultado);
+
+                $("#search-table").append(`<tr id="invoice-list">
+                                                    <td class="invoice-note">` + objeto[0].NotaFiscal + `</td>
+                                                    <td class="invoice-partner-id">` + objeto[0].IDdoParceiro + `</td>
+                                                    <td class="invoice-received-value">` + objeto[0].ValorRecebido + `</td>
+                                                    <td class="invoice-taxed-value">` + objeto[0].ValorTaxado + `</td>
+                                                    <td class="invoice-type">` + objeto[0].TipoAntecipação + `</td>
+                                                    <td class="invoice-status">` + objeto[0].Status + `</td>
+                                                    <td class="invoice-date">` + objeto[0].Data + `</td>
+                                                </tr>`);
+
+                $("#invoice-list").css("display", "flex");
+            });
+            break;
+    }
 }
