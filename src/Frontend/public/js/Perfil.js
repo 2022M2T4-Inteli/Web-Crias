@@ -14,5 +14,9 @@ $(document).ready(function(){
         $("#number-hotel").html(objeto[0].Número);
         $("#zip-hotel").html(objeto[0].CEP);
         $("#state-hotel").html(objeto[0].Estado);
+        $("#account-name").html(objeto[0].TitulardaConta);
+        $("#account-number").html(objeto[0].NúmerodaConta);
+        $("#agency").html(objeto[0].Agência);
+
     });
-});
+});    
