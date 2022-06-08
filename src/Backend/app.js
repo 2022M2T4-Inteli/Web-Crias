@@ -16,6 +16,33 @@ app.listen(port, hostname, () => {
 
 app.get('/serverStatus')
 
+app.get('/getInvoiceDataForPartner/:id', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	const { id } = req.params;
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+    var sql = `SELECT
+					TipoAntecipacao.Nome AS TipoAntecipação,
+					Fatura.NotaFiscal AS NotaFiscal,
+					Fatura.ValorRecebido as ValorRecebido,
+					Fatura.ValorTaxado as ValorTaxado,
+					Fatura.Data as Data,
+					Fatura.Status as Status
+                FROM Fatura
+                    INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id
+				WHERE Fatura.Status != "Finalizado" AND Fatura.Estabelecimento_id = ?`;
+    
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.send(JSON.stringify(rows));
+	});
+	db.close(); // Fecha o banco
+});
+
 app.get('/getInvoiceData', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
@@ -97,6 +124,33 @@ app.get('/getPaidInvoiceData', (req, res) => {
 				WHERE Fatura.Status = "Finalizado"`;
     
 	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.send(JSON.stringify(rows));
+	});
+	db.close(); // Fecha o banco
+});
+
+app.get('/getPaidInvoiceDataForPartner/:id', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	const { id } = req.params;
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+    var sql = `SELECT
+					TipoAntecipacao.Nome AS TipoAntecipação,
+					Fatura.NotaFiscal AS NotaFiscal,
+					Fatura.ValorRecebido as ValorRecebido,
+					Fatura.ValorTaxado as ValorTaxado,
+					Fatura.Data as Data,
+					Fatura.Status as Status
+                FROM Fatura
+                    INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id
+				WHERE Fatura.Status = "Finalizado" AND Fatura.Estabelecimento_id = ?`;
+    
+	db.all(sql, id,  (err, rows ) => {
 		if (err) {
 		    throw err;
 		}

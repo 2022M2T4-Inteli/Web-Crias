@@ -1,5 +1,3 @@
-console.log(localStorage.getItem("id_used"));
-
 function checkLogin(){ 
     var EMAIL = $("#log").val();
     var PASSWORD = $("#pass").val(); 
