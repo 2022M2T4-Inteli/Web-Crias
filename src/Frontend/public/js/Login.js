@@ -1,5 +1,6 @@
-function checkLogin( ){ 
-    
+console.log(localStorage.getItem("id_used"));
+
+function checkLogin(){ 
     var EMAIL = $("#log").val();
     var PASSWORD = $("#pass").val(); 
 
@@ -12,7 +13,8 @@ function checkLogin( ){
         console.log(objeto[0].Estabelecimento_id);
         //console.log(Object.keys(objeto).length);
         
-        sendID(objeto[0].Estabelecimento_id);
+        localStorage.clear();
+        localStorage.setItem("id_used", objeto[0].Estabelecimento_id);
         
 
         if(objeto[0].Senha == PASSWORD){loadPage(objeto[0].Estabelecimento_id);}
@@ -24,9 +26,4 @@ function loadPage (id) {
     if(id){location.replace("MenuParceiro.html");}
 
     else{location.replace("MenuAdmin.html");}
-}
-
-function sendID (id) {
-    localStorage.clear();
-    localStorage.setItem("id_used", id);
 }

@@ -1,8 +1,5 @@
-let id = localStorage.getItem("id_used");
-
 $(document).ready(function(){
-
-    var url = "http://127.0.0.1:5555/getPartnerDataById/" + id; 
+    var url = "http://127.0.0.1:5555/getPartnerDataById/" + localStorage.getItem("id_used"); 
 
     $.get(url, function(resultado){
         var objeto = JSON.parse(resultado);
