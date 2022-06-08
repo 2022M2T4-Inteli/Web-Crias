@@ -1,8 +1,14 @@
+let id = localStorage.getItem("id_used");
+
 $(document).ready(function(){
-    $.get("http://127.0.0.1:5555/getPartnerData", function(resultado){
+
+    var url = "http://127.0.0.1:5555/getPartnerDataById/" + id; 
+
+    $.get(url, function(resultado){
         var objeto = JSON.parse(resultado);
         console.log(objeto);
         console.log(Object.keys(objeto).length);
+        
         $("#hotel-name").html(objeto[0].RazaoSocial);
         $("#cnpj-hotel").html(objeto[0].CNPJ);
         $("#cell-hotel").html(objeto[0].Celular);
