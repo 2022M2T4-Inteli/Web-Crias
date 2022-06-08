@@ -252,20 +252,24 @@ app.get('/getPartnerDataByID/:id', (req, res) => {
 	db.close(); // Fecha o banco
 });
 
-app.get('/checkLogin', (req, res) => {
+app.get('/checkLogin/:email', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
+	const { email } = req.params;
+
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `SELECT * FROM Login`;
+    var sql = `SELECT * FROM Login WHERE Login.Email=?`;
      
-	db.all(sql, [],  (err, rows ) => {
+	db.all(sql, [email],  (err, rows ) => {
 		if (err) {
-		    throw err;
+		    throw err;	
 		}
 		res.send(JSON.stringify(rows));
 	});
+
 	db.close(); // Fecha o banco
+
 });
 
 /*
