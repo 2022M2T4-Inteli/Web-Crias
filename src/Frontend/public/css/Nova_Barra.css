@@ -35,6 +35,9 @@
 
 #T_menu{
 	margin-top: 17px;
+	width:33vw;
+	margin-left: 20%;
+
 }
 
 #H_menu {
@@ -46,6 +49,21 @@
 }
 
 #L_menu {
-	text-align: right;
-	margin-top: 17px;
+	font-size: 20px;
+    margin-left: 90%;
+    display: flex;
+	margin-top: -2.5%;
+
 }
+
+@media screen and (max-width: 768px) {
+	div.col-sm-8 {
+	  display: none;
+	}
+  }
+
+
+
+
+
+

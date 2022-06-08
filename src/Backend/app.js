@@ -33,9 +33,101 @@ app.get('/getInvoiceData', (req, res) => {
 					Fatura.Status as Status
                 FROM Fatura
                     INNER JOIN Estabelecimento ON Estabelecimento.id = Fatura.Estabelecimento_id
-                    INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id`;
+                    INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id
+				WHERE Fatura.Status != "Finalizado"`;
     
 	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.send(JSON.stringify(rows));
+	});
+	db.close(); // Fecha o banco
+});
+
+app.get('/getInvoiceDataByNf/:nf', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	const { nf } = req.params;
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+    var sql = `SELECT
+                    Fatura.id,
+					Estabelecimento.id AS IDdoParceiro,
+					Estabelecimento.Razao AS NomeDoParceiro,
+					TipoAntecipacao.Nome AS TipoAntecipação,
+					Fatura.NotaFiscal AS NotaFiscal,
+					Fatura.ValorRecebido as ValorRecebido,
+					Fatura.ValorTaxado as ValorTaxado,
+					Fatura.Data as Data,
+					Fatura.Status as Status
+                FROM Fatura
+                    INNER JOIN Estabelecimento ON Estabelecimento.id = Fatura.Estabelecimento_id
+                    INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id
+				WHERE Fatura.Status != "Finalizado" AND Fatura.NotaFiscal = ?`;
+    
+	db.all(sql, nf,  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.send(JSON.stringify(rows));
+	});
+	db.close(); // Fecha o banco
+});
+
+app.get('/getPaidInvoiceData', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+    var sql = `SELECT
+                    Fatura.id,
+					Estabelecimento.id AS IDdoParceiro,
+					Estabelecimento.Razao AS NomeDoParceiro,
+					TipoAntecipacao.Nome AS TipoAntecipação,
+					Fatura.NotaFiscal AS NotaFiscal,
+					Fatura.ValorRecebido as ValorRecebido,
+					Fatura.ValorTaxado as ValorTaxado,
+					Fatura.Data as Data,
+					Fatura.Status as Status
+                FROM Fatura
+                    INNER JOIN Estabelecimento ON Estabelecimento.id = Fatura.Estabelecimento_id
+                    INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id
+				WHERE Fatura.Status = "Finalizado"`;
+    
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.send(JSON.stringify(rows));
+	});
+	db.close(); // Fecha o banco
+});
+
+app.get('/getPaidInvoiceDataByNf/:nf', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	const { nf } = req.params;
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+    var sql = `SELECT
+                    Fatura.id,
+					Estabelecimento.id AS IDdoParceiro,
+					Estabelecimento.Razao AS NomeDoParceiro,
+					TipoAntecipacao.Nome AS TipoAntecipação,
+					Fatura.NotaFiscal AS NotaFiscal,
+					Fatura.ValorRecebido as ValorRecebido,
+					Fatura.ValorTaxado as ValorTaxado,
+					Fatura.Data as Data,
+					Fatura.Status as Status
+                FROM Fatura
+                    INNER JOIN Estabelecimento ON Estabelecimento.id = Fatura.Estabelecimento_id
+                    INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id
+				WHERE Fatura.Status = "Finalizado" AND Fatura.NotaFiscal = ?`;
+    
+	db.all(sql, nf,  (err, rows ) => {
 		if (err) {
 		    throw err;
 		}
@@ -122,20 +214,62 @@ app.get('/getPartnerData', (req, res) => {
 	db.close(); // Fecha o banco
 });
 
-app.get('/checkLogin', (req, res) => {
+app.get('/getPartnerDataByID/:id', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
+	const { id } = req.params;
+
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `SELECT * FROM Login`;
-     
-	db.all(sql, [],  (err, rows ) => {
+    var sql = `SELECT
+					Estabelecimento.id,
+                    Estabelecimento.Razao AS RazaoSocial,
+                    Estabelecimento.CNPJ AS CNPJ,
+                    Estabelecimento.Celular AS Celular,
+                    Estabelecimento.QuantidadeAntecipacao AS QuantidadeAntecipação,
+                    Login.Email AS Email,
+                    Endereco.Logradouro AS Logradouro,
+                    Endereco.Nome AS NomedoLogradouro,
+                    Endereco.Numero AS Número,
+                    Endereco.Bairro AS Bairro,
+                    Endereco.Estado AS Estado,
+                    Endereco.CEP AS CEP,
+                    ContaBancaria.TitularDaConta AS TitulardaConta,
+                    ContaBancaria.NumeroDaConta AS NúmerodaConta,
+                    ContaBancaria.Agencia AS Agência
+                FROM Estabelecimento
+                    INNER JOIN Login ON Login.Estabelecimento_id = Estabelecimento.id
+                    INNER JOIN Endereco ON Endereco.Estabelecimento_id = Estabelecimento.id
+                    INNER JOIN ContaBancaria ON ContaBancaria.Estabelecimento_id = Estabelecimento.id
+				WHERE Estabelecimento.id = ?;`;
+    
+	db.all(sql, id,  (err, rows ) => {
 		if (err) {
 		    throw err;
 		}
 		res.send(JSON.stringify(rows));
 	});
 	db.close(); // Fecha o banco
+});
+
+app.get('/checkLogin/:email', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	const { email } = req.params;
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+    var sql = `SELECT * FROM Login WHERE Login.Email=?`;
+     
+	db.all(sql, [email],  (err, rows ) => {
+		if (err) {
+		    throw err;	
+		}
+		res.send(JSON.stringify(rows));
+	});
+
+	db.close(); // Fecha o banco
+
 });
 
 /*

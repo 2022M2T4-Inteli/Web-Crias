@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     $.get("http://127.0.0.1:5555/getPartnerData", function(resultado){
         var objeto = JSON.parse(resultado);
@@ -14,5 +13,9 @@ $(document).ready(function(){
         $("#number-hotel").html(objeto[0].Número);
         $("#zip-hotel").html(objeto[0].CEP);
         $("#state-hotel").html(objeto[0].Estado);
+        $("#account-name").html(objeto[0].TitulardaConta);
+        $("#account-number").html(objeto[0].NúmerodaConta);
+        $("#agency").html(objeto[0].Agência);
+
     });
-});
+});    

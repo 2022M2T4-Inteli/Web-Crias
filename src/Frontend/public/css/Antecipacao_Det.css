@@ -2,6 +2,7 @@
     font-family: 'Montserrat', sans-serif;
     padding: 0;
     margin: 0;
+	color: black;
 }
 
 .main {
@@ -109,15 +110,12 @@
 	flex-direction: column;
 	text-align: center;
 	margin: 20px;
-	line-height: 1.5;
     font-size: 16px;
-	
 }
 
 
 .col-sm-4 {
     text-align: center;
-
     border-style: solid;
 	border-radius: 50px 20px;
 	width: 20%;
