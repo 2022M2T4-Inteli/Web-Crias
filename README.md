@@ -15,16 +15,8 @@
 Nosso projeto desenvolve uma aplicação web para a Hurb.
 <br><br>
 <p align="center">
-<a href="https://www.hurb.com/br"><img src="https://user-images.githubusercontent.com/99191485/172633035-e4a23e5a-d9b4-486d-b352-f8972ae0c60d.jpg" border="0"></a>
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
-</p>
-
-
-💡 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
-<br><br>
-Meu projeto ajuda estudantes inteli a configurarem seus githubs.
-<br><br>
-May the force be with you!
+<a href="https://www.hurb.com/br"><img src="https://user-images.githubusercontent.com/99191485/172633035-e4a23e5a-d9b4-486d-b352-f8972ae0c60d.jpg" border="0"></a><br>
+Com o aumento da demanda dos hoteleiros pelas antecipações de pagamento, a Hurb precisa de uma plataforma que esclareça as taxas, os modos e os dias de pagamento, além de organizar a visualização das solicitações para os hoteleiros e administradores da Hurb. A nossa tarefa será desenvolver essa plataforma e para isso, nos organizamos em 5 sprints, a primeira para análises de mercado, a segunda para desenvolvimento do frontend, na terceira backend, na quarta integração e na quinta ajustes finos e apresentação.
 <br><br>
 
 ## 🛠 Estrutura de pastas
@@ -33,65 +25,36 @@ May the force be with you!
 |<br>
 |-->documentos<br>
   &emsp;|-->antigos<br>
-  &emsp;|Documentação.docx<br>
-|-->executáveis<br>
-  &emsp;|-->windows<br>
-  &emsp;|-->android<br>
-  &emsp;|-->HTML<br>
+  &emsp;|Documentação.pdf<br>
 |-->imagens<br>
 |-->src<br>
   &emsp;|-->Backend<br>
+          |-->DataBase<br>
   &emsp;|-->Frontend<br>
+          |-->css<br>
+          |-->html<br>
+          |-->icons<br>
+          |-->js<br>
 |readme.md<br>
 
-A pasta raiz contem dois arquivos que devem ser alterados:
+<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre o projeto. O mesmo que você está lendo agora.
 
-<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
+Há também 3 pastas que seguem da seguinte forma:
 
-Há também 4 pastas que seguem da seguinte forma:
+<b>documentos</b>: Aqui estão todos os documentos do projeto, principalmente o <b>Web Application Document</b>. Há uma pasta <b>antigos</b> onde estão todas as versões antigas da documentação.
 
-<b>documentos</b>: Aqui estarão todos os documentos do projeto, mas principalmente o <b>Documentação do Sistema</b>. Há uma pasta <b>antigos</b> onde estarão todas as versões antigas da documentação.
+<b>imagens</b>: Alguns ícones e logos prontos para serem utilizados e visualizados.
 
-<b>executáveis</b>: Aqui estarão todos os executáveis do jogo, prontos para rodar. Há no mínimo 3 pastas, uma para binários <b>Windows</b>, uma para binários <b>android</b> e uma para a <b>Web/HTML</b>
+<b>src</b>: Nesta pasta está todo o código fonte do sistema, pronto para para ser baixado e modificado. Existem duas pastas, <b>Backend</b> e <b>Frontend</b> que contêm, respectivamente, o código do servidor e o código da página web.
 
-<b>imagens</b>: Algumas imagens do jogo/sistema e logos prontos para serem utilizados e visualizados.
-
-<b>src</b>: Nesta pasta irá todo o código fonte do sistema, pronto para para ser baixado e modificado. Existem duas pastas, <b>Backend</b> e <b>Frintend</b> que devem conter, respectivamente, o código do servidor e o código da página web.
-
-## 🛠 Instalação
-
-<b>Android:</b>
-
-Faça o Download do JOGO.apk no seu celular.
-Execute o APK e siga as instruções de seu telefone.
-
-```sh
-Coloque código do prompt de comnando se for necessário
-```
-
-<b>Windows:</b>
-
-Não há instalação! Apenas executável!
-Encontre o JOGO.exe na pasta executáveis e execute-o como qualquer outro programa.
-
-```sh
-Coloque código do prompt de comnando se for necessário
-```
-
-<b>HTML:</b>
-
-Não há instalação!
-Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
 
 ## 📈 Exemplo de uso
 
-Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado.
+A plataforma Hurb Antecipações será útil para a organização financeira dos hoteleiros.
 
-Adicione blocos de códigos e, se necessário, screenshots.
-
-Este modelo pode ser copiado e utilizado à vontade.
-
-Através da cópia/clone/ download do repositório, altere os dados do readme.md e carregue os arquivos de seu projeto.
+<p align="center">
+<img src="historicoantecipacoes.jpg" border="0">Exemplo de como a tela de histórico será organizada.<br>
+<p>
 
 ## 💻 Configuração para Desenvolvimento
 
