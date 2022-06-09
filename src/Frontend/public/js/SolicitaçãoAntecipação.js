@@ -45,6 +45,8 @@ function calcd30() {
 }
 
 let allReservas = 0;
+let minInvoicedReservations = [];
+let maxInvoicedReservations = [];
 var value = 0;
 var minValue = 0;
 var max = 0;
@@ -62,6 +64,8 @@ function getAllReservations() {
 function simulate() {
     var montante = parseFloat(document.getElementById("montante").value);
     var count = -1;
+    minInvoicedReservations = [];
+    maxInvoicedReservations = [];
     value = 0;
     minValue = 0;
 
@@ -75,12 +79,15 @@ function simulate() {
             while (value < montante) {
                 count++;
                 if (count <= allReservas.length) {
+                    minInvoicedReservations.push(allReservas[count].Valor);
+                    maxInvoicedReservations.push(allReservas[count].Valor);
                     value += allReservas[count].Valor;
                 }
             }
 
             if (value > montante) {
                 minValue = value - allReservas[count].Valor;
+                minInvoicedReservations.pop();
                 document.getElementById("min-value").innerHTML = "Valores mais próximos possiveis são:" + `<br>` + `<select id="valores" name="valores">  ` + `<option value="` + minValue.toFixed(2) + `">` + minValue.toFixed(2) + `</option>` + `<br>` + `<option value="` + value.toFixed(2) + `">` + value.toFixed(2) + `</option>` + `</select>`;
                 var options = document.querySelector(".choose");
                 options.style.display = 'block'
@@ -95,6 +102,8 @@ function simulate() {
             document.getElementById("min-value").innerHTML = `Valor mínimo a se retirar é ${allReservas[0].Valor.toFixed(2)}`
         }
     }
+    console.log(minInvoicedReservations);
+    console.log(maxInvoicedReservations);
 }
 
 $(document).ready(function () {
@@ -126,6 +135,19 @@ function confirmar() {
             ValorTaxado: taxado,
             Data: "09/06/22",
             Status: "A Pagar"
+        }
+    }).done(function () {
+        console.log("enviado com sucesso");
+    })
+}
+
+function changeReservationFaturaId(){
+    $.ajax({
+        type: 'POST',
+        url: "http://127.0.0.1:5555/postReservationData",
+        data: {
+            FaturaID: 1,
+            ReservaID: 1
         }
     }).done(function () {
         console.log("enviado com sucesso");

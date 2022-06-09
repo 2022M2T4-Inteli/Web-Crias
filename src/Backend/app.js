@@ -370,29 +370,6 @@ app.get('/getReservasNaoFaturadas/:id', (req, res) => {
 	db.close()
 })
 
-/*
-app.post('/postPartnerData', (req, res) => {
-	res.statusCode = 200;
-	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
-
-	var db = new sqlite3.Database(DBPATH); // Abre o banco
-	var sql = `INSERT INTO Parceiro (razao, cnpj, celular)
-				VALUES 
-					(?, ?, ?)`
-    
-	let param = [];
-	param.push(req.body.razao, req.body.cnpj, req.body.celular);
-
-	db.all(sql, param,  (err, rows ) => {
-		if (err) {
-			throw err;
-		}
-		res.json(rows);
-	});
-	db.close(); // Fecha o banco
-});
-*/
-
 app.post('/postInvoiceData', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
@@ -404,6 +381,25 @@ app.post('/postInvoiceData', (req, res) => {
 
 	let param = [];
 	param.push(req.body.EstabelecimentoID, req.body.TipoAntecipacaoID, req.body.NotaFiscal, req.body.ValorRecebido, req.body.ValorTaxado, req.body.Data, req.body.Status);
+
+	db.all(sql, param, (err, rows) => {
+		if (err) {
+			throw err;
+		}
+		res.json(rows);
+	});
+	db.close(); // Fecha o banco
+});
+
+app.post('/postReservationData', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	var sql = `UPDATE Reserva SET Fatura_id = ? WHERE Reserva.id = ?`;
+
+	let param = [];
+	param.push(req.body.FaturaID, req.body.ReservaID);
 
 	db.all(sql, param, (err, rows) => {
 		if (err) {
