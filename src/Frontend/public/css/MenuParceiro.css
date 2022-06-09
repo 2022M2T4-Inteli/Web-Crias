@@ -19,6 +19,10 @@
 
 /* Carrossel */
 
+.carousel-inner{
+    margin-top: -2,5%;
+}
+
 .item {
     height: 55rem;
     position: relative;
@@ -107,16 +111,6 @@
     justify-content: center;
 }
 
-/*.type-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 7.5rem;
-    margin-bottom: 2rem;
-    width: 25%;
-    height: 45rem;
-}*/
-
 .type-box{
     margin-bottom: 50px;
     
@@ -140,7 +134,7 @@
 .mask-content {
     display: flex;
     flex-direction: column;
-    background-color: #CCCCCC;
+    background-color: #e4dada2f;
     width: 100%;
     height: 60%;
 }
@@ -170,11 +164,11 @@
 
 .mask-button button{
     width: 50%;
-    height: 75%;
+    height: 100%;
     background-color: #3468FC;
     color: white;
     font-size: 2rem;
-    padding: 0%;
+    padding: 3%;
 }
 
 /* Modais */
