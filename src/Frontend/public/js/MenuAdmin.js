@@ -12,7 +12,7 @@ $(document).ready(function(){
                                             <td class="ranking-table-id">` + objeto[i].id + `</td>
                                             <td class="ranking-table-razao">` + objeto[i].RazaoSocial + `</td>
                                             <td class="ranking-table-qtd">` + objeto[i].QuantidadeAntecipacao + `</td>
-                                            <td class="ranking-table-total">` + objeto[i].ValorAntecipado + `</td>
+                                            <td class="ranking-table-total">` + (objeto[i].ValorAntecipado).toFixed(2) + `</td>
                                         </tr>`);
         }
     });
@@ -21,8 +21,8 @@ $(document).ready(function(){
     $.get("http://127.0.0.1:5555/getGeneralVision", function(resultado){
         var objeto = JSON.parse(resultado);
         $("#total-amount-anticipations").html(objeto[0].TotalDeAntecipações);
-        $("#total-amount-advance").html(objeto[0].ValorTotalAntecipado);
-        $("#total-taxed-amount").html(objeto[0].ValorTotalTaxado);
+        $("#total-amount-advance").html((objeto[0].ValorTotalAntecipado).toFixed(2));
+        $("#total-taxed-amount").html((objeto[0].ValorTotalTaxado).toFixed(2));
         $("#most-requested-type").html(objeto[0].TipoMaisAntecipado);
     });
 });
@@ -95,8 +95,8 @@ function showInvoiceData(){
             $("#search-table").append(`<tr id="invoice-list">
                                             <td class="invoice-note">` + objeto[i].NotaFiscal + `</td>
                                             <td class="invoice-partner-id">` + objeto[i].IDdoParceiro + `</td>
-                                            <td class="invoice-received-value">` + objeto[i].ValorRecebido + `</td>
-                                            <td class="invoice-taxed-value">` + objeto[i].ValorTaxado + `</td>
+                                            <td class="invoice-received-value">` + (objeto[i].ValorRecebido).toFixed(2) + `</td>
+                                            <td class="invoice-taxed-value">` + (objeto[i].ValorTaxado).toFixed(2) + `</td>
                                             <td class="invoice-type">` + objeto[i].TipoAntecipação + `</td>
                                             <td class="invoice-status">` + objeto[i].Status + `</td>
                                             <td class="invoice-date">` + objeto[i].Data + `</td>
@@ -113,8 +113,8 @@ function showPaidInvoiceData(){
             $("#search-table").append(`<tr id="invoice-list">
                                             <td class="invoice-note">` + objeto[i].NotaFiscal + `</td>
                                             <td class="invoice-partner-id">` + objeto[i].IDdoParceiro + `</td>
-                                            <td class="invoice-received-value">` + objeto[i].ValorRecebido + `</td>
-                                            <td class="invoice-taxed-value">` + objeto[i].ValorTaxado + `</td>
+                                            <td class="invoice-received-value">` + (objeto[i].ValorRecebido).toFixed(2) + `</td>
+                                            <td class="invoice-taxed-value">` + (objeto[i].ValorTaxado).toFixed(2) + `</td>
                                             <td class="invoice-type">` + objeto[i].TipoAntecipação + `</td>
                                             <td class="invoice-status">` + objeto[i].Status + `</td>
                                             <td class="invoice-date">` + objeto[i].Data + `</td>
@@ -132,7 +132,7 @@ function showPartnerData(){
                                             <td class="hotel-id">`+ objeto[i].id + `</td>
                                             <td class="hotel-name">` + objeto[i].RazaoSocial + `</td>
                                             <td class="hotel-state">` + objeto[i].Estado + `</td>
-                                            <td class="hotel-tel">` + objeto[i].Celular + `<a href="Detalhes do Hotel.html">Ver Mais</a></td>
+                                            <td class="hotel-tel">` + objeto[i].Celular + `<a href="Detalhes do Hotel.html" onclick="sendID(` + objeto[i].id + `)">Ver Mais</a></td>
                                         </tr>`);
         }
     });
@@ -152,7 +152,7 @@ function showSearch(){
                                                     <td class="hotel-id">`+ objeto[0].id + `</td>
                                                     <td class="hotel-name">` + objeto[0].RazaoSocial + `</td>
                                                     <td class="hotel-state">` + objeto[0].Estado + `</td>
-                                                    <td class="hotel-tel">` + objeto[0].Celular + `<a href="Detalhes do Hotel.html">Ver Mais</a></td>
+                                                    <td class="hotel-tel">` + objeto[0].Celular + `<a href="Detalhes do Hotel.html" onclick="sendID(` + objeto[0].id + `)">Ver Mais</a></td>
                                             </tr>`);
             });
             break;
@@ -167,8 +167,8 @@ function showSearch(){
                 $("#search-table").append(`<tr id="invoice-list">
                                                     <td class="invoice-note">` + objeto[0].NotaFiscal + `</td>
                                                     <td class="invoice-partner-id">` + objeto[0].IDdoParceiro + `</td>
-                                                    <td class="invoice-received-value">` + objeto[0].ValorRecebido + `</td>
-                                                    <td class="invoice-taxed-value">` + objeto[0].ValorTaxado + `</td>
+                                                    <td class="invoice-received-value">` + (objeto[0].ValorRecebido).toFixed(2) + `</td>
+                                                    <td class="invoice-taxed-value">` + (objeto[0].ValorTaxado).toFixed(2) + `</td>
                                                     <td class="invoice-type">` + objeto[0].TipoAntecipação + `</td>
                                                     <td class="invoice-status">` + objeto[0].Status + `</td>
                                                     <td class="invoice-date">` + objeto[0].Data + `</td>
@@ -186,8 +186,8 @@ function showSearch(){
                 $("#search-table").append(`<tr id="invoice-list">
                                                     <td class="invoice-note">` + objeto[0].NotaFiscal + `</td>
                                                     <td class="invoice-partner-id">` + objeto[0].IDdoParceiro + `</td>
-                                                    <td class="invoice-received-value">` + objeto[0].ValorRecebido + `</td>
-                                                    <td class="invoice-taxed-value">` + objeto[0].ValorTaxado + `</td>
+                                                    <td class="invoice-received-value">` + (objeto[0].ValorRecebido).toFixed(2) + `</td>
+                                                    <td class="invoice-taxed-value">` + (objeto[0].ValorTaxado).toFixed(2) + `</td>
                                                     <td class="invoice-type">` + objeto[0].TipoAntecipação + `</td>
                                                     <td class="invoice-status">` + objeto[0].Status + `</td>
                                                     <td class="invoice-date">` + objeto[0].Data + `</td>
@@ -197,4 +197,9 @@ function showSearch(){
             });
             break;
     }
+}
+
+function sendID(id){
+    localStorage.clear();
+    localStorage.setItem("idHurb", id);
 }

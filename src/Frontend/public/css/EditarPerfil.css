@@ -13,7 +13,8 @@
   background-color: #3468FC;
 }
 
-.menu a, p {
+.menu a,
+p {
   display: inline;
   color: white;
   margin-right: 30px;
@@ -60,8 +61,21 @@
   display: inline-block;
 }
 
-#hotel-name, #cnpj-hotel, #cell-hotel, #email-hotel, #logradouro-hotel, #logradouro-name-hotel, #neighbourhood-hotel, #number-hotel, #zip-hotel, #state-hotel, #account-name, #account-number, #agency {
+#hotel-name,
+#cnpj-hotel,
+#cell-hotel,
+#email-hotel,
+#logradouro-hotel,
+#logradouro-name-hotel,
+#neighbourhood-hotel,
+#number-hotel,
+#zip-hotel,
+#state-hotel,
+#account-name,
+#account-number,
+#agency {
   color: black;
   font-size: 32px;
   font-weight: 400;
+
 }
