@@ -326,6 +326,49 @@ app.get('/checkLogin/:email', (req, res) => {
 
 });
 
+app.get('/getValorReservasNaoFaturadas/:id', (req, res) => {
+    res.statusCode = 200
+    res.setHeader('Access-Control-Allow-Origin', '*')
+
+    const { id } = req.params;
+
+    var db = new sqlite3.Database(DBPATH)
+    var sql = `SELECT SUM(Valor) AS Valor FROM Reserva WHERE Reserva.Fatura_id IS NULL AND Reserva.Estabelecimento_id = ?`
+
+    db.all(sql, id, (err, rows) => {
+        if (err) {
+            throw err
+        }
+        res.send(JSON.stringify(rows))
+    })
+    db.close()
+})
+
+app.get('/getReservasNaoFaturadas/:id', (req, res) => {
+    res.statusCode = 200
+    res.setHeader('Access-Control-Allow-Origin', '*')
+
+    const { id } = req.params;
+
+    var db = new sqlite3.Database(DBPATH)
+    var sql = `SELECT 
+					Reserva.id AS ID,
+					Reserva.Valor AS Valor
+				FROM 
+					Reserva
+				WHERE 
+					Reserva.Fatura_id IS NULL AND Reserva.Estabelecimento_id = ?
+				ORDER BY Reserva.Valor ASC`
+
+    db.all(sql, id, (err, rows) => {
+        if (err) {
+            throw err
+        }
+        res.send(JSON.stringify(rows))
+    })
+    db.close()
+})
+
 /*
 app.post('/postPartnerData', (req, res) => {
 	res.statusCode = 200;

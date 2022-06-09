@@ -19,7 +19,6 @@
 	margin-left: 10px;
 }
 
-
 .menu p {
 	display: inline;
 	color: white;
@@ -106,4 +105,8 @@
 
 #button-color {
 	background-color: #3468FC;
+}
+
+#choose-type {
+	display: none;
 }
