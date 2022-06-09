@@ -23,7 +23,7 @@
                 </div>
                 <div class="logout">
                     <div class="logout-button">
-                        <a href="index - Admin.html">Log Out</a>
+                        <a href="index.html">Log Out</a>
                     </div>
                 </div>
             </div>
@@ -66,13 +66,13 @@
                         <div class="search-bar">
                             <b>Barra de Pesquisa</b>
                             <div class="bar">
-                                <input type="text">
+                                <input id="search-text" type="text">
                                 <select id="search-type" onchange="changeSearchType()">
                                     <option value="Estabelecimento">Estabelecimento</option>
                                     <option value="Pendentes">Solicitações Pendentes</option>
                                     <option value="Passadas">Solicitações Passadas</option>
                                 </select>
-                                <button>Ordenar</button>
+                                <button onclick="showSearch()">Pesquisar</button>
                             </div>
 
                             <table id="search-table">
@@ -91,12 +91,6 @@
                                     <th class="invoice-status">Status</th>
                                     <th class="invoice-date">Data</th>
                                 </tr>
-                                <!--<tr>
-                                    <td class="hotel-id">1</td>
-                                    <td class="hotel-name">Pousada Vale</td>
-                                    <td class="hotel-state">São Paulo</td>
-                                    <td class="hotel-tel">12991377946 <a href="Detalhes do Hotel.html">Ver Mais</a></td>
-                                </tr>-->
                             </table>
                         </div>
                         <br>

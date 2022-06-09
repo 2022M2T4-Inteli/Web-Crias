@@ -11,13 +11,11 @@
 ## Integrantes: <a href="https://www.linkedin.com/in/felipe-silberberg-111998230/">Felipe Silberberg</a>, <a href="https://www.linkedin.com/in/gabrielcaetanonhoncanse/">Gabriel Caetano Nhoncanse</a>, <a href="https://www.linkedin.com/in/gabriel-rocha-pinto-santos-113385231/">Gabriel Rocha</a>, <a href="https://www.linkedin.com/in/gabriela-barretto99/">Gabriela Barretto</a>, <a href="https://www.linkedin.com/in/lu%C3%ADsa-vit%C3%B3ria-leite-silva-681443230/">Luísa Leite</a>, <a href="https://www.linkedin.com/in/renatosilvamachado/">Renato Machado</a>
 
 ## Descrição
-
-📜 Descrição curta sobre o que seu projeto faz.
-<br><br>
-Meu projeto é um exemplo de como utilizar o github.
+<br>
+Nosso projeto desenvolve uma aplicação web para a Hurb.
 <br><br>
 <p align="center">
-<img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
+<a href="https://www.hurb.com/br"><img src="https://user-images.githubusercontent.com/99191485/172633035-e4a23e5a-d9b4-486d-b352-f8972ae0c60d.jpg" border="0"></a>
   Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
 </p>
 

@@ -54,33 +54,42 @@
 		<br>
 		<div>
 			<b> Saldo:</b>
-			<p class="valor_saldo">R$40.000,00</p>
+			<p id="saldo" class="valor_saldo"></p>
 		</div>
 		<br>
 		<div>
 			<b>Qual o montante desejado:</b>
-			<input type="number" id="montante" min="0" max="40000">
-			<b>*Valor máximo:R$40.000,00</b>
+			<input type="number" id="montante" min="0">
+			<b style="font-size: 85%;">*Valor máximo: <span id="valMax"></span></b>
 		</div>
 		<br>
-		<div>
-			<b>Qual tipo de antecipação?</b>
-			<div class="radio">
-				<label><input onclick="calcd2()" type="radio" name="optradio">D+2</label>
-			</div>
-			<div class="radio">
-				<label><input onclick="calcd7()" type="radio" name="optradio">D+7</label>
-			</div>
-			<div class="radio">
-				<label><input onclick="calcd15()" type="radio" name="optradio">D+15</label>
-			</div>
-			<div class="radio">
-				<label><input onclick="calcd30()" type="radio" name="optradio">D+30</label>
-			</div>
+		<button id="button-color" type="button" class="btn btn-primary" onclick="simulate()">Simular</button>
+
+		<div id="value-option">
+			<span id="min-value"></span>
+			<span id="max-value"></span>
 		</div>
-		<div class="espaçamento1">
-			<b id="receberá">Você receberá:</b>
-			<b id="taxado">Foi taxado:</b>
+
+		<div id="choose-type">
+			<div>
+				<b>Qual tipo de antecipação?</b>
+				<div class="radio">
+					<label><input onclick="calcd2()" type="radio" name="optradio">D+2</label>
+				</div>
+				<div class="radio">
+					<label><input onclick="calcd7()" type="radio" name="optradio">D+7</label>
+				</div>
+				<div class="radio">
+					<label><input onclick="calcd15()" type="radio" name="optradio">D+15</label>
+				</div>
+				<div class="radio">
+					<label><input onclick="calcd30()" type="radio" name="optradio">D+30</label>
+				</div>
+			</div>
+			<div class="espaçamento1">
+				<b id="receberá">Você receberá:</b>
+				<b id="taxado">Foi taxado:</b>
+			</div>
 		</div>
 		<br><br>
 		<div>

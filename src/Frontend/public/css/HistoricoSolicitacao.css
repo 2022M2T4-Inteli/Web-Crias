@@ -73,6 +73,10 @@ th {
     border-bottom-style: solid;
 }
 
+.nf {
+    width: 10%;
+}
+
 .total-value {
     width: 25%;
 }
