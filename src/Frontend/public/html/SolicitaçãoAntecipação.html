@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<!--Adding tilte to page, choosing css file and linking font to file-->
+<!--Adding title to page, choosing css file and linking font to file-->
 
 <head>
 	<meta charset="UTF-8">
@@ -64,33 +64,34 @@
 		</div>
 		<br>
 		<button id="button-color" type="button" class="btn btn-primary" onclick="simulate()">Simular</button>
-
+		<br><br>
 		<div id="value-option">
-			<span id="min-value"></span>
-			<span id="max-value"></span>
+			<p id="min-value"></p>
 		</div>
 
-		<div id="choose-type">
-			<div>
-				<b>Qual tipo de antecipação?</b>
-				<div class="radio">
-					<label><input onclick="calcd2()" type="radio" name="optradio">D+2</label>
+		<form>
+			<div class="choose">
+				<div>
+					<b>Qual tipo de antecipação?</b>
+					<div class="radio">
+						<label><input onclick="calcd2()" type="radio" name="optradio">D+2</label>
+					</div>
+					<div class="radio">
+						<label><input onclick="calcd7()" type="radio" name="optradio">D+7</label>
+					</div>
+					<div class="radio">
+						<label><input onclick="calcd15()" type="radio" name="optradio">D+15</label>
+					</div>
+					<div class="radio">
+						<label><input onclick="calcd30()" type="radio" name="optradio">D+30</label>
+					</div>
 				</div>
-				<div class="radio">
-					<label><input onclick="calcd7()" type="radio" name="optradio">D+7</label>
-				</div>
-				<div class="radio">
-					<label><input onclick="calcd15()" type="radio" name="optradio">D+15</label>
-				</div>
-				<div class="radio">
-					<label><input onclick="calcd30()" type="radio" name="optradio">D+30</label>
+				<div class="espaçamento1">
+					<b id="receberá">Você receberá:</b>
+					<b id="taxado">Foi taxado:</b>
 				</div>
 			</div>
-			<div class="espaçamento1">
-				<b id="receberá">Você receberá:</b>
-				<b id="taxado">Foi taxado:</b>
-			</div>
-		</div>
+		</form>
 		<br><br>
 		<div>
 			<b>Forma de recebimento do pagamento:</b>
@@ -126,7 +127,8 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-						<button type="button" class="btn btn-primary">Confirmar pedido</button>
+						<button onclick="confirmar()" type="button" class="btn btn-primary"
+							data-dismiss="modal">Confirmar pedido</button>
 					</div>
 				</div>
 			</div>

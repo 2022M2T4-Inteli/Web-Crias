@@ -1,7 +1,7 @@
-const express = require('express'); 
+const express = require('express');
 const app = express();
 
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 const sqlite3 = require('sqlite3').verbose();
@@ -11,7 +11,7 @@ const hostname = '127.0.0.1';
 const port = 5555;
 
 app.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+	console.log(`Server running at http://${hostname}:${port}/`);
 });
 
 app.get('/serverStatus')
@@ -23,7 +23,7 @@ app.get('/getInvoiceDataForPartner/:id', (req, res) => {
 	const { id } = req.params;
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `SELECT
+	var sql = `SELECT
 					TipoAntecipacao.Nome AS TipoAntecipação,
 					Fatura.NotaFiscal AS NotaFiscal,
 					Fatura.ValorRecebido as ValorRecebido,
@@ -33,10 +33,10 @@ app.get('/getInvoiceDataForPartner/:id', (req, res) => {
                 FROM Fatura
                     INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id
 				WHERE Fatura.Status != "Finalizado" AND Fatura.Estabelecimento_id = ?`;
-    
-	db.all(sql, [],  (err, rows ) => {
+
+	db.all(sql, [], (err, rows) => {
 		if (err) {
-		    throw err;
+			throw err;
 		}
 		res.send(JSON.stringify(rows));
 	});
@@ -48,7 +48,7 @@ app.get('/getInvoiceData', (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `SELECT
+	var sql = `SELECT
                     Fatura.id,
 					Estabelecimento.id AS IDdoParceiro,
 					Estabelecimento.Razao AS NomeDoParceiro,
@@ -62,10 +62,10 @@ app.get('/getInvoiceData', (req, res) => {
                     INNER JOIN Estabelecimento ON Estabelecimento.id = Fatura.Estabelecimento_id
                     INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id
 				WHERE Fatura.Status != "Finalizado"`;
-    
-	db.all(sql, [],  (err, rows ) => {
+
+	db.all(sql, [], (err, rows) => {
 		if (err) {
-		    throw err;
+			throw err;
 		}
 		res.send(JSON.stringify(rows));
 	});
@@ -79,7 +79,7 @@ app.get('/getInvoiceDataByNf/:nf', (req, res) => {
 	const { nf } = req.params;
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `SELECT
+	var sql = `SELECT
                     Fatura.id,
 					Estabelecimento.id AS IDdoParceiro,
 					Estabelecimento.Razao AS NomeDoParceiro,
@@ -93,10 +93,10 @@ app.get('/getInvoiceDataByNf/:nf', (req, res) => {
                     INNER JOIN Estabelecimento ON Estabelecimento.id = Fatura.Estabelecimento_id
                     INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id
 				WHERE Fatura.Status != "Finalizado" AND Fatura.NotaFiscal = ?`;
-    
-	db.all(sql, nf,  (err, rows ) => {
+
+	db.all(sql, nf, (err, rows) => {
 		if (err) {
-		    throw err;
+			throw err;
 		}
 		res.send(JSON.stringify(rows));
 	});
@@ -108,7 +108,7 @@ app.get('/getPaidInvoiceData', (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `SELECT
+	var sql = `SELECT
                     Fatura.id,
 					Estabelecimento.id AS IDdoParceiro,
 					Estabelecimento.Razao AS NomeDoParceiro,
@@ -122,10 +122,10 @@ app.get('/getPaidInvoiceData', (req, res) => {
                     INNER JOIN Estabelecimento ON Estabelecimento.id = Fatura.Estabelecimento_id
                     INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id
 				WHERE Fatura.Status = "Finalizado"`;
-    
-	db.all(sql, [],  (err, rows ) => {
+
+	db.all(sql, [], (err, rows) => {
 		if (err) {
-		    throw err;
+			throw err;
 		}
 		res.send(JSON.stringify(rows));
 	});
@@ -139,7 +139,7 @@ app.get('/getPaidInvoiceDataForPartner/:id', (req, res) => {
 	const { id } = req.params;
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `SELECT
+	var sql = `SELECT
 					TipoAntecipacao.Nome AS TipoAntecipação,
 					Fatura.NotaFiscal AS NotaFiscal,
 					Fatura.ValorRecebido as ValorRecebido,
@@ -149,10 +149,10 @@ app.get('/getPaidInvoiceDataForPartner/:id', (req, res) => {
                 FROM Fatura
                     INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id
 				WHERE Fatura.Status = "Finalizado" AND Fatura.Estabelecimento_id = ?`;
-    
-	db.all(sql, id,  (err, rows ) => {
+
+	db.all(sql, id, (err, rows) => {
 		if (err) {
-		    throw err;
+			throw err;
 		}
 		res.send(JSON.stringify(rows));
 	});
@@ -166,7 +166,7 @@ app.get('/getPaidInvoiceDataByNf/:nf', (req, res) => {
 	const { nf } = req.params;
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `SELECT
+	var sql = `SELECT
                     Fatura.id,
 					Estabelecimento.id AS IDdoParceiro,
 					Estabelecimento.Razao AS NomeDoParceiro,
@@ -180,10 +180,10 @@ app.get('/getPaidInvoiceDataByNf/:nf', (req, res) => {
                     INNER JOIN Estabelecimento ON Estabelecimento.id = Fatura.Estabelecimento_id
                     INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id
 				WHERE Fatura.Status = "Finalizado" AND Fatura.NotaFiscal = ?`;
-    
-	db.all(sql, nf,  (err, rows ) => {
+
+	db.all(sql, nf, (err, rows) => {
 		if (err) {
-		    throw err;
+			throw err;
 		}
 		res.send(JSON.stringify(rows));
 	});
@@ -195,17 +195,17 @@ app.get('/getRanking', (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `SELECT
+	var sql = `SELECT
 					Estabelecimento.id,
 					Estabelecimento.Razao AS RazaoSocial,
 					Estabelecimento.QuantidadeAntecipacao AS QuantidadeAntecipacao,
 					(SELECT SUM(Fatura.ValorRecebido) FROM Fatura WHERE Fatura.Estabelecimento_id = Estabelecimento.id) AS ValorAntecipado
 				FROM Estabelecimento
 				ORDER BY Estabelecimento.QuantidadeAntecipacao DESC`;
-    
-	db.all(sql, [],  (err, rows ) => {
+
+	db.all(sql, [], (err, rows) => {
 		if (err) {
-		    throw err;
+			throw err;
 		}
 		res.send(JSON.stringify(rows));
 	});
@@ -217,16 +217,16 @@ app.get('/getGeneralVision', (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `SELECT
+	var sql = `SELECT
 					(SELECT SUM(Estabelecimento.QuantidadeAntecipacao) FROM Estabelecimento) As TotalDeAntecipações,
 					SUM(Fatura.ValorRecebido) As ValorTotalAntecipado,
 					SUM(Fatura.ValorTaxado) As ValorTotalTaxado,
 					(SELECT TipoAntecipacao.Nome FROM TipoAntecipacao WHERE TipoAntecipacao.Quantidade = (SELECT MAX(TipoAntecipacao.Quantidade) FROM TipoAntecipacao)) As TipoMaisAntecipado
 				FROM Fatura`;
-    
-	db.all(sql, [],  (err, rows ) => {
+
+	db.all(sql, [], (err, rows) => {
 		if (err) {
-		    throw err;
+			throw err;
 		}
 		res.send(JSON.stringify(rows));
 	});
@@ -238,7 +238,7 @@ app.get('/getPartnerData', (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `SELECT
+	var sql = `SELECT
 					Estabelecimento.id,
                     Estabelecimento.Razao AS RazaoSocial,
                     Estabelecimento.CNPJ AS CNPJ,
@@ -258,10 +258,10 @@ app.get('/getPartnerData', (req, res) => {
                     INNER JOIN Login ON Login.Estabelecimento_id = Estabelecimento.id
                     INNER JOIN Endereco ON Endereco.Estabelecimento_id = Estabelecimento.id
                     INNER JOIN ContaBancaria ON ContaBancaria.Estabelecimento_id = Estabelecimento.id;`;
-    
-	db.all(sql, [],  (err, rows ) => {
+
+	db.all(sql, [], (err, rows) => {
 		if (err) {
-		    throw err;
+			throw err;
 		}
 		res.send(JSON.stringify(rows));
 	});
@@ -275,7 +275,7 @@ app.get('/getPartnerDataByID/:id', (req, res) => {
 	const { id } = req.params;
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `SELECT
+	var sql = `SELECT
 					Estabelecimento.id,
                     Estabelecimento.Razao AS RazaoSocial,
                     Estabelecimento.CNPJ AS CNPJ,
@@ -296,10 +296,10 @@ app.get('/getPartnerDataByID/:id', (req, res) => {
                     INNER JOIN Endereco ON Endereco.Estabelecimento_id = Estabelecimento.id
                     INNER JOIN ContaBancaria ON ContaBancaria.Estabelecimento_id = Estabelecimento.id
 				WHERE Estabelecimento.id = ?;`;
-    
-	db.all(sql, id,  (err, rows ) => {
+
+	db.all(sql, id, (err, rows) => {
 		if (err) {
-		    throw err;
+			throw err;
 		}
 		res.send(JSON.stringify(rows));
 	});
@@ -313,11 +313,11 @@ app.get('/checkLogin/:email', (req, res) => {
 	const { email } = req.params;
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `SELECT * FROM Login WHERE Login.Email=?`;
-     
-	db.all(sql, [email],  (err, rows ) => {
+	var sql = `SELECT * FROM Login WHERE Login.Email=?`;
+
+	db.all(sql, [email], (err, rows) => {
 		if (err) {
-		    throw err;	
+			throw err;
 		}
 		res.send(JSON.stringify(rows));
 	});
@@ -327,32 +327,33 @@ app.get('/checkLogin/:email', (req, res) => {
 });
 
 app.get('/getValorReservasNaoFaturadas/:id', (req, res) => {
-    res.statusCode = 200
-    res.setHeader('Access-Control-Allow-Origin', '*')
+	res.statusCode = 200
+	res.setHeader('Access-Control-Allow-Origin', '*')
 
-    const { id } = req.params;
+	const { id } = req.params;
 
-    var db = new sqlite3.Database(DBPATH)
-    var sql = `SELECT SUM(Valor) AS Valor FROM Reserva WHERE Reserva.Fatura_id IS NULL AND Reserva.Estabelecimento_id = ?`
+	var db = new sqlite3.Database(DBPATH)
+	var sql = `SELECT SUM(Valor) AS Valor FROM Reserva WHERE Reserva.Fatura_id IS NULL AND Reserva.Estabelecimento_id = ?`
 
-    db.all(sql, id, (err, rows) => {
-        if (err) {
-            throw err
-        }
-        res.send(JSON.stringify(rows))
-    })
-    db.close()
+	db.all(sql, id, (err, rows) => {
+		if (err) {
+			throw err
+		}
+		res.send(JSON.stringify(rows))
+	})
+	db.close()
 })
 
 app.get('/getReservasNaoFaturadas/:id', (req, res) => {
-    res.statusCode = 200
-    res.setHeader('Access-Control-Allow-Origin', '*')
+	res.statusCode = 200
+	res.setHeader('Access-Control-Allow-Origin', '*')
 
-    const { id } = req.params;
+	const { id } = req.params;
 
-    var db = new sqlite3.Database(DBPATH)
-    var sql = `SELECT 
+	var db = new sqlite3.Database(DBPATH)
+	var sql = `SELECT 
 					Reserva.id AS ID,
+					Reserva.Fatura_id AS IDFatura,
 					Reserva.Valor AS Valor
 				FROM 
 					Reserva
@@ -360,13 +361,13 @@ app.get('/getReservasNaoFaturadas/:id', (req, res) => {
 					Reserva.Fatura_id IS NULL AND Reserva.Estabelecimento_id = ?
 				ORDER BY Reserva.Valor ASC`
 
-    db.all(sql, id, (err, rows) => {
-        if (err) {
-            throw err
-        }
-        res.send(JSON.stringify(rows))
-    })
-    db.close()
+	db.all(sql, id, (err, rows) => {
+		if (err) {
+			throw err
+		}
+		res.send(JSON.stringify(rows))
+	})
+	db.close()
 })
 
 /*
@@ -375,19 +376,40 @@ app.post('/postPartnerData', (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-    var sql = `INSERT INTO Parceiro (razao, cnpj, celular)
-                VALUES 
-                    (?, ?, ?)`
+	var sql = `INSERT INTO Parceiro (razao, cnpj, celular)
+				VALUES 
+					(?, ?, ?)`
     
-    let param = [];
-    param.push(req.body.razao, req.body.cnpj, req.body.celular);
+	let param = [];
+	param.push(req.body.razao, req.body.cnpj, req.body.celular);
 
 	db.all(sql, param,  (err, rows ) => {
 		if (err) {
-		    throw err;
+			throw err;
 		}
 		res.json(rows);
 	});
 	db.close(); // Fecha o banco
 });
 */
+
+app.post('/postInvoiceData', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	var sql = `INSERT INTO Fatura (Estabelecimento_id, TipoAntecipacao_id, NotaFiscal, ValorRecebido, ValorTaxado, Data, Status)
+			 	VALUES 
+					(?, ?, ?, ?, ?, ?, ?)`;
+
+	let param = [];
+	param.push(req.body.EstabelecimentoID, req.body.TipoAntecipacaoID, req.body.NotaFiscal, req.body.ValorRecebido, req.body.ValorTaxado, req.body.Data, req.body.Status);
+
+	db.all(sql, param, (err, rows) => {
+		if (err) {
+			throw err;
+		}
+		res.json(rows);
+	});
+	db.close(); // Fecha o banco
+});
