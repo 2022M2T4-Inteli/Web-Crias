@@ -1,6 +1,7 @@
 var tpAnt = 0;
 var taxado = 0
 var recebido = 0
+var idFatura = 0;
 
 function calcd2() {
     var montante = parseFloat(document.getElementById("valores").value);
@@ -79,8 +80,8 @@ function simulate() {
             while (value < montante) {
                 count++;
                 if (count <= allReservas.length) {
-                    minInvoicedReservations.push(allReservas[count].Valor);
-                    maxInvoicedReservations.push(allReservas[count].Valor);
+                    minInvoicedReservations.push(allReservas[count]);
+                    maxInvoicedReservations.push(allReservas[count]);
                     value += allReservas[count].Valor;
                 }
             }
@@ -120,6 +121,8 @@ $(document).ready(function () {
         }
     })
 
+    getTotalFatura();
+
     getAllReservations();
 })
 
@@ -133,23 +136,75 @@ function confirmar() {
             NotaFiscal: 231521,
             ValorRecebido: recebido,
             ValorTaxado: taxado,
-            Data: "09/06/22",
+            Data: "10/06/22",
             Status: "A Pagar"
+        }
+    }).done(function () {
+        console.log("enviado com sucesso");
+    })
+
+    var reservation = [];
+    var teste = parseFloat(document.getElementById("valores").value);
+    var teste2 = parseFloat(document.getElementById("montante").value);
+
+    if (teste > teste2){
+        reservation = maxInvoicedReservations;
+    }
+    else {
+        reservation = minInvoicedReservations;
+    }
+
+    var id = idFatura + 1;
+    var contador = 0;
+
+    while(contador < reservation.length){
+        changeReservationFaturaId(id, reservation[contador].ID);
+        contador ++;
+    }
+}
+
+function changeReservationFaturaId(fatura, reserva){
+    $.ajax({
+        type: 'POST',
+        url: "http://127.0.0.1:5555/postReservationData",
+        data: {
+            FaturaID: fatura,
+            ReservaID: reserva
         }
     }).done(function () {
         console.log("enviado com sucesso");
     })
 }
 
-function changeReservationFaturaId(){
-    $.ajax({
-        type: 'POST',
-        url: "http://127.0.0.1:5555/postReservationData",
-        data: {
-            FaturaID: 1,
-            ReservaID: 1
-        }
-    }).done(function () {
-        console.log("enviado com sucesso");
+function getTotalFatura(){
+    var url = "http://127.0.0.1:5555/getTotalFatura";
+
+    $.get(url, function (resultado) {
+        idFatura = resultado[0].FaturaID;
     })
+}
+
+function addTable(){
+    $("#table").html(`<tr>
+                        <th>ID</th>
+                        <th>Valor</th>
+                    </tr>`);
+    var reservation = [];
+    var teste = parseFloat(document.getElementById("valores").value);
+    var teste2 = parseFloat(document.getElementById("montante").value);
+
+    if (teste > teste2){
+        reservation = maxInvoicedReservations;
+        console.log("aa");
+    }
+    else {
+        reservation = minInvoicedReservations;
+    }
+
+    for(i = 0; i < reservation.length; i++){
+        $("#table").append(`<tr>
+                                <td>` + reservation[i].ID + `</td>
+                                <td>` + reservation[i].Valor + `</td>
+                            </tr>`);
+    }
 }

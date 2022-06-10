@@ -34,7 +34,7 @@ app.get('/getInvoiceDataForPartner/:id', (req, res) => {
                     INNER JOIN TipoAntecipacao ON TipoAntecipacao.id = Fatura.TipoAntecipacao_id
 				WHERE Fatura.Status != "Finalizado" AND Fatura.Estabelecimento_id = ?`;
 
-	db.all(sql, [], (err, rows) => {
+	db.all(sql, id, (err, rows) => {
 		if (err) {
 			throw err;
 		}
@@ -373,7 +373,7 @@ app.get('/getReservasNaoFaturadas/:id', (req, res) => {
 app.post('/postInvoiceData', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
-
+	
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	var sql = `INSERT INTO Fatura (Estabelecimento_id, TipoAntecipacao_id, NotaFiscal, ValorRecebido, ValorTaxado, Data, Status)
 			 	VALUES 
@@ -394,12 +394,13 @@ app.post('/postInvoiceData', (req, res) => {
 app.post('/postReservationData', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
-
+	
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	var sql = `UPDATE Reserva SET Fatura_id = ? WHERE Reserva.id = ?`;
 
 	let param = [];
 	param.push(req.body.FaturaID, req.body.ReservaID);
+	console.log(param);
 
 	db.all(sql, param, (err, rows) => {
 		if (err) {
@@ -409,3 +410,19 @@ app.post('/postReservationData', (req, res) => {
 	});
 	db.close(); // Fecha o banco
 });
+
+app.get('/getTotalFatura', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*');
+
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	var sql = `SELECT MAX(ID) AS FaturaID FROM FATURA`;
+
+	db.all(sql, [], (err, rows) => {
+		if (err) {
+			throw err;
+		}
+		res.json(rows);
+	});
+	db.close(); // Fecha o banco
+})

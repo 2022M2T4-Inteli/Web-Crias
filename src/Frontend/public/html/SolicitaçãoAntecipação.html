@@ -106,7 +106,7 @@
 	</div>
 	<div>
 		<div class="centralize-button">
-			<button id="button-color" type="button" class="btn btn-primary" data-toggle="modal"
+			<button onclick="addTable()" id="button-color" type="button" class="btn btn-primary" data-toggle="modal"
 				data-target="#exampleModal">
 				Fechar pedido
 			</button>
@@ -123,7 +123,13 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<h4>Você tem certeza que deseja solicitar a antecipação?</h4>
+						<h4>Você está antecipando as seguintes reservas</h4>
+						<table id="table" style="width: 80%;">
+							<tr>
+								<th>ID</th>
+								<th>Valor</th>
+							</tr>
+						</table>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
