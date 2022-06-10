@@ -157,6 +157,8 @@ function confirmar() {
     var id = idFatura + 1;
     var contador = 0;
 
+    updateAmountData();
+
     while(contador < reservation.length){
         changeReservationFaturaId(id, reservation[contador].ID);
         contador ++;
@@ -170,6 +172,28 @@ function changeReservationFaturaId(fatura, reserva){
         data: {
             FaturaID: fatura,
             ReservaID: reserva
+        }
+    }).done(function () {
+        console.log("enviado com sucesso");
+    })
+}
+
+function updateAmountData(){
+    $.ajax({
+        type: 'POST',
+        url: "http://127.0.0.1:5555/postTypeData",
+        data: {
+            TipoAntecipacaoID: tpAnt
+        }
+    }).done(function () {
+        console.log("enviado com sucesso");
+    })
+
+    $.ajax({
+        type: 'POST',
+        url: "http://127.0.0.1:5555/postPartnerData",
+        data: {
+            id: localStorage.getItem("id_used")
         }
     }).done(function () {
         console.log("enviado com sucesso");
