@@ -350,11 +350,13 @@ app.get('/getReservasNaoFaturadas/:id', (req, res) => {
 
 	const { id } = req.params;
 
-	var db = new sqlite3.Database(DBPATH)
+	var db = new sqlite3.Database(DBPATH);
 	var sql = `SELECT 
 					Reserva.id AS ID,
 					Reserva.Fatura_id AS IDFatura,
-					Reserva.Valor AS Valor
+					Reserva.Valor AS Valor,
+					Reserva.DataCheckin AS DataEntrada,
+					Reserva.DataCheckout AS DataSaida
 				FROM 
 					Reserva
 				WHERE 
