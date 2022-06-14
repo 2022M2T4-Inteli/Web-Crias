@@ -38,10 +38,6 @@ th {
     justify-content: center;
     height: 3rem;
     background-color: #8CAAFD;
-    /* background-color: #D8BEFE; */
-    /* background-color: #B27EFD; */
-    /* background-color: #4F03C2; */
-    /* background-color: #40F28A; */
 }
 
 td {
@@ -171,8 +167,10 @@ td {
     justify-content: center;
     align-items: center;
     width: 25rem;
+    border-width: 1px;
+    border-style: solid;
     height: 5.25rem;
-    border-radius: 100px;
+    border-radius: 16px;
     border-width: 1.5px;
 }
 
