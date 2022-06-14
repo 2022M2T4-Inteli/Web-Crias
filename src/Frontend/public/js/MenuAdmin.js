@@ -183,7 +183,7 @@ function showPartnerData(){
                                                 <td class="hotel-name">` + objeto[i].RazaoSocial + `</td>
                                                 <td class="hotel-state">` + objeto[i].Estado + `</td>
                                                 <td class="hotel-tel">` + objeto[i].Celular + `</td>
-                                                <td><a href="Detalhes do Hotel.html" onclick="sendID(` + objeto[0].id + `)">Ver Mais</a></td>
+                                                <td class="hotel-more"><a href="Detalhes do Hotel.html" onclick="sendID(` + objeto[0].id + `)">Ver Mais</a></td>
                                             </tr>`);
             }
             else{
@@ -192,7 +192,7 @@ function showPartnerData(){
                                                 <td class="hotel-name" style="background-color: #F2F2F2">` + objeto[i].RazaoSocial + `</td>
                                                 <td class="hotel-state" style="background-color: #F2F2F2">` + objeto[i].Estado + `</td>
                                                 <td class="hotel-tel" style="background-color: #F2F2F2">` + objeto[i].Celular + `</td>
-                                                <td><a href="Detalhes do Hotel.html" onclick="sendID(` + objeto[0].id + `)" style="background-color: #F2F2F2">Ver Mais</a></td>
+                                                <td class="hotel-more" style="background-color: #F2F2F2"><a href="Detalhes do Hotel.html" onclick="sendID(` + objeto[0].id + `)" style="background-color: #F2F2F2">Ver Mais</a></td>
                                             </tr>`);
             }
             
@@ -216,7 +216,7 @@ function showSearch(){
                                                     <td class="hotel-name">` + objeto[0].RazaoSocial + `</td>
                                                     <td class="hotel-state">` + objeto[0].Estado + `</td>
                                                     <td class="hotel-tel">` + objeto[0].Celular + `</td>
-                                                    <td><a href="Detalhes do Hotel.html" onclick="sendID(` + objeto[0].id + `)">Ver Mais</a></td>
+                                                    <td class="hotel-more"><a href="Detalhes do Hotel.html" onclick="sendID(` + objeto[0].id + `)">Ver Mais</a></td>
                                             </tr>`);
             });
             break;

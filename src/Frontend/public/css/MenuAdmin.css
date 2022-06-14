@@ -27,7 +27,6 @@ table {
 
 tr {
     display: flex;
-
 }
 
 th {
@@ -221,8 +220,8 @@ td {
     width: 97.5%;
     height: 1.5rem;
     flex-direction: row;
-    border-style: solid;
     border-width: 2px;
+    height: 2.5rem;
 }
 
 .bar select, button:hover {
@@ -232,24 +231,33 @@ td {
 .bar input {
     width: 70%; 
     height: 100%; 
-    border-color: #000000;
     border-style: none;
+    outline: none;
+    background-color: #F2F2F2;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 1rem;
+    font-weight: 650;
 }
 
 .bar select {
     width: 15%;
     height: 100%;
+    outline: none;
     text-align: center;
-    border-color: #000000; 
     border-style: none;
+    background-color: #F2F2F2;
 }
 
 .bar button {
     width: 15%;
     height: 100%;
+    outline: none;
     background-color: #FFFFFF;
-    border-color: #000000;
     border-style: none;
+    background-color: #F2F2F2;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 #invoice-list {
@@ -268,8 +276,8 @@ td {
 }
 
 .hotel-name {
-    min-width: 60%;
-    max-width: 70%;
+    min-width: 40%;
+    max-width: 50%;
 }
 
 .hotel-state {
@@ -283,7 +291,8 @@ td {
 }
 
 .hotel-more {
-    width: 10%;
+    min-width: 10%;
+    max-width: 10%;
 }
 
 .invoice-note {
