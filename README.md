@@ -68,10 +68,7 @@ install express
 install sqlite3
 ```
   
-  Por fim rode:
-     ```sh
-node app.js
-```
+ 
   
 -<b>E também tenha um Navegador web, conectado à internet</b>
 
