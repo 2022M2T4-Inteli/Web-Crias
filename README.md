@@ -62,7 +62,9 @@ Descreva como instalar todas as dependências para desenvolvimento e como rodar 
 
 Para abrir este projeto você necessita das seguintes ferramentas:
 
--<a href="https://godotengine.org/download">GODOT</a>
+-<b>Navegador web, conectado à internet</b>
+
+Execute o node na pasta que esta o arquivo app.js
 
 ```sh
 node app.js
@@ -72,18 +74,21 @@ node app.js
 
 A cada atualização os detalhes devem ser lançados aqui.
 
-* 0.2.1 - 25/01/2022
-    * MUDANÇA: Atualização de docs (código do módulo permanece inalterado)
-* 0.2.0 - 15/01/2022
-    * MUDANÇA: Remove `setDefaultXYZ()`
-    * ADD: Adiciona `init()`
-* 0.1.1 - 11/01/2022
-    * CONSERTADO: Crash quando chama `baz()` (Obrigado @NomeDoContribuidorGeneroso!)
-* 0.1.0 - 10/01/2022
-    * O primeiro lançamento adequado
-    * MUDANÇA: Renomeia `foo()` para `bar()`
-* 0.0.1 - 01/01/2022
-    * Trabalho em andamento
+
+* 0.0.7 - 11/05/2022
+    * MUDANÇA: Organização das
+* 0.0.6 - 11/05/2022
+    * Lançamento de um protótipo da tela de Perfil. (Luísa Leite)
+* 0.0.5 - 10/05/2022
+    * Lançamento de um protótipo da tela de Solicitação de Antecipação. (Gabriel Nhoncanse)
+* 0.0.4 - 08/05/2022
+    * Lançamento de um protótipo da tela da Barra de Navegação. (Gabriela Barretto)
+* 0.0.3 - 08/05/2022
+    * MUDANÇA: Atualização na tela de Menu do administrador. (Detalhamento + CSS) (Renato Machado)
+* 0.0.2 - 08/05/2022
+    * Lançamento de um protótipo da tela de Menu do parceiro. (Felipe Silberberg)
+* 0.0.1 - 03/05/2022
+    * Lançamento de um protótipo da tela de Menu do administrador. (Renato Machado)
 
 ## 📋 Licença/License
 
