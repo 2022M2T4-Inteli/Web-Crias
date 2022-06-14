@@ -61,15 +61,20 @@ A plataforma Hurb Antecipações será útil para a organização financeira dos
 Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
 
 Para abrir este projeto você necessita das seguintes ferramentas:
-  Em primeiro lugar abra o terminal do seu computador e entre dentro da pasta onde está o projeto. Então rode os comandos "install express" / "install sqlite3", por fim rode "node app.js"
-
--<b>Navegador web, conectado à internet</b>
-
-Execute o node na pasta que esta o arquivo app.js
-
-```sh
+  Em primeiro lugar abra o terminal do seu computador e entre dentro da pasta onde está o projeto. Então rode os comandos: 
+  ```sh
+install express
+```
+   ```sh
+install sqlite3
+```
+  Por fim rode:
+     ```sh
 node app.js
 ```
+  
+-<b>E também tenha um Navegador web, conectado à internet</b>
+
 
 ## 🗃 Histórico de lançamentos
 
