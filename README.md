@@ -52,8 +52,8 @@ Há também 3 pastas que seguem da seguinte forma:
 
   A principal função do nosso sistema é o hoteleiro pode fazer o pedido de sua antecipação, por essa tela:
   
- <p align="center">
-<a href= "file:///C:/Users/Inteli/Documents/GitHub/Projeto1/src/Frontend/public/html/Solicita%C3%A7%C3%A3oAntecipa%C3%A7%C3%A3o.html"><img src="./imagens/pedidodeantecipacao.png" alt="pedido" border="0"></a>
+<p align="center">
+<a href= "file:///C:/Users/Inteli/Documents/GitHub/Projeto1/src/Frontend/public/html/Solicita%C3%A7%C3%A3oAntecipa%C3%A7%C3%A3o.html"><img src="./imagens/pedidodeantecipacao2.png" alt="pedido" border="0"></a>
 </p>
   
 
