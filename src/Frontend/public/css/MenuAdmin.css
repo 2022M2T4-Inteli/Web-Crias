@@ -48,6 +48,10 @@ td {
     justify-content: center;
 }
 
+td a {
+    text-decoration: none;
+}
+
 #left-border-table {
     border-top-left-radius: 10px;
 }
