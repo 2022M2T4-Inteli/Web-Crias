@@ -107,27 +107,42 @@ td {
 }
 
 .nf {
-    width: 10%;
+    min-width: 10%;
+    max-width: 10%;
+    
 }
 
 .total-value {
-    width: 25%;
+    min-width: 17.5%;
+    max-width: 17.5%;
 }
 
 .receive-value {
-    width: 25%;
+    min-width: 17.5%;
+    max-width: 17.5%;
 }
 
 .antecipation-type {
-    width: 12.5%;
+    min-width: 12.5%;
+    max-width: 12.5%;
 }
 
 .date {
-    width: 12.5%;
+    min-width: 12.5%;
+    max-width: 12.5%;
 }
 
 .status {
-    width: 25%;
+    min-width: 15%;
+    max-width: 15%;
+}
+
+.details {
+    min-width: 15%;
+    max-width: 15%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu {
@@ -175,6 +190,31 @@ td {
 	margin-top: 17px;
 }
 
+.id-modal {
+    min-width: 20%;
+}
+
+.id-invoice-modal{
+    min-width: 20%
+}
+
+.value-modal {
+    min-width: 20%;
+}
+
+.checkin-modal {
+    min-width: 20%;
+}
+
+.checkout-modal {
+    min-width: 20%;
+}
+
+.btn {
+    background-color: transparent;
+    color: blue;
+    font-size: 1.5rem;
+}
 @media only screen and (max-width: 768px) {
     .pending-section {
         display: flex;

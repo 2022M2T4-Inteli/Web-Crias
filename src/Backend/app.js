@@ -24,6 +24,7 @@ app.get('/getInvoiceDataForPartner/:id', (req, res) => {
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	var sql = `SELECT
+					Fatura.id,
 					TipoAntecipacao.Nome AS TipoAntecipação,
 					Fatura.NotaFiscal AS NotaFiscal,
 					Fatura.ValorRecebido as ValorRecebido,
@@ -140,6 +141,7 @@ app.get('/getPaidInvoiceDataForPartner/:id', (req, res) => {
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	var sql = `SELECT
+					Fatura.id,
 					TipoAntecipacao.Nome AS TipoAntecipação,
 					Fatura.NotaFiscal AS NotaFiscal,
 					Fatura.ValorRecebido as ValorRecebido,
@@ -469,4 +471,30 @@ app.get('/getTotalFatura', (req, res) => {
 	db.close(); // Fecha o banco
 })
 
+app.get('/getReservasFaturadas/:id', (req, res) => {
+	res.statusCode = 200
+	res.setHeader('Access-Control-Allow-Origin', '*')
+
+	const { id } = req.params;
+
+	var db = new sqlite3.Database(DBPATH);
+	var sql = `SELECT 
+					Reserva.id AS ID,
+					Reserva.Fatura_id AS IDFatura,
+					Reserva.Valor AS Valor,
+					Reserva.DataCheckin AS DataEntrada,
+					Reserva.DataCheckout AS DataSaida
+				FROM 
+					Reserva
+				WHERE 
+					Reserva.Fatura_id IS NOT NULL AND Reserva.Fatura_id = ?`
+
+	db.all(sql, id, (err, rows) => {
+		if (err) {
+			throw err
+		}
+		res.send(JSON.stringify(rows))
+	})
+	db.close()
+})
 

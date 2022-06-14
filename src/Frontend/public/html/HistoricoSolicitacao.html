@@ -58,7 +58,8 @@
                             <th class="receive-value">Valor Taxado</th>
                             <th class="antecipation-type">Tipo</th>
                             <th class="date">Data</th>
-                            <th class="status" id="right-border-table">Status</th>
+                            <th class="status">Status</th>
+                            <th class="details" id="right-border-table"></th>
                         </tr>
                     </table>
                 </div>
@@ -72,13 +73,40 @@
                             <th class="receive-value">Valor Taxado</th>
                             <th class="antecipation-type">Tipo</th>
                             <th class="date">Data</th>
-                            <th class="status" id="right-border-table">Status</th>
+                            <th class="status">Status</th>
+                            <th class="details" id="right-border-table"></th>
+
                         </tr>
                     </table>
                 </div>
             </div>
             <br><br><br>
-
+            <div id="modal-hist" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Reservas da Fatura</h2>
+                    </div>
+                    <div class="modal-body">
+                          <table id="modal-table">
+                            <tr>
+                                <th class="id-modal" id="left-border-table">ID da Reserva</th>
+                                <th class="id-invoice-modal">ID da Fatura</th>
+                                <th class="value-modal">Valor</th>
+                                <th class="checkin-modal">Data do Check-in</th>
+                                <th class="checkout-modal" id="right-border-table">Data do Check-out</th>
+                                
+                            </tr>
+                          </table>                     
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            
+                </div>
+            </div>
             <hr>
             <div class="page-footer">
                 <img src="../icons/hurb-logo.png" width="250rem" height="100rem">
