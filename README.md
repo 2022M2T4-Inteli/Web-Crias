@@ -15,7 +15,7 @@
 Nosso projeto desenvolve uma aplicação web para a Hurb.
 <br><br>
 <p align="center">
-<a href="https://www.hurb.com/br"><img src="https://user-images.githubusercontent.com/99191485/172633035-e4a23e5a-d9b4-486d-b352-f8972ae0c60d.jpg" border="0"></a><br>
+<a href="https://www.hurb.com/br"><img src="https://user-images.githubusercontent.com/99191485/172633035-e4a23e5a-d9b4-486d-b352-f8972ae0c60d.jpg" border="0" height="200" width="200"></a><br>
 Com o aumento da demanda dos hoteleiros pelas antecipações de pagamento, a Hurb precisa de uma plataforma que esclareça as taxas, os modos e os dias de pagamento, além de organizar a visualização das solicitações para os hoteleiros e administradores da Hurb. A nossa tarefa será desenvolver essa plataforma e para isso, nos organizamos em 5 sprints, a primeira para análises de mercado, a segunda para desenvolvimento do frontend, na terceira backend, na quarta integração e na quinta ajustes finos e apresentação.
 <br><br>
 
