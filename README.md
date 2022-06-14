@@ -58,16 +58,16 @@ A plataforma Hurb Antecipações será útil para a organização financeira dos
 
 ## 💻 Configuração para Desenvolvimento
 
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
-
-Para abrir este projeto você necessita das seguintes ferramentas:
+  Para abrir este projeto você necessita das seguintes ferramentas:
   Em primeiro lugar abra o terminal do seu computador e entre dentro da pasta onde está o projeto. Então rode os comandos: 
   ```sh
 install express
 ```
+  
    ```sh
 install sqlite3
 ```
+  
   Por fim rode:
      ```sh
 node app.js
