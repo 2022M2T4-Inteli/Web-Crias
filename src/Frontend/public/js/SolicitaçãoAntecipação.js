@@ -1,48 +1,29 @@
 var tpAnt = 0;
-var taxado = 0
-var recebido = 0
+var taxado = 0;
+var recebido = 0;
 var idFatura = 0;
 
-function calcd2() {
-    var montante = parseFloat(document.getElementById("valores").value);
-    taxado = montante * 0.12
-    recebido = montante - taxado
-    taxado = taxado.toFixed(2)
-    recebido = recebido.toFixed(2)
-    document.getElementById("receberá").innerHTML = "Você receberá: R$ " + recebido
-    document.getElementById("taxado").innerHTML = "Foi taxado: R$ " + taxado
-    tpAnt = 1;
-}
-
-function calcd7() {
-    var montante = parseFloat(document.getElementById("valores").value);
-    taxado = montante * 0.09
-    recebido = montante - taxado
-    taxado = taxado.toFixed(2)
-    recebido = recebido.toFixed(2)
-    document.getElementById("receberá").innerHTML = "Você receberá: R$ " + recebido
-    document.getElementById("taxado").innerHTML = "Foi taxado: R$ " + taxado
-    tpAnt = 2;
-}
-
-function calcd15() {
-    var montante = parseFloat(document.getElementById("valores").value);
-    taxado = montante * 0.06
-    recebido = montante - taxado
-    taxado = taxado.toFixed(2)
-    recebido = recebido.toFixed(2)
-    document.getElementById("receberá").innerHTML = "Você receberá: R$ " + recebido
-    document.getElementById("taxado").innerHTML = "Foi taxado: R$ " + taxado
-    tpAnt = 3;
-}
-
-function calcd30() {
-    var montante = parseFloat(document.getElementById("valores").value);
-    taxado = 0
-    recebido = montante
-    document.getElementById("receberá").innerHTML = "Você receberá: R$ " + recebido
-    document.getElementById("taxado").innerHTML = "Foi taxado: R$ " + taxado
-    tpAnt = 4;
+function calc(taxa) {
+    var montant = parseFloat(document.getElementById("valores").value);
+    taxado = montant * taxa;
+    recebido = montant - taxado;
+    taxado = taxado.toFixed(2);
+    recebido = recebido.toFixed(2);
+    document.getElementById("receberá").innerHTML = "Você receberá: R$ " + recebido;
+    document.getElementById("taxado").innerHTML = "Foi taxado: R$ " + taxado;
+    if (taxa == 0.12) {
+        tpAnt = 1;
+    }
+    if (taxa == 0.09) {
+        tpAnt = 2;
+    }
+    if (taxa == 0.06) {
+        tpAnt = 3;
+    }
+    if (taxa == 0) {
+        tpAnt = 4;
+    }
+    console.log(tpAnt)
 }
 
 let allReservas = 0;
@@ -92,9 +73,9 @@ function simulate() {
                 options.style.display = 'block'
             }
             else if (value == montante) {
-                document.getElementById("min-value").innerHTML = "Valor válido";
                 var options = document.querySelector(".choose");
                 options.style.display = 'block'
+                document.getElementById("min-value").innerHTML = "Valor válido" + `<select id="valores" name="valores" style="display: none">` + `<option selected="selected" value="` + montante + `">` + `</option>` + `</select>`
             }
         }
         else {
@@ -142,7 +123,7 @@ function confirmar() {
     var teste = parseFloat(document.getElementById("valores").value);
     var teste2 = parseFloat(document.getElementById("montante").value);
 
-    if (teste > teste2){
+    if (teste > teste2) {
         reservation = maxInvoicedReservations;
     }
     else {
@@ -154,13 +135,13 @@ function confirmar() {
 
     updateAmountData();
 
-    while(contador < reservation.length){
+    while (contador < reservation.length) {
         changeReservationFaturaId(id, reservation[contador].ID);
-        contador ++;
+        contador++;
     }
 }
 
-function changeReservationFaturaId(fatura, reserva){
+function changeReservationFaturaId(fatura, reserva) {
     $.ajax({
         type: 'POST',
         url: "http://127.0.0.1:5555/postReservationData",
@@ -173,7 +154,7 @@ function changeReservationFaturaId(fatura, reserva){
     })
 }
 
-function updateAmountData(){
+function updateAmountData() {
     $.ajax({
         type: 'POST',
         url: "http://127.0.0.1:5555/postTypeData",
@@ -195,7 +176,7 @@ function updateAmountData(){
     })
 }
 
-function getTotalFatura(){
+function getTotalFatura() {
     var url = "http://127.0.0.1:5555/getTotalFatura";
 
     $.get(url, function (resultado) {
@@ -203,7 +184,7 @@ function getTotalFatura(){
     })
 }
 
-function addTable(){
+function addTable() {
     $("#table").html(`<tr>
                         <th>ID</th>
                         <th>Valor</th>
@@ -214,14 +195,14 @@ function addTable(){
     var teste = parseFloat(document.getElementById("valores").value);
     var teste2 = parseFloat(document.getElementById("montante").value);
 
-    if (teste > teste2){
+    if (teste > teste2) {
         reservation = maxInvoicedReservations;
     }
     else {
         reservation = minInvoicedReservations;
     }
 
-    for(i = 0; i < reservation.length; i++){
+    for (i = 0; i < reservation.length; i++) {
         $("#table").append(`<tr>
                                 <td>` + reservation[i].ID + `</td>
                                 <td>` + reservation[i].Valor + `</td>
