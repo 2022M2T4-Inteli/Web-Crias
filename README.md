@@ -41,16 +41,22 @@ Com o aumento da demanda dos hoteleiros pelas antecipações de pagamento, a Hur
 
 Há também 3 pastas que seguem da seguinte forma:
 
-<b>documentos</b>: Aqui estão todos os documentos do projeto, principalmente o <b>Web Application Document</b>. Há uma pasta <b>antigos</b> onde estão todas as versões antigas da documentação.
+<b>Documentos</b>: Aqui estão todos os documentos do projeto, principalmente o <b>Web Application Document</b>. Há uma pasta <b>antigos</b> onde estão todas as versões antigas da documentação.
 
-<b>imagens</b>: Alguns ícones e logos prontos para serem utilizados e visualizados.
+<b>Imagens</b>: Alguns ícones e logos prontos para serem utilizados e visualizados.
 
-<b>src</b>: Nesta pasta está todo o código fonte do sistema, pronto para para ser baixado e modificado. Existem duas pastas, <b>Backend</b> e <b>Frontend</b> que contêm, respectivamente, o código do servidor e o código da página web.
+<b>Src</b>: Nesta pasta está todo o código fonte do sistema, pronto para para ser baixado e modificado. Existem duas pastas, <b>Backend</b> e <b>Frontend</b> que contêm, respectivamente, o código do servidor e o código da página web.
 
 
 ## 📈 Exemplo de uso
 
-A plataforma Hurb Antecipações será útil para a organização financeira dos hoteleiros.
+  A principal função do nosso sistema é o hoteleiro pode fazer o pedido de sua antecipação, por essa tela:
+  <p align="center">
+<a href= "file:///C:/Users/Inteli/Documents/GitHub/Projeto1/src/Frontend/public/html/Solicita%C3%A7%C3%A3oAntecipa%C3%A7%C3%A3o.html"><img src="file:///C:/Users/Inteli/Pictures/pedidodeantecipacao.png" alt="pedido" border="0"></a>
+</p>
+  
+
+  A plataforma Hurb Antecipações será útil para a organização financeira dos hoteleiros.
 
 <p align="center">
 <img src="historicoantecipacoes.jpg" border="0">Exemplo de como a tela de histórico será organizada.<br>
