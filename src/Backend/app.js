@@ -466,3 +466,5 @@ app.get('/getTotalFatura', (req, res) => {
 	});
 	db.close(); // Fecha o banco
 })
+
+
