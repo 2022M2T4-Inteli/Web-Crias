@@ -71,6 +71,8 @@ function simulate() {
     minValue = 0;
 
     if (montante != null) {
+        console.log(allReservas);
+
         if (montante > max) {
             document.getElementById("min-value").innerHTML = "Você não tem esse valor para faturar";
         }
@@ -101,6 +103,8 @@ function simulate() {
             document.getElementById("min-value").innerHTML = `Valor mínimo a se retirar é ${allReservas[0].Valor.toFixed(2)}`
         }
     }
+    console.log(minInvoicedReservations);
+    console.log(maxInvoicedReservations);
 }
 
 $(document).ready(function () {
@@ -108,6 +112,7 @@ $(document).ready(function () {
 
     $.get(url, function (resultado) {
         var objeto = JSON.parse(resultado)
+
         max = objeto[0].Valor;
 
         for (i = 0; i < Object.keys(objeto).length; i++) {
@@ -207,8 +212,6 @@ function addTable(){
     $("#table").html(`<tr>
                         <th>ID</th>
                         <th>Valor</th>
-                        <th>Data de Check-in</th>
-                        <th>Data de Check-out</th>
                     </tr>`);
     var reservation = [];
     var teste = parseFloat(document.getElementById("valores").value);
@@ -216,6 +219,7 @@ function addTable(){
 
     if (teste > teste2){
         reservation = maxInvoicedReservations;
+        console.log("aa");
     }
     else {
         reservation = minInvoicedReservations;
@@ -225,8 +229,6 @@ function addTable(){
         $("#table").append(`<tr>
                                 <td>` + reservation[i].ID + `</td>
                                 <td>` + reservation[i].Valor + `</td>
-                                <td>` + reservation[i].DataEntrada + `</td>
-                                <td>` + reservation[i].DataSaida + `</td>
                             </tr>`);
     }
 }
