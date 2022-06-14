@@ -20,6 +20,43 @@
     z-index: 1;
 }
 
+table {
+    border-radius: 10px;
+    border-style: none;
+}
+
+tr {
+    display: flex;
+
+}
+
+th {
+    display: flex;
+    flex-direction: row;
+    border-style: none;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    background-color: #8CAAFD;
+}
+
+td {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#left-border-table {
+    border-top-left-radius: 10px;
+}
+
+#right-border-table {
+    border-top-right-radius: 10px;
+}
+
 .header-menu {
     display: flex; 
     flex-direction: row; 
@@ -147,34 +184,25 @@
 
 .ranking table {
     width: 100%;
-    border-style: solid;
-}
-
-.ranking th {
-    border-bottom-style: solid;
-    height: 1.5rem;
-}
-
-.ranking td {
-    height: 1.5rem;
 }
 
 .ranking-table-position {
-    width: 2.5%;
+    min-width: 4%;
     text-align: center;
 }
 
 .ranking-table-id {
-    width: 5%;
+    width: 10%;
+    justify-content: center;
     text-align: center;
 }
 
 .ranking-table-razao {
-    width: 70%;
+    width: 50%;
 }
 
 .ranking-table-qtd {
-    width: 2.5%;
+    min-width: 10%;
     text-align: center;
 }
 
@@ -234,62 +262,61 @@
 }
 
 .hotel-id {
-    width: 2.5%;
-    max-width: 2.5%;
+    min-width: 5%;
     text-align: center;
 }
 
 .hotel-name {
-    width: 70%;
+    min-width: 60%;
     max-width: 70%;
 }
 
 .hotel-state {
     width: 20%;
     max-width: 20%;
-    text-align: center;
 }
 
 .hotel-tel {
     width: 40%;
     max-width: 40%;
-    text-align: center;
 }
 
 .invoice-note {
-    width: 20%;
+    width: 15%;
     max-width: 20%;
-    text-align: center;
 }
 
 .invoice-partner-id {
     width: 10%;
     max-width: 10%;
-    text-align: center;
+}
+
+.invoice-partner-id td {
+    text-align: center; 
 }
 
 .invoice-received-value {
     width: 25%;
     max-width: 25%;
-    text-align: center;
 }
 
 .invoice-taxed-value {
     width: 25%;
     max-width: 25%;
-    text-align: center;
 }
 
 .invoice-date {
     width: 30%;
     max-width: 30%;
-    text-align: center;
+}
+
+.invoice-type {
+    width: 10%;
 }
 
 .invoice-status {
     width: 20%;
     max-width: 20%;
-    text-align: center;
 }
 
 .search-bar table {
@@ -297,17 +324,6 @@
     overflow-x: scroll;
     width: 98%;
     max-height: 20rem;
-    border-style: solid;
-}
-
-.search-bar th {
-    border-bottom-style: solid;
-    height: 1.5rem;
-    height: 1.5rem;
-}
-
-.search-bar td {
-    height: 1.5rem;
 }
 
 @media only screen and (max-width: 768px) {

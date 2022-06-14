@@ -29,19 +29,19 @@ $(document).ready(function(){
 
 function resetTable(){
     $("#search-table").html(`<tr id="partner-list">
-                                        <th class="hotel-id">ID</th>
+                                        <th class="hotel-id" id="left-border-table">ID</th>
                                         <th class="hotel-name">Razão Social</th>
                                         <th class="hotel-state">Estado</th>
-                                        <th class="hotel-tel">Telefone</th>
+                                        <th class="hotel-tel" id="right-border-table">Telefone</th>
                                     </tr>
                                     <tr id="invoice-list">
-                                        <th class="invoice-note">Nota Fiscal</th>
+                                        <th class="invoice-note" id="left-border-table">Nota Fiscal</th>
                                         <th class="invoice-partner-id">Esta. ID</th>
                                         <th class="invoice-received-value">Valor Recebido</th>
                                         <th class="invoice-taxed-value">Valor Taxado</th>
                                         <th class="invoice-type">Tipo</th>
                                         <th class="invoice-status">Status</th>
-                                        <th class="invoice-date">Data</th>
+                                        <th class="invoice-date" id="right-border-table">Data</th>
                                     </tr>`);
 
     switch(document.getElementById("search-type").value){
