@@ -75,20 +75,88 @@ node app.js
 A cada atualização os detalhes devem ser lançados aqui.
 
 
+
+* 0.3.4 - 13/06/2022
+    * MUDANÇA: Exibição de datas na tela de Faturamento (Após faturar reservas). (Renato Machado)
+
+* 0.3.3 - 10/06/2022
+    * Finalização da API da tela de Faturamento. (Solicitação de Antecipação) (Renato Machado)
+
+* 0.3.2 - 09/06/2022
+    * MUDANÇA: Integração dos dados bancários na tela de perfil. (Felipe Silberberg)
+
+* 0.3.1 - 08/06/2022
+    * Criação da API da tela de Faturamento. (Solicitação de Antecipação) (Renato Machado)
+
+* 0.3.0 - 08/06/2022
+    * Finalização da API e integração da tela de Histórico de Faturamento. (Renato Machado)
+
+* 0.2.9 - 08/06/2022
+    * Finalização da API e integração da tela de Login. (Gabriela Barretto)
+
+* 0.2.8 - 08/06/2022
+    * Integração do Backend com a tela de Perfil do Parceiro. (Felipe Silberberg)
+
+* 0.2.7 - 07/06/2022
+    * MUDANÇA: Finalização da API na tela do Administrador. (Renato Machado)
+
+* 0.2.6 - 06/06/2022
+    * MUDANÇA: Atualizações na API na tela do Administrador. (Barra de Pesquisa com filtros) (Renato Machado)
+
+* 0.2.5 - 06/06/2022
+    * MUDANÇA: Atualizações na responsividade na tela de Menu do Parceiro. (Luísa Leite)
+
+* 0.2.4 - 31/05/2022
+    * Integração inicial da API na tela do Login. (Frontend e Backend, checa a existência do email e senha no banco) (Gabriela Barretto)
+
+* 0.2.3 - 31/05/2022
+    * Integração inicial da API na tela do Perfil do Parceiro. (Frontend e Backend) (Felipe Silberberg)
+
+* 0.2.2 - 27/05/2022
+    * Integração inicial da API na tela do Administrador. (Frontend e Backend) (Renato Machado)
+
+* 0.2.1 - 26/05/2022
+    * Aplicação de uma API, primeiros End-Points adicionados. (Renato Machado)
+
+* 0.2.0 - 26/05/2022
+    * Inserção de um Banco de Dados dicticios simulando o da HURB. (Renato Machado)
+
+* 0.1.2 - 12/05/2022 à 26/05/2022
+    * MUDANÇA: Atualizações diversas nas telas trabalhadas, divididas entre os integrantes, melhorando desing e usabilidade.
+
+* 0.1.1 - 12/05/2022
+    * MUDANÇA: Integração das telas surgindo um protótipo navegável. (Renato Machado)
+
+* 0.1.0 - 12/05/2022
+    * Lançamento de um protótipo da tela de Login. (Gabriel Nhoncanse)
+
+* 0.0.9 - 12/05/2022
+    * MUDANÇA: Atualização na tela de Menu do Parceiro. (Adição da Barra de Navegação) (Felipe Silberberg)
+
+* 0.0.8 - 12/05/2022
+    * MUDANÇA: Atualização na tela de Administrador. (Renato Machado)
+
 * 0.0.7 - 11/05/2022
-    * MUDANÇA: Organização das
+    * MUDANÇA: Organização das pastas e atualização na tela de Perfil. (Gabriel Nhoncanse)
+
 * 0.0.6 - 11/05/2022
     * Lançamento de um protótipo da tela de Perfil. (Luísa Leite)
+
 * 0.0.5 - 10/05/2022
     * Lançamento de um protótipo da tela de Solicitação de Antecipação. (Gabriel Nhoncanse)
+
 * 0.0.4 - 08/05/2022
     * Lançamento de um protótipo da tela da Barra de Navegação. (Gabriela Barretto)
+
 * 0.0.3 - 08/05/2022
     * MUDANÇA: Atualização na tela de Menu do administrador. (Detalhamento + CSS) (Renato Machado)
+
 * 0.0.2 - 08/05/2022
     * Lançamento de um protótipo da tela de Menu do parceiro. (Felipe Silberberg)
+
 * 0.0.1 - 03/05/2022
     * Lançamento de um protótipo da tela de Menu do administrador. (Renato Machado)
+
 
 ## 📋 Licença/License
 
