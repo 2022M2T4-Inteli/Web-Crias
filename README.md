@@ -15,7 +15,7 @@
 Nosso projeto desenvolve uma aplicação web para a Hurb.
 <br><br>
 <p align="center">
-<a href="https://www.hurb.com/br"><img src="https://user-images.githubusercontent.com/99191485/172633035-e4a23e5a-d9b4-486d-b352-f8972ae0c60d.jpg" border="0" height="500" width="500"></a><br>
+<a href="https://www.hurb.com/br"><img src="https://user-images.githubusercontent.com/99191485/172633035-e4a23e5a-d9b4-486d-b352-f8972ae0c60d.jpg" border="0" height="300" width="300"></a><br>
 Com o aumento da demanda dos hoteleiros pelas antecipações de pagamento, a Hurb precisa de uma plataforma que esclareça as taxas, os modos e os dias de pagamento, além de organizar a visualização das solicitações para os hoteleiros e administradores da Hurb. A nossa tarefa será desenvolver essa plataforma e para isso, nos organizamos em 5 sprints, a primeira para análises de mercado, a segunda para desenvolvimento do frontend, na terceira backend, na quarta integração e na quinta ajustes finos e apresentação.
 <br><br>
 
@@ -52,7 +52,7 @@ Há também 3 pastas que seguem da seguinte forma:
 
   A principal função do nosso sistema é o hoteleiro pode fazer o pedido de sua antecipação, por essa tela:
   <p align="center">
-<a href= "file:///C:/Users/Inteli/Documents/GitHub/Projeto1/src/Frontend/public/html/Solicita%C3%A7%C3%A3oAntecipa%C3%A7%C3%A3o.html"><img src="file:///C:/Users/Inteli/Pictures/pedidodeantecipacao.png" alt="pedido" border="0"></a>
+<a href= "file:///C:/Users/Inteli/Documents/GitHub/Projeto1/src/Frontend/public/html/Solicita%C3%A7%C3%A3oAntecipa%C3%A7%C3%A3o.html"><img src="C:\Users\Inteli\Documents\GitHub\Projeto1\imagens" alt="pedido" border="0"></a>
 </p>
   
 
