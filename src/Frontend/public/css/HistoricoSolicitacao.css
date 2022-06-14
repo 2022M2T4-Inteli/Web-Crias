@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     color: #000000;
+    text-align: center;
 }
 
 .main {
@@ -19,6 +20,47 @@
 .page-footer {
     width: auto;
     width: 100%;
+}
+
+table {
+    border-radius: 10px;
+    border-style: none;
+}
+
+tr {
+    display: flex;
+
+}
+
+th {
+    display: flex;
+    flex-direction: row;
+    border-style: none;
+    align-items: center;
+    justify-content: center;
+    height: 4.5rem;
+    background-color: #8CAAFD;
+    /* background-color: #D8BEFE; */
+    /* background-color: #B27EFD; */
+    /* background-color: #4F03C2; */
+    /* background-color: #40F28A; */
+}
+
+td {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#left-border-table {
+    border-top-left-radius: 10px;
+}
+
+#right-border-table {
+    border-top-right-radius: 10px;
 }
 
 /* Título da página */
@@ -47,7 +89,7 @@
 .divisory {
     background-color: #000000;
     width: 10%;
-    height: 0.5rem;
+    height: 0.25rem;
 }
 
 .pending-section {
@@ -62,15 +104,6 @@
     flex-direction: column;
     margin-left: 0.5%;
     margin-right: 0.5%;
-}
-
-table {
-    border-style: solid;
-    width: 75%;
-}
-
-th {
-    border-bottom-style: solid;
 }
 
 .nf {
@@ -95,26 +128,6 @@ th {
 
 .status {
     width: 25%;
-}
-
-@media only screen and (max-width: 768px) {
-    table {
-        width: 100%;
-    }
-
-    .pending-section {
-        display: flex;
-        flex-direction: column;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    
-    .past-section {
-        display: flex;
-        flex-direction: column;
-        margin-left: 0;
-        margin-right: 0;
-    }
 }
 
 .menu {
@@ -160,4 +173,20 @@ th {
 #L_menu {
 	text-align: right;
 	margin-top: 17px;
+}
+
+@media only screen and (max-width: 768px) {
+    .pending-section {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .past-section {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
