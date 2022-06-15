@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<!--Adding tilte to page, choosing css file and linking font to file-->
+<!--Adding title to page, choosing css file and linking font to file-->
 
 <head>
 	<meta charset="UTF-8">
@@ -64,33 +64,31 @@
 		</div>
 		<br>
 		<button id="button-color" type="button" class="btn btn-primary" onclick="simulate()">Simular</button>
-
+		<br><br>
 		<div id="value-option">
-			<span id="min-value"></span>
-			<span id="max-value"></span>
+			<p id="min-value"></p>
 		</div>
 
-		<div id="choose-type">
-			<div>
-				<b>Qual tipo de antecipação?</b>
-				<div class="radio">
-					<label><input onclick="calcd2()" type="radio" name="optradio">D+2</label>
+		<form>
+			<div class="choose">
+				<div>
+					<b>Qual tipo de antecipação?</b>
+					<div class="radio" id="tipoAnt">
+						<label><input onclick="calc(0.12)" type="radio" name="optradio">D+2</label>
+						<br>
+						<label><input onclick="calc(0.09)" type="radio" name="optradio">D+7</label>
+						<br>
+						<label><input onclick="calc(0.06)" type="radio" name="optradio">D+15</label>
+						<br>
+						<label><input onclick="calc(0)" type="radio" name="optradio">D+30</label>
+					</div>
 				</div>
-				<div class="radio">
-					<label><input onclick="calcd7()" type="radio" name="optradio">D+7</label>
-				</div>
-				<div class="radio">
-					<label><input onclick="calcd15()" type="radio" name="optradio">D+15</label>
-				</div>
-				<div class="radio">
-					<label><input onclick="calcd30()" type="radio" name="optradio">D+30</label>
+				<div class="espaçamento1">
+					<b id="receberá">Você receberá:</b>
+					<b id="taxado">Foi taxado:</b>
 				</div>
 			</div>
-			<div class="espaçamento1">
-				<b id="receberá">Você receberá:</b>
-				<b id="taxado">Foi taxado:</b>
-			</div>
-		</div>
+		</form>
 		<br><br>
 		<div>
 			<b>Forma de recebimento do pagamento:</b>
@@ -105,7 +103,7 @@
 	</div>
 	<div>
 		<div class="centralize-button">
-			<button id="button-color" type="button" class="btn btn-primary" data-toggle="modal"
+			<button onclick="addTable()" id="button-color" type="button" class="btn btn-primary" data-toggle="modal"
 				data-target="#exampleModal">
 				Fechar pedido
 			</button>
@@ -122,11 +120,18 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<h4>Você tem certeza que deseja solicitar a antecipação?</h4>
+						<h4>Você está antecipando as seguintes reservas</h4>
+						<table id="table" style="width: 80%;">
+							<tr>
+								<th>ID</th>
+								<th>Valor</th>
+							</tr>
+						</table>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-						<button type="button" class="btn btn-primary">Confirmar pedido</button>
+						<button onclick="confirmar()" type="button" class="btn btn-primary"
+							data-dismiss="modal">Confirmar pedido</button>
 					</div>
 				</div>
 			</div>

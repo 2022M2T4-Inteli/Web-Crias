@@ -1,6 +1,8 @@
 
 $(document).ready(function(){
-    $.get("http://127.0.0.1:5555/getPartnerData", function(resultado){
+    var url = "http://127.0.0.1:5555/getPartnerDataByID/" + localStorage.getItem("id_used"); 
+
+    $.get(url, function(resultado){
         var objeto = JSON.parse(resultado);
         console.log(objeto);
         console.log(Object.keys(objeto).length);

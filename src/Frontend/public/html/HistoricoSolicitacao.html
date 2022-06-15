@@ -4,7 +4,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<link href="../css/HistoricoSolicitacao.css" rel="stylesheet">
-		<link href="../css/Nova_Barra.css" rel="stylesheet">
 		
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
 		
@@ -51,34 +50,63 @@
                 </div>
 
                 <div class="pending-section">
-                    <h2>Solicitações Pendentes:</h2>
+                    <h3>Solicitações Pendentes:</h3>
                     <table id="pending-table">
                         <tr>
-                            <th class="nf">Nota Fiscal</th>
-                            <th class="total-value">Valor Total</th>
-                            <th class="receive-value">Valor a Receber</th>
+                            <th class="nf" id="left-border-table">Nota Fiscal</th>
+                            <th class="total-value">Valor a Receber</th>
+                            <th class="receive-value">Valor Taxado</th>
                             <th class="antecipation-type">Tipo</th>
                             <th class="date">Data</th>
                             <th class="status">Status</th>
+                            <th class="details" id="right-border-table"></th>
                         </tr>
                     </table>
                 </div>
+                <br>
                 <div class="past-section">
-                    <h2>Solicitações Finalizadas:</h2>
+                    <h3>Solicitações Finalizadas:</h3>
                     <table id="past-table">
                         <tr>
-                            <th class="nf">Nota Fiscal</th>
-                            <th class="total-value">Valor Total</th>
-                            <th class="receive-value">Valor a Receber</th>
+                            <th class="nf" id="left-border-table">Nota Fiscal</th>
+                            <th class="total-value">Valor a Receber</th>
+                            <th class="receive-value">Valor Taxado</th>
                             <th class="antecipation-type">Tipo</th>
                             <th class="date">Data</th>
                             <th class="status">Status</th>
+                            <th class="details" id="right-border-table"></th>
+
                         </tr>
                     </table>
                 </div>
             </div>
             <br><br><br>
-
+            <div id="modal-hist" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Reservas da Fatura</h2>
+                    </div>
+                    <div class="modal-body">
+                          <table id="modal-table">
+                            <tr>
+                                <th class="id-modal" id="left-border-table">ID da Reserva</th>
+                                <th class="id-invoice-modal">ID da Fatura</th>
+                                <th class="value-modal">Valor</th>
+                                <th class="checkin-modal">Data do Check-in</th>
+                                <th class="checkout-modal" id="right-border-table">Data do Check-out</th>
+                                
+                            </tr>
+                          </table>                     
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            
+                </div>
+            </div>
             <hr>
             <div class="page-footer">
                 <img src="../icons/hurb-logo.png" width="250rem" height="100rem">
