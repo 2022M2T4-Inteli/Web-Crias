@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+$(document).ready(function(){ //Pega os dados do hotel que está logado e mostra na tela de "Editar perfil", na área do hoteleiro
     var url = "http://127.0.0.1:5555/getPartnerDataByID/" + localStorage.getItem("id_used"); 
 
     $.get(url, function(resultado){

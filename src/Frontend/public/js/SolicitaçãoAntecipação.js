@@ -3,7 +3,7 @@ var taxado = 0;
 var recebido = 0;
 var idFatura = 0;
 
-function calc(taxa) {
+function calc(taxa) { //calcula o quanto será recebido e o quanto será taxado, se acordo com o montante selecionado pelo hoteleiro e pelo tipo de antecipação escolhido
     var montant = parseFloat(document.getElementById("valores").value);
     taxado = montant * taxa;
     recebido = montant - taxado;
@@ -33,7 +33,7 @@ var value = 0;
 var minValue = 0;
 var max = 0;
 
-function getAllReservations() {
+function getAllReservations() { //
     var url = "http://127.0.0.1:5555/getReservasNaoFaturadas/" + localStorage.getItem("id_used");
 
     $.get(url, function (resultado) {
@@ -43,7 +43,7 @@ function getAllReservations() {
     })
 }
 
-function simulate() {
+function simulate() { //verifica se o valor desejado pelo hoteleiro é possível de ser faturado e, caso seja, verifica se o valor exato pode ser fatorado com base nos valores das diárias e, caso não possa, é apresentado dois valores mais próximos do valor desejado
     var montante = parseFloat(document.getElementById("montante").value);
     var count = -1;
     minInvoicedReservations = [];
@@ -84,7 +84,7 @@ function simulate() {
     }
 }
 
-$(document).ready(function () {
+$(document).ready(function () { //mostra o saldo do hotel e o valor máximo que ele pode faturar
     var url = "http://127.0.0.1:5555/getValorReservasNaoFaturadas/" + localStorage.getItem("id_used");
 
     $.get(url, function (resultado) {
@@ -102,7 +102,7 @@ $(document).ready(function () {
     getAllReservations();
 })
 
-function confirmar() {
+function confirmar() { //cria uma nova fatura no banco com as informações da nova fatura e desconta o valor faturado do saldo do hoteleiro
     $.ajax({
         type: 'POST',
         url: "http://127.0.0.1:5555/postInvoiceData",
@@ -141,7 +141,7 @@ function confirmar() {
     }
 }
 
-function changeReservationFaturaId(fatura, reserva) {
+function changeReservationFaturaId(fatura, reserva) {//atribui um id de fatura as reservas que foram faturadas
     $.ajax({
         type: 'POST',
         url: "http://127.0.0.1:5555/postReservationData",
@@ -154,7 +154,7 @@ function changeReservationFaturaId(fatura, reserva) {
     })
 }
 
-function updateAmountData() {
+function updateAmountData() { //aumenta a quantidade de antecipações registradas em um determinado estabelecimento e a quantidade de um determinado tipo de antecipação
     $.ajax({
         type: 'POST',
         url: "http://127.0.0.1:5555/postTypeData",
@@ -176,7 +176,7 @@ function updateAmountData() {
     })
 }
 
-function getTotalFatura() {
+function getTotalFatura() { //mostra o total da fatura que está sendo feita
     var url = "http://127.0.0.1:5555/getTotalFatura";
 
     $.get(url, function (resultado) {
@@ -184,7 +184,7 @@ function getTotalFatura() {
     })
 }
 
-function addTable() {
+function addTable() { //mostra a tabela que será mostrada na hora da confirmação de pedido
     $("#table").html(`<tr>
                         <th>ID</th>
                         <th>Valor</th>
