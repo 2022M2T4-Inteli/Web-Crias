@@ -497,4 +497,3 @@ app.get('/getReservasFaturadas/:id', (req, res) => {
 	})
 	db.close()
 })
-
