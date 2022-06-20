@@ -15,9 +15,8 @@
 Nosso projeto desenvolve uma aplicação web para a Hurb.
 <br><br>
 <p align="center">
-<a href="https://www.hurb.com/br"><img src="https://user-images.githubusercontent.com/99191485/172633035-e4a23e5a-d9b4-486d-b352-f8972ae0c60d.jpg" border="0"></a></p><br>
 <a href="https://www.hurb.com/br"><img src="https://user-images.githubusercontent.com/99191485/172633035-e4a23e5a-d9b4-486d-b352-f8972ae0c60d.jpg" border="0" height="300" width="300"></a><br>
-Com o aumento da demanda dos hoteleiros pelas antecipações de pagamento, a Hurb precisa de uma plataforma que esclareça as taxas, os modos e os dias de pagamento, além de organizar a visualização das solicitações para os hoteleiros e administradores da Hurb. A nossa tarefa será desenvolver essa plataforma e para isso, nos organizamos em 5 sprints, a primeira para análises de mercado, a segunda para desenvolvimento do frontend, na terceira backend, na quarta integração e na quinta ajustes finos e apresentação.
+Com o aumento da demanda dos hoteleiros pelas antecipações de pagamento, a Hurb precisa de uma plataforma que esclareça as taxas, os modos e os dias de pagamento, além de organizar a visualização das solicitações para os hoteleiros e administradores da Hurb. A nossa tarefa será desenvolver essa plataforma e para isso, nos organizamos em 5 sprints, a primeira para análises de mercado, a segunda para desenvolvimento do frontend, na terceira backend, na quarta integração e na quinta ajustes finos e apresentação.</p>
 <br><br>
 
 ## 🛠 Estrutura de pastas
@@ -80,29 +79,6 @@ node app.js
 
 
 ## 🗃 Histórico de lançamentos
-
-A cada atualização os detalhes devem ser lançados aqui.
-
-* 0.2.1 - 25/01/2022
-    * MUDANÇA: Atualização de docs (código do módulo permanece inalterado)
-* 0.2.0 - 15/01/2022
-    * MUDANÇA: Remove `setDefaultXYZ()`
-    * ADD: Adiciona `init()`
-* 0.1.1 - 11/01/2022
-    * CONSERTADO: Crash quando chama `baz()` (Obrigado @NomeDoContribuidorGeneroso!)
-* 0.1.0 - 10/01/2022
-    * O primeiro lançamento adequado
-    * MUDANÇA: Renomeia `foo()` para `bar()`
-* 0.0.1 - 01/01/2022
-    * Trabalho em andamento
-* 0.1.1 - 11/01/2022
-    * CONSERTADO: Crash quando chama `baz()` (Obrigado @NomeDoContribuidorGeneroso!)
-* 0.2.0 - 29/04/2022 - Semana 2
-    * O primeiro lançamento adequado
-    * MUDANÇA: Renomeia `foo()` para `bar()`
-* 0.1.0 - 22/04/2022 - Semana 1
-    * Trabalho em andam
-
 
 * 0.3.4 - 13/06/2022
     * MUDANÇA: Exibição de datas na tela de Faturamento (Após faturar reservas). (Renato Machado)
