@@ -187,3 +187,26 @@ p {
 	justify-content: center;
 	gap: 100px;
 }
+
+.icons {
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	align-items: flex-end;
+	gap: 20px;
+	width: 50%;
+	padding-bottom: 50px;
+}
+
+.page-footer {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.hurb {
+	display: flex;
+	width: 50%;
+	flex-direction: column;
+	align-items: flex-start;
+}
