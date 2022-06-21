@@ -10,6 +10,9 @@ const DBPATH = 'DataBase/BancoHurb.db'; //caminho das pastas até o banco
 const hostname = '127.0.0.1'; //definindo o ip usado
 const port = 5555; //definindo a porta usada
 
+app.use(express.static("../Frontend/public"));
+app.use(express.static("../Frontend/public/html"));
+
 app.listen(port, hostname, () => { //iniciando o servidor
 	console.log(`Server running at http://${hostname}:${port}/`);
 });
