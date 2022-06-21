@@ -1,6 +1,6 @@
 $(document).ready(function () { 
-    var url1 = "http://127.0.0.1:5555/getInvoiceDataForPartner/" + localStorage.getItem("id_used");
-    var url2 = "http://127.0.0.1:5555/getPaidInvoiceDataForPartner/" + localStorage.getItem("id_used");
+    var url1 = "http://127.0.0.1:1234/getInvoiceDataForPartner/" + localStorage.getItem("id_used");
+    var url2 = "http://127.0.0.1:1234/getPaidInvoiceDataForPartner/" + localStorage.getItem("id_used");
 
     //Taking ranking info from database.
     $.get(url1, function (resultado) { //organiza as reservas pendentes na tabela, na área de admin
@@ -78,7 +78,7 @@ function modal(idFatura) { //organiza as colunas da tabela do modal
                                 <th class="checkout-modal" id="right-border-table">Data do Check-out</th>
                             </tr>`);
 
-    var url = "http://127.0.0.1:5555/getReservasFaturadas/" + idFatura;
+    var url = "http://127.0.0.1:1234/getReservasFaturadas/" + idFatura;
     console.log(idFatura)
 
     $.get(url, function(resultado){ //

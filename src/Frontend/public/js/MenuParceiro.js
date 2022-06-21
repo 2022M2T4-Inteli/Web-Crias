@@ -13,7 +13,7 @@ function changePage(index){ //muda a tela que está sendo apresentada no carrose
 }
 
 $(document).ready(function(){ //mostra uma mensagem de "bem-vindo" com o nome do hotel que está logado 
-    var url = "http://127.0.0.1:5555/getPartnerDataByID/" + localStorage.getItem("id_used"); 
+    var url = "http://127.0.0.1:1234/getPartnerDataByID/" + localStorage.getItem("id_used"); 
     $.get(url, function(resultado){
         var objeto = JSON.parse(resultado);
         console.log(objeto);

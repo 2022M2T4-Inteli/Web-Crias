@@ -2,7 +2,7 @@ function checkLogin() {
     var EMAIL = $("#log").val();
     var PASSWORD = $("#pass").val();
 
-    var url = "http://127.0.0.1:5555/checkLogin/" + EMAIL;
+    var url = "http://127.0.0.1:1234/checkLogin/" + EMAIL;
 
     $.get(url, function (resultado) { //confere os dados da tela de login e, caso o email e senha inseridos estejam no banco de dados e a senha seja do respectivo email, o usuário ganha acesso a área do seu login, seja de admin ou de hoteleiro
 

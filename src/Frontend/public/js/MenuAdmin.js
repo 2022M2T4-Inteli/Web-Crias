@@ -4,7 +4,7 @@ $(document).ready(function () {
     changeSearchType()
 
     //Taking ranking info from database.
-    $.get("http://127.0.0.1:5555/getRanking", function (resultado) { //monta o ranking dos principais antecipadores
+    $.get("http://127.0.0.1:1234/getRanking", function (resultado) { //monta o ranking dos principais antecipadores
         var objeto = JSON.parse(resultado);
         var aux = 1;
         for (i = 0; i < Object.keys(objeto).length; i++) {
@@ -31,7 +31,7 @@ $(document).ready(function () {
     });
 
     //Taking the general info section from database.
-    $.get("http://127.0.0.1:5555/getGeneralVision", function (resultado) { //mostra as informações de "Quantidade de Antecipações", "Valor Total Antecipado", "Valor Total Taxado" e "Tipo Mais Solicitado" na tela principal do admin
+    $.get("http://127.0.0.1:1234/getGeneralVision", function (resultado) { //mostra as informações de "Quantidade de Antecipações", "Valor Total Antecipado", "Valor Total Taxado" e "Tipo Mais Solicitado" na tela principal do admin
         var objeto = JSON.parse(resultado);
         $("#total-amount-anticipations").html(objeto[0].TotalDeAntecipações);
         $("#total-amount-advance").html((objeto[0].ValorTotalAntecipado).toFixed(2));
@@ -103,7 +103,7 @@ function changeSearchType() { //muda o modelo da tabela de acordo com o tipo de 
 }
 
 function showInvoiceData() { //pega as faturas que estão pendentes quando o tipo de pesquisa for por "Solicitações Pendentes"
-    $.get("http://127.0.0.1:5555/getInvoiceData", function (resultado) {
+    $.get("http://127.0.0.1:1234/getInvoiceData", function (resultado) {
         var objeto = JSON.parse(resultado);
         var aux = 1;
         for (i = 0; i < Object.keys(objeto).length; i++) {
@@ -138,7 +138,7 @@ function showInvoiceData() { //pega as faturas que estão pendentes quando o tip
 }
 
 function showPaidInvoiceData() { //pega as faturas que estão pagas quando o tipo de pesquisa for por "Solicitações Passadas"
-    $.get("http://127.0.0.1:5555/getPaidInvoiceData", function (resultado) {
+    $.get("http://127.0.0.1:1234/getPaidInvoiceData", function (resultado) {
         var objeto = JSON.parse(resultado);
         var aux = 1;
         for (i = 0; i < Object.keys(objeto).length; i++) {
@@ -173,7 +173,7 @@ function showPaidInvoiceData() { //pega as faturas que estão pagas quando o tip
 }
 
 function showPartnerData() { //mostra os dados do hotel quando o tipo de pesquisa for por "Estabelecimento"
-    $.get("http://127.0.0.1:5555/getPartnerData", function (resultado) {
+    $.get("http://127.0.0.1:1234/getPartnerData", function (resultado) {
         var objeto = JSON.parse(resultado);
         var aux = 1;
         for (i = 0; i < Object.keys(objeto).length; i++) {
@@ -206,7 +206,7 @@ function showSearch() { //mostra a tabela de acordo com o parametro que foi pesq
 
     switch (document.getElementById("search-type").value) {
         case "Estabelecimento":
-            var url = "http://127.0.0.1:5555/getPartnerDataByID/" + $("#search-text").val();
+            var url = "http://127.0.0.1:1234/getPartnerDataByID/" + $("#search-text").val();
 
             $.get(url, function (resultado) {
                 var objeto = JSON.parse(resultado);
@@ -221,7 +221,7 @@ function showSearch() { //mostra a tabela de acordo com o parametro que foi pesq
             });
             break;
         case "Pendentes":
-            var url = "http://127.0.0.1:5555/getInvoiceDataByNf/" + $("#search-text").val();
+            var url = "http://127.0.0.1:1234/getInvoiceDataByNf/" + $("#search-text").val();
 
             console.log(url);
 
@@ -242,7 +242,7 @@ function showSearch() { //mostra a tabela de acordo com o parametro que foi pesq
             });
             break;
         case "Passadas":
-            var url = "http://127.0.0.1:5555/getPaidInvoiceDataByNf/" + $("#search-text").val();
+            var url = "http://127.0.0.1:1234/getPaidInvoiceDataByNf/" + $("#search-text").val();
 
             $.get(url, function (resultado) {
                 var objeto = JSON.parse(resultado);

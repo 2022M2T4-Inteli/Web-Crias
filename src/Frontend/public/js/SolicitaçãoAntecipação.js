@@ -34,7 +34,7 @@ var minValue = 0;
 var max = 0;
 
 function getAllReservations() { //
-    var url = "http://127.0.0.1:5555/getReservasNaoFaturadas/" + localStorage.getItem("id_used");
+    var url = "http://127.0.0.1:1234/getReservasNaoFaturadas/" + localStorage.getItem("id_used");
 
     $.get(url, function (resultado) {
         var objeto = JSON.parse(resultado)
@@ -85,7 +85,7 @@ function simulate() { //verifica se o valor desejado pelo hoteleiro é possível
 }
 
 $(document).ready(function () { //mostra o saldo do hotel e o valor máximo que ele pode faturar
-    var url = "http://127.0.0.1:5555/getValorReservasNaoFaturadas/" + localStorage.getItem("id_used");
+    var url = "http://127.0.0.1:1234/getValorReservasNaoFaturadas/" + localStorage.getItem("id_used");
 
     $.get(url, function (resultado) {
         var objeto = JSON.parse(resultado)
@@ -105,7 +105,7 @@ $(document).ready(function () { //mostra o saldo do hotel e o valor máximo que 
 function confirmar() { //cria uma nova fatura no banco com as informações da nova fatura e desconta o valor faturado do saldo do hoteleiro
     $.ajax({
         type: 'POST',
-        url: "http://127.0.0.1:5555/postInvoiceData",
+        url: "http://127.0.0.1:1234/postInvoiceData",
         data: {
             EstabelecimentoID: localStorage.getItem("id_used"),
             TipoAntecipacaoID: tpAnt,
@@ -144,7 +144,7 @@ function confirmar() { //cria uma nova fatura no banco com as informações da n
 function changeReservationFaturaId(fatura, reserva) {//atribui um id de fatura as reservas que foram faturadas
     $.ajax({
         type: 'POST',
-        url: "http://127.0.0.1:5555/postReservationData",
+        url: "http://127.0.0.1:1234/postReservationData",
         data: {
             FaturaID: fatura,
             ReservaID: reserva
@@ -157,7 +157,7 @@ function changeReservationFaturaId(fatura, reserva) {//atribui um id de fatura a
 function updateAmountData() { //aumenta a quantidade de antecipações registradas em um determinado estabelecimento e a quantidade de um determinado tipo de antecipação
     $.ajax({
         type: 'POST',
-        url: "http://127.0.0.1:5555/postTypeData",
+        url: "http://127.0.0.1:1234/postTypeData",
         data: {
             TipoAntecipacaoID: tpAnt
         }
@@ -167,7 +167,7 @@ function updateAmountData() { //aumenta a quantidade de antecipações registrad
 
     $.ajax({
         type: 'POST',
-        url: "http://127.0.0.1:5555/postPartnerData",
+        url: "http://127.0.0.1:1234/postPartnerData",
         data: {
             id: localStorage.getItem("id_used")
         }
@@ -177,7 +177,7 @@ function updateAmountData() { //aumenta a quantidade de antecipações registrad
 }
 
 function getTotalFatura() { //mostra o total da fatura que está sendo feita
-    var url = "http://127.0.0.1:5555/getTotalFatura";
+    var url = "http://127.0.0.1:1234/getTotalFatura";
 
     $.get(url, function (resultado) {
         idFatura = resultado[0].FaturaID;
