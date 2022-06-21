@@ -8,7 +8,7 @@ const sqlite3 = require('sqlite3').verbose(); //requerimento do sqlite
 const DBPATH = 'DataBase/BancoHurb.db'; //caminho das pastas até o banco
 
 const hostname = '127.0.0.1'; //definindo o ip usado
-const port = 5555; //definindo a porta usada
+const port = 1234; //definindo a porta usada
 
 app.use(express.static("../Frontend/public"));
 app.use(express.static("../Frontend/public/html"));
