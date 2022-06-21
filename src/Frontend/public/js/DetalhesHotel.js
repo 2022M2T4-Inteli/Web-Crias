@@ -2,7 +2,7 @@ console.log(localStorage.getItem("idHurb"));
 
 $(document).ready(function(){ //organiza os dados do estabelecimento na tela de "Detalhes do Hotel", na área do admin
     //Taking ranking info from database.
-    var url = "http://127.0.0.1:5555/getPartnerDataByID/" + localStorage.getItem("idHurb");
+    var url = "http://127.0.0.1:1234/getPartnerDataByID/" + localStorage.getItem("idHurb");
 
     $.get(url, function(resultado){
         var objeto = JSON.parse(resultado);
