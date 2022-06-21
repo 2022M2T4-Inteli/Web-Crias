@@ -194,6 +194,7 @@
 	width: 100%;
 	height: 55px;
 	background-color: #3468FC;
+    z-index: 5;
 }
 
 .menu a {
