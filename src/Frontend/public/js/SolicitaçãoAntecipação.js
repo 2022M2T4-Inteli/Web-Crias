@@ -10,7 +10,7 @@ function calc(taxa) { //calcula o quanto será recebido e o quanto será taxado,
     taxado = taxado.toFixed(2);
     recebido = recebido.toFixed(2);
     document.getElementById("receberá").innerHTML = "Você receberá: R$ " + recebido;
-    document.getElementById("taxado").innerHTML = "Foi taxado: R$ " + taxado;
+    document.getElementById("taxado").innerHTML = "Foi retido: R$ " + taxado;
     if (taxa == 0.12) {
         tpAnt = 1;
     }
