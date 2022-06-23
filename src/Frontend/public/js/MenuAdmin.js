@@ -52,7 +52,7 @@ function resetTable() { //reseta a tabela sempre que o tipo de pesquisa for alte
                                         <th class="invoice-note" id="left-border-table">Nota Fiscal</th>
                                         <th class="invoice-partner-id">Esta. ID</th>
                                         <th class="invoice-received-value">Valor Recebido</th>
-                                        <th class="invoice-taxed-value">Valor Taxado</th>
+                                        <th class="invoice-taxed-value">Valor Retido</th>
                                         <th class="invoice-type">Tipo</th>
                                         <th class="invoice-status">Status</th>
                                         <th class="invoice-date" id="right-border-table">Data</th>
