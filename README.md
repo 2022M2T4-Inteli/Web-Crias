@@ -94,4 +94,15 @@ npm start
 
 Aqui estão as referências usadas no projeto:
 
-1. <https://creativecommons.org/share-your-work/>
+1. <https://www.w3schools.com/>
+2. <https://www.sqlite.org/index.html>
+3. <https://www.postman.com/>
+4. <https://nodejs.org/en/>
+5. <https://www.heroku.com/>
+6. <https://www.figma.com/>
+7. <https://trello.com/>
+8. <https://code.visualstudio.com/>
+9. <https://github.com/>
+10. <https://miro.com/>
+11. <https://app.funretrospectives.com/>
+12. <https://app.slack.com/>
