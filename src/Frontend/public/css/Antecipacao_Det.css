@@ -146,7 +146,6 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	gap: 100px;
 }
 
 
@@ -185,7 +184,6 @@ p {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	gap: 100px;
 }
 
 .icons {
