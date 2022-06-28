@@ -18,9 +18,9 @@
 
 ## 📝 Descrição
 
-    A solução consiste em uma aplicação web, destinada a facilitar o processo de antecipação do recebimento das diárias. Para os hoteleiros, será possível definir um  período de tempo, sendo que as diárias desse período serão as antecipadas, podendo escolher entre três tipos de antecipação, cada uma com taxa diferente, sendo que quanto maior for a antecipação, maior será a taxa.
-    Além disso, a plataforma também permite que a equipe da hurb tenha acesso à uma lista dos hotéis que mais pedem antecipação e respectivas suas informações, além do histórico e detalhes de antecipações passadas, permitindo um maior controle das quantias antecipadas e das adquiridas por meio das taxas.
-    O usuário acessa a plataforma através de um login, que consiste em um email e senha, os quais serão definidos na hora do cadastro do usuário no site.
+ A solução consiste em uma aplicação web, destinada a facilitar o processo de antecipação do recebimento das diárias. Para os hoteleiros, será possível definir um  montante, sendo que as diárias que formarem esse valor, ou o mais próximo possível, serão as antecipadas, podendo escolher entre três tipos de antecipação, cada uma com taxa diferente, sendo que quanto maior for a antecipação, maior será a taxa.
+ Além disso, a plataforma também permite que a equipe da hurb tenha acesso à uma lista dos hotéis que mais pedem antecipação e respectivas suas informações, além do histórico e detalhes de antecipações passadas, permitindo um maior controle das quantias antecipadas e das adquiridas por meio das taxas.
+ O usuário acessa a plataforma através de um login, que consiste em um email e senha, os quais serão definidos anteriormente pela Hurb.
 
 
 ## 📁 Estrutura de pastas
